@@ -67,7 +67,7 @@ view students who have a "Trouble" tag attached to them.
 	-- run method to evaluate absences
 
 ```
-	module ProductHelper
+module ProductHelper
   def class_for_product_date(product, date)
     case product.get_daily_average(date)
     when 0..24
