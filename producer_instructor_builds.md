@@ -56,16 +56,17 @@ messaging with producers/students
 
 	http://www.rubydoc.info/gems/mailboxer/0.12.5
 
-		```
+```
 		gem 'mailboxer'
 				-- 	class User < ActiveRecord::Base
   						acts_as_messageable
 						end
-		```
+```
 
 view students who have a "Trouble" tag attached to them.
 	-- run method to evaluate absences
-	```
+
+```
 	module ProductHelper
   def class_for_product_date(product, date)
     case product.get_daily_average(date)
@@ -79,11 +80,12 @@ view students who have a "Trouble" tag attached to them.
 	      ""
 	   end
 	end
-
 ```
+
 ```
 app/views/products/show.html.haml:
 ```
+
 ```
 @product.each do |product|
   %td{:class => class_for_product_date(product, date)}
