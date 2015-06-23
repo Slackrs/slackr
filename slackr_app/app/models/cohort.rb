@@ -1,6 +1,6 @@
 class Cohort < ActiveRecord::Base
 	
-	belongs_to :producers
+	belongs_to :producer
 	has_many :instructors, :students
 
 
