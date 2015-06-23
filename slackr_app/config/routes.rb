@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :users
 
-  get 'users/show'
-
-  get 'users/new'
-
-  get 'users/create'
+  resources :cohorts do
+    resources :students
+    resources :instructors
+  end
+  
+  resources :producers
+  resources :students
+  resources :instructors
 
   root 'sessions#new'
+
   get     '/login' => 'sessions#new'
 
   post    '/login' => 'sessions#create'
