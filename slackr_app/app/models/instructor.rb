@@ -1,5 +1,5 @@
 class Instructor < ActiveRecord::Base
-	belongs_to :cohorts
+	belongs_to :cohort
 	has_many :students
 
 	validates :email, uniqueness: true
