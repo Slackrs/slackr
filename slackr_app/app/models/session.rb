@@ -1,0 +1,1 @@
+# we don't need this at all since it's not an Active Record object
