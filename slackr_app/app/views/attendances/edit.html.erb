@@ -1,1 +1,7 @@
-edit.html.erb
+<%= render :partial "attendance", locals: {attendances: @attendances} %>
+
+<%= render :partial "attendance", collection: @attendances %>
+
+<%= render @attendances %>
+
+<!-- attendance list -->
