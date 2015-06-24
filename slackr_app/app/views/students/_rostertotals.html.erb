@@ -1,0 +1,17 @@
+<table class=".table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Presents</th>
+		<th>Lates</th>
+		<th>Absences</th>
+		<th>Excuseds</th>
+	<% @students.each do |student| %>
+		<tr>
+			<td><%= link_to "#{student.name}", cohort_student_path(student.cohort_id, student.id) %></td>
+			<td><%= student.presents %></td>
+			<td><%= student.lates %></td>
+			<td><%= student.absences %></td>
+			<td><%= student.absences %></td>
+		</tr>
+	<% end %>
+</table>

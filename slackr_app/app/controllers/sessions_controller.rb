@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       if user.producer?
         redirect_to cohorts_path
       elsif user.instructor?
-        redirect_to cohort_students_path(user)
+        redirect_to cohort_students_path(user.cohort_id)
       else
         redirect_to cohort_student_path(user.cohort_id, user.id)
       end
