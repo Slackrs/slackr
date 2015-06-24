@@ -8,8 +8,9 @@ class AttendancesController < ApplicationController
 # 	def index
 # 	end
 
-# 	def edit
-# 	end
+	def edit
+		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :students => {:cohort_id => @cohort.id}})
+	end
 
 # 	def show
 # 		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :students => {:cohort_id => @cohort.id}})
