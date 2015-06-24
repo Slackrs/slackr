@@ -20,8 +20,8 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user 
   end
 
+  def current_user
+    @current user ||= User.find(params[:user_id])
+  end
 
-
-
-  
 end

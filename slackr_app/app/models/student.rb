@@ -24,4 +24,6 @@ class Student < User
 			student.flagged?
 		end
 	end
+
+	
 end

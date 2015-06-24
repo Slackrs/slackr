@@ -1,5 +1,8 @@
 class CohortsController < ApplicationController
 
+	before_action :students_only, only: [:index, :show]
+	# before_action :students_only, except: [:edit, :new]
+
 	def new
 	end
 
@@ -7,6 +10,12 @@ class CohortsController < ApplicationController
 	end
 
 	def edit
+	end
+
+	def show
+		if current_user.producer?
+			render :show_producer
+		end
 	end
 
 

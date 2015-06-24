@@ -2,13 +2,13 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :producers do
-    resources :cohorts
+  resources :cohorts do
+    resources :students
+    resources :instructors
+    resources :attendances
   end
   
   resources :producers
-  resources :students
-  resources :instructors
 
   root 'sessions#new'
 
