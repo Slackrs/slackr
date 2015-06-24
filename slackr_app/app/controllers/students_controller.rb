@@ -21,14 +21,15 @@ class StudentsController < ApplicationController
 	end
 
 	def troubled
-		if @current_user.producer? || @current_user.instructor?
+		if @current_user.producer?
 			@cohorts = @current_user.cohorts
 			@students = []
 			@cohorts.map do |cohort|
 				cohort.students.each {|s| @students.push(s)}
-			end	
+			end
+			@troubled = Student.troubled_array(@students)
 		elsif @current_user.instructor?
-			@students = @current_user.students
+			@troubled = Student.troubled.where(cohort_id: params[:cohort_id])
 		else
 			redirect_to '/'
 		end	
