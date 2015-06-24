@@ -1,23 +1,13 @@
 class AttendancesController < ApplicationController
 
-# 	before_action :set_cohort
+	def show
+		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :students => {:cohort_id => params[:cohort_id]})
+	end
 
-# 	def new
-# 	end
+	def edit
+		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :students => {:cohort_id => params[:cohort_id]})
+	end
 
-# 	def index
-# 	end
+	private
 
-# 	def edit
-# 	end
-
-# 	def show
-# 		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :students => {:cohort_id => @cohort.id}})
-# 	end
-
-# 	private
-
-# 	def set_cohort
-# 		@cohort = Cohort.find(params[:cohort_id])
-# 	end
-# end
+end
