@@ -11,6 +11,15 @@ class Student < User
 		self.attendances.where({absent: true, date: (self.cohort.start_date..Date.today)}).count
 	end
 
+	def excuseds
+		self.attendances.where({excused: true, date: (self.cohort.start_date..Date.today)}).count
+	end
+
+	def presents
+		self.attendances.where({present: true, date:
+			(self.cohort.start_date..Date.today)}).count
+	end
+
 	def flagged?
 		self.official_absences > 4
 	end
@@ -19,8 +28,8 @@ class Student < User
 		self.absences + (self.lates/3)
 	end
 
-	def self.troubled
-		self.all.select do |student|
+	def self.troubled_array(students)
+		students.select do |student|
 			student.flagged?
 		end
 	end

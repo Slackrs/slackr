@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
   # Allows us to check for a logged in user
   def authorize
     redirect_to '/login' unless current_user 
-    
   end
+
 
   def auth_producer
     if !@current_user.producer?

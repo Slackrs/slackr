@@ -6,16 +6,16 @@ Rails.application.routes.draw do
 
   resources :cohorts do
     resources :students
-    resources :instructors
-    resources :attendances
+    # resources :instructors
+    resources :attendances, only: [:show, :edit]
   end
 
   resources :users
 
-  root 'sessions#new'
+  root 'sessions#landing'
 
   get     '/login' => 'sessions#new'
   post    '/login' => 'sessions#create'
-  delete '/logout' => 'sessions#destroy'
+  delete '/login' => 'sessions#destroy'
  
 end

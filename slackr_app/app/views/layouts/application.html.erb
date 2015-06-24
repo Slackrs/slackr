@@ -9,6 +9,11 @@
 <body>
 
 <%= yield %>
+	
+	
+	<%= form_tag('/login', method: 'delete') do %>
+		<%= submit_tag('LOG OUT') %>
+	<% end %> 
 
 </body>
 </html>

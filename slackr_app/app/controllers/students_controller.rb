@@ -11,8 +11,11 @@ class StudentsController < ApplicationController
 	#Roster of Students in Cohort
 		#NEED TO REFACTOR STUDENTS MODEL/SO MANY QUERIES
 	def index
-		if @current_user.producer? || @current_user.instructor?
+		if @current_user.producer?  
 			@cohort = Cohort.find(params[:cohort_id])
+			@students = @cohort.students
+		elsif @current_user.instructor?
+			@cohort = Cohort.find(@current_user.cohort_id)
 			@students = @cohort.students
 		else
 			redirect_to '/'
@@ -20,14 +23,15 @@ class StudentsController < ApplicationController
 	end
 
 	def troubled
-		if @current_user.producer? || @current_user.instructor?
+		if @current_user.producer?
 			@cohorts = @current_user.cohorts
 			@students = []
 			@cohorts.map do |cohort|
 				cohort.students.each {|s| @students.push(s)}
-			end	
+			end
+			@troubled = Student.troubled_array(@students)
 		elsif @current_user.instructor?
-			@students = @current_user.students
+			@troubled = Student.troubled.where(cohort_id: params[:cohort_id])
 		else
 			redirect_to '/'
 		end	
