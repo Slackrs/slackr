@@ -9,8 +9,11 @@ class StudentsController < ApplicationController
 	#Roster of Students in Cohort
 		#NEED TO REFACTOR STUDENTS MODEL/SO MANY QUERIES
 	def index
-		if @current_user.producer? || @current_user.instructor?
+		if @current_user.producer?  
 			@cohort = Cohort.find(params[:cohort_id])
+			@students = @cohort.students
+		elsif @current_user.instructor?
+			@cohort = Cohort.find(@current_user.cohort_id)
 			@students = @cohort.students
 		else
 			redirect_to '/'
