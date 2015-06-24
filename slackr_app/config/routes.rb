@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     resources :instructors
     resources :attendances
   end
-  
-  resources :producers
+
+  resources :users
 
   root 'sessions#new'
 

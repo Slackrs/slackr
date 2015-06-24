@@ -1,7 +1,3 @@
-<%= render :partial "attendances/attendance", locals: {attendances: @attendances} %>
+Welcome <%= @current_user.type %> with name <%= @current_user.name %>
 
-<%= render :partial "attendances/attendance", collection: @attendances %>
-
-<%= render @attendances %>
-
-<!-- students vers of this may be stripped. -->
+<%= render @students %>

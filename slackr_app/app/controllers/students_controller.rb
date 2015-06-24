@@ -1,5 +1,7 @@
 class StudentsController < ApplicationController
 
+	before_action :current_user
+
 	def new
 	end
 
@@ -7,6 +9,9 @@ class StudentsController < ApplicationController
 	end
 
 	def edit
+	end
+
+	def show
 	end
 
 end

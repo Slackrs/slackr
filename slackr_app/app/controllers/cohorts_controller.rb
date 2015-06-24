@@ -1,6 +1,7 @@
 class CohortsController < ApplicationController
 
-	before_action :students_only, only: [:index, :show]
+	before_action :current_user
+	# before_action :students_only, only: [:index, :show]
 	# before_action :students_only, except: [:edit, :new]
 
 	def new
