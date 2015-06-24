@@ -1,5 +1,6 @@
 class CohortsController < ApplicationController
 
+
 	before_action :authorize
 	#before_action :students_only, only: [:index, :show]
 	# before_action :students_only, except: [:edit, :new]
