@@ -1,12 +1,21 @@
 class ProducersController < ApplicationController
 
-	def new
-	end
-
 	def index
+		@cohorts = current_user.cohorts
 	end
 
-	def edit
+	def show
+		@cohort = Cohort.find(params[:id])
 	end
+
+	def troubled
+		@cohort = Cohort.find(params[:id])
+		@troublestudents = @cohort.students.
+
+		#pass in 
+	end
+
+
+
 
 end
