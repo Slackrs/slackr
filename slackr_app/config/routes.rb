@@ -2,9 +2,8 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :cohorts do
-    resources :students
-    resources :instructors
+  resources :producers do
+    resources :cohorts
   end
   
   resources :producers
