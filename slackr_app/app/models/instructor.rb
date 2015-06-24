@@ -1,9 +1,5 @@
-class Instructor < ActiveRecord::Base
+class Instructor < User
 	belongs_to :cohort
-	has_many :students
-
-	validates :email, uniqueness: true
-	# DHH <3's Coda
-	has_secure_password
+	has_many :students, through: :cohort
 
 end
