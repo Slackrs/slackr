@@ -28,8 +28,8 @@ class Student < User
 		self.absences + (self.lates/3)
 	end
 
-	def self.troubled
-		self.all.select do |student|
+	def self.troubled_array(students)
+		students.select do |student|
 			student.flagged?
 		end
 	end
