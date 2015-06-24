@@ -4,6 +4,7 @@ class ProducersController < ApplicationController
 	end
 
 	def index
+		@user_type = session[:user_type]
 	end
 
 	def edit
