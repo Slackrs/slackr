@@ -1,7 +1,3 @@
-<%= render :partial "attendance", locals: {attendances: @attendances} %>
+<h1>Cohort #name#: Attendance for #date#</h1>
 
-<%= render :partial "attendance", collection: @attendances %>
-
-<%= render @attendances %>
-
-<!-- attendance list -->
+<%= render 'attendances/editday' %>
