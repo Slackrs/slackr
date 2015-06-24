@@ -6,20 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-today = Date.today
-cohort1 = Cohort.create({
-	name: FFaker::Name.name,
-	start_date: today - 50,
-	end_date: today + 50,
-	producer_id: 1
-})
-cohort2 = Cohort.create({
-	name: FFaker::Name.name,
-	start_date: today - 20,
-	end_date: today + 80,
-	producer_id: 1
-})
+Cohort.destroy_all
+Producer.destroy_all
+Instructor.destroy_all
+Student.destroy_all
 
 producer = Producer.create({
 	name: 'Herman Melville',
@@ -28,12 +18,26 @@ producer = Producer.create({
 	password_confirmation: 'password'
 })
 
+today = Date.today
+cohort1 = Cohort.create({
+	name: FFaker::Name.name,
+	start_date: today - 50,
+	end_date: today + 50,
+	producer: producer
+})
+cohort2 = Cohort.create({
+	name: FFaker::Name.name,
+	start_date: today - 20,
+	end_date: today + 80,
+	producer: producer
+})
+
 instructor1 = Instructor.create({
 	name: 'Ryan',
 	email: 'ryaneburke@gmail.com',
 	password: 'password',
 	password_confirmation: 'password',
-	cohort_id: 1
+	cohort: cohort1
 })
 
 instructor2 = Instructor.create({
@@ -41,7 +45,7 @@ instructor2 = Instructor.create({
 	email: 'kllystvns@gmail.com',
 	password: 'password',
 	password_confirmation: 'password',
-	cohort_id: 2
+	cohort: cohort2
 })
 
 students = []
@@ -51,7 +55,7 @@ s = Student.create({
 	phone_num: '7138707413',
 	password: 'password',
 	password_confirmation: 'password',
-	cohort_id: 1
+	cohort: cohort1
 })
 students.push(s)
 
@@ -62,7 +66,7 @@ students.push(s)
 		phone_num: FFaker::PhoneNumber.short_phone_number,
 		password: 'password',
 		password_confirmation: 'password',
-		cohort_id: 2
+		cohort: cohort2
 	})
 	students.push(s)
 end
@@ -75,7 +79,7 @@ students.each do |student|
 	cohort_dates.each do |date|
 		Attendance.create({
 			date: date,
-			student_id: student.id,
+			student: student,
 			present: true,
 			late: false,
 			absent: false,

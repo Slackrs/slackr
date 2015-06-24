@@ -21,8 +21,8 @@ class ApplicationController < ActionController::Base
     
   end
 
+  def current_user
+    @current user ||= User.find(params[:user_id])
+  end
 
-
-
-  
 end

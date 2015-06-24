@@ -5,11 +5,10 @@ Rails.application.routes.draw do
   resources :cohorts do
     resources :students
     resources :instructors
+    resources :attendances
   end
   
   resources :producers
-  resources :students
-  resources :instructors
 
   root 'sessions#new'
 
