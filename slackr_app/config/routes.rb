@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   resources :cohorts do
     resources :students
-    resources :instructors
-    resources :attendances
+    # resources :instructors
+    resources :attendances, only: [:show, :edit]
   end
 
   resources :users
