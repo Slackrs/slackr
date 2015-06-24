@@ -12,15 +12,18 @@ class SessionsController < ApplicationController
 
     if producer && producer.authenticate(params[:password])
       # store their id in session
+      session[:user_type] = 'producer'
       session[:producer_id] = producer.id
       redirect_to producer_path(producer)
     elsif instructor && instructor.authenticate(params[:password])
       # store their id in session
+      session[:user_type] = 'instructor'
       session[:instructor_id] = instructor.id
       redirect_to instructor_path(instructor)
       # rerender the form
     elsif student && student.authenticate(params[:password])
       # store their id in session
+      session[:user_type] = 'student'
       session[:student_id] = student.id
       redirect_to student_path(student)
       # rerender the form
