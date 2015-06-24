@@ -18,5 +18,12 @@ class CohortsController < ApplicationController
 		end
 	end
 
+	# def troubled
+	# 	@cohort = Cohort.find(params[:id])
+	# 	@troublestudents = @cohort.students.
+
+	# 	#pass in 
+	# end
+
 
 end
