@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
+  get '/students/troubled' => 'students#troubled'
+
   resources :cohorts do
     resources :students
     resources :instructors
