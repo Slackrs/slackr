@@ -1,4 +1,4 @@
-<table class=".table-striped">
+<table class="table-striped">
 	<tr>
 		<th>Name</th>
 		<th>Presents</th>
@@ -7,7 +7,7 @@
 		<th>Excuseds</th>
 	<% @students.each do |student| %>
 			<% if student.flagged? %>
-				<tr class=".danger">
+				<tr class="danger">
 			<% else %>
 				<tr>
 			<% end %>
@@ -15,7 +15,7 @@
 					<td><%= student.presents %></td>
 					<td><%= student.lates %></td>
 					<td><%= student.absences %></td>
-					<td><%= student.absences %></td>
+					<td><%= student.excuseds %></td>
 			</tr>
 	<% end %>
 </table>
