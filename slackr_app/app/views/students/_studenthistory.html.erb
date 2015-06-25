@@ -1,16 +1,22 @@
-<table class="table-striped">
-	<tr>
-		<th>Date</th>
-		<th>Late</th>
-		<th>Absent</th>
-		<th>Excused</th>
-	</tr>
-	<% @attendances.each do |attendance| %>
-	<tr>
-		<td><%= attendance.date %></td>
-		<td><%= attendance.late %></td>
-		<td><%= attendance.absent %></td>
-		<td><%= attendance.excused %></td>
-	</tr>
+
+<div class="table-head">
+	<div class="tr">
+		<div class="td date">Date</div>
+		<div class="td check">Present</div>
+		<div class="td check">Late</div>
+		<div class="td check">Absence</div>
+		<div class="td check">Excused</div>
+	</div>
+</div>
+<div class="table">
+	<% @attendances.each_with_index do |attendance, i| %>
+		<% even_odd = ((i % 2 == 0) ? 'odd' : 'even')%>
+		<div class="tr <%= even_odd %>">
+			<div class="td date"><%= attendance.date %></div>
+			<div class="td check"><%= attendance.present %></div>
+			<div class="td check"><%= attendance.late %></div>
+			<div class="td check"><%= attendance.absent %></div>
+			<div class="td check"><%= attendance.excused %></div>
+		</div>
 	<% end %>
-</table>
+</div>

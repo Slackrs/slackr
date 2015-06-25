@@ -15,3 +15,29 @@
 		<td><%= student.official_absences %></td>
 	</tr>
 <% end %>
+
+
+<div class="table-head">
+	<div class="tr">
+		<div class="td name">Student</div>
+		<div class="td check">Presents</div>
+		<div class="td check">Lates</div>
+		<div class="td check">Absences</div>
+		<div class="td check">Excuseds</div>
+	</div>
+</div>
+
+
+<div class="table">
+	<% @students.each_with_index do |student, i| %>
+		<% flagged = (student.flagged? ? 'flagged' : nil) %>
+		<% even_odd = ((i % 2 == 0) ? 'even' : 'odd')%>
+		<div class="tr <%= even_odd %> <%= flagged %>">
+				<div class="td name"><%= link_to "#{student.name}", cohort_student_path(student.cohort_id, student.id) %></div>
+				<div class="td check"><%= student.presents %></div>
+				<div class="td check"><%= student.lates %></div>
+				<div class="td check"><%= student.absences %></div>
+				<div class="td check"><%= student.absences %></div>
+		</div>
+	<% end %>
+</div>

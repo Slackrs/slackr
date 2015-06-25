@@ -1,13 +1,13 @@
 
-			<div class="table-head">
-				<div class="tr">
-					<div class="td name">Student</div>
-					<div class="td check">Presents</div>
-					<div class="td check">Lates</div>
-					<div class="td check">Absences</div>
-					<div class="td check">Excuseds</div>
-				</div>
-			</div>
+<div class="table-head">
+	<div class="tr">
+		<div class="td name">Student</div>
+		<div class="td check">Presents</div>
+		<div class="td check">Lates</div>
+		<div class="td check">Absences</div>
+		<div class="td check">Excuseds</div>
+	</div>
+</div>
 <div class="table">
 	<% @students.each_with_index do |student, i| %>
 		<% flagged = (student.flagged? ? 'flagged' : nil) %>
@@ -18,54 +18,6 @@
 				<div class="td check"><%= student.lates %></div>
 				<div class="td check"><%= student.absences %></div>
 				<div class="td check"><%= student.absences %></div>
-		</div>
-	<% end %>
-</div>
-
-
-
-<div class="table-head">
-	<div class="td name">
-		Student
-	</div>
-<!-- 	<div class="td date">
-		Date
-	</div> -->
-	<div class="td check">
-		Present
-	</div>
-	<div class="td check">
-		Late
-	</div>
-	<div class="td check">
-		Absent
-	</div>
-	<div class="td check">
-		Excused
-	</div>
-</div>
-<div class="table">
-	<% @attendances.each_with_index do |attendance, i| %>
-		<% even_odd = ((i % 2 == 0) ? 'even' : 'odd')%>
-		<div class="tr <%= even_odd %>">
-			<div class="td name">
-				<%= attendance.student.name %>
-			</div>
-			<!-- <div class="td date">
-				<%= attendance.date %>
-			</div> -->
-			<div class="td check">
-				<%= attendance.present %>
-			</div>
-			<div class="td check">
-				<%= attendance.late %>
-			</div>
-			<div class="td check">
-				<%= attendance.absent %>
-			</div>
-			<div class="td check">
-				<%= attendance.excused %>
-			</div>
 		</div>
 	<% end %>
 </div>
