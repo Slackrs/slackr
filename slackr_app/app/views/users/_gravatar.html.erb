@@ -1,0 +1,6 @@
+<div class="pro-pic">
+	<%= link_to user do %>
+		<%= image_tag gravatar_url(user.email, size) %>
+		<%= user.name %>
+	<% end %>
+</div>
