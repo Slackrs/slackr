@@ -18,7 +18,8 @@ Rails.application.routes.draw do
 
   # root 'sessions#landing' # this kink needs to be ironed out
 
-  root 'sessions#new'
+  root 'sessions#landing'
+
 
   get     '/login' => 'sessions#new'
   post    '/login' => 'sessions#create'
