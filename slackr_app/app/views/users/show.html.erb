@@ -5,4 +5,5 @@ to be added later -->
 
 <p><strong>Name:</strong> <%= @user.name %><br /><strong>Email:</strong> <%= @user.email %><br /><strong>Phone #:</strong> <%= @user.phone_num %></p>
 
-<%= link_to "edit", edit_user_path(current_user), :class => "button"  %>
+<%= link_to "edit profile", edit_user_path(current_user), :class => "button"  %>
+<%= link_to "change password", user_edit_pass_path(current_user), :class => "button" %>
