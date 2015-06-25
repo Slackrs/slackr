@@ -10,14 +10,13 @@ class CohortsController < ApplicationController
 	# Cohorts Index
 	def index
 		auth_producer
-		@cohorts = current_user.cohorts
+		@cohorts = @current_user.cohorts
 	end
 
 	# def new
 	# end
 
-	# def index
-	# end
+
 
 	# def edit
 	# end

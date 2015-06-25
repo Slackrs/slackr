@@ -1,8 +1,10 @@
 class StudentsController < ApplicationController
 
+
 	before_action :authorize
 	#before_action :students_only, only: [:index, :show]
 	# before_action :students_only, except: [:edit, :new]
+
 
 
 # INSTRUCTOR & PRODUCER %%%%%%%%%%%%%%%%%%%%%%%%
@@ -46,6 +48,7 @@ class StudentsController < ApplicationController
 		end
 	end
 
+
 end
 
 
@@ -54,3 +57,4 @@ end
 # 	def set_cohort
 # 		@cohort = Cohort.find(params[:cohort_id])
 # 	end
+

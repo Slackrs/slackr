@@ -10,4 +10,18 @@ class AttendancesController < ApplicationController
 
 	private
 
+	
+
+# 	def show
+# 		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :students => {:cohort_id => @cohort.id}})
+# 	end
+
+# 	private
+
+# 	def set_cohort
+# 		@cohort = Cohort.find(params[:cohort_id])
+# 	end
+# end
+
 end
+
