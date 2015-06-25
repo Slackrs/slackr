@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/students/troubled' => 'students#troubled'
 
-  resources :cohorts, only: [:index, :show] do
+  resources :cohorts, only: [:index] do
     resources :students, only: [:index, :show]
     # resources :instructors
     resources :attendances, only: [:show, :edit, :update]
