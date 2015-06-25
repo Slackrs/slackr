@@ -5,7 +5,6 @@
 	padding: 0;
 	text-decoration: none;
 	list-style: none;
-	font-family: 'Open Sans', sans-serif;
 	line-height: 1;
 	color: rgb(34,34,34);
 	cursor: default;
@@ -13,13 +12,14 @@
 }
 
 .header {
+	font-family: 'Open Sans', sans-serif;
 	position: fixed;
 	width: 100%;
 	height: 60px;
 	line-height: 60px;
 	top: 0;
 	text-align: center;
-	font-size: 34px;
+	font-size: 44px;
 	background: rgb(25,180,170);
 	background: #eee;
 	color: rgb(250,210,55);
@@ -27,25 +27,40 @@
 	color: white;
 	color: #333;
 
-	font-family: Impact;
+}
+
+.header p {
+	/*font-family: Impact;*/
+	display: inline-block;
+	line-height: 0.8;
+	vertical-align: bottom;
+}
+
+.footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	height: 30px;
+	background: #333;
 }
 
 .container {
 	margin-top: 70px;
 	display: flex;
-	height: 80vh;
+	height: 88vh;
 }
 
 .nav {
 	width: 20%;
-	height: 100%;
-	margin: 30px;
+	margin: 60px;
+	margin-right: 20px;
 }
 
 .content {
 	display: flex;
 	flex-direction: column;
-	margin: 30px;
+	margin: 60px;
+	margin-left: 20px;
 	width: 70%;
 	overflow: hidden;
 }
@@ -73,7 +88,8 @@
 	margin-bottom: 3px;
 	margin: 3px;
 
-	background: rgb(250,210,55);	
+	background: rgb(250,210,55);
+	font-family: Georgia;	
 }
 
 .table-head {
@@ -85,6 +101,7 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 	color: #fff;
+	font-family: 'Open Sans';
 }
 
 .name {
@@ -102,12 +119,24 @@
 .even .td {
 	background: #e5f2ea;
 
-	background: rgb(250,230,150);
+	background: rgb(255,255,240);
 	background: #fff;		
 }
 
 .odd .td {
-	background: rgb(250,245,220);
+	background: rgb(250,240,210);
+}
+
+.flagged .td {
+	background: rgb(250,100,100);
+	color: white;
+}
+.flagged .td * {
+	color: white;
+}
+
+.f2 {
+
 }
 
 .td:hover {
@@ -117,7 +146,6 @@
 	margin-bottom: 2px;
 	margin-right: -2px;*/
 }
-
 .td:hover * {
 	color: white;
 }
