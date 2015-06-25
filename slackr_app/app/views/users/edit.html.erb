@@ -1,7 +1,7 @@
-<%= form_for @user do |user| %>
+<%= form_for @user.type do |profile| %>
  <%= render profile %>
  	<div class="action">
- 		<%= user.submit 'Edit Profile' %>
+ 		<%= profile.submit 'Edit Profile' %>
  	</div>
  <% end %>
 
