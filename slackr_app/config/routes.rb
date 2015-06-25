@@ -10,9 +10,10 @@ Rails.application.routes.draw do
     resources :attendances, only: [:show, :edit, :update]
   end
 
-  resources :users, only: [:index, :get, :edit, :update]
+  resources :users, only: [:index, :get, :edit, :update, :show]
 
-  root 'sessions#landing'
+  # root 'sessions#landing' # this kink needs to be ironed out
+  root 'sessions#new'
 
   get     '/login' => 'sessions#new'
   post    '/login' => 'sessions#create'

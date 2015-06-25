@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container-fluid">
 <nav class="nav navbar-default navbar-static-top ">
 <h1 class="text-center">Slackr</h1>
@@ -41,3 +42,26 @@
 <nav class="nav navbar-default navbar-static-bottom ">
 <p>Hello</p>
 </nav>
+=======
+<table class="table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Presents</th>
+		<th>Lates</th>
+		<th>Absences</th>
+		<th>Excuseds</th>
+	<% @students.each do |student| %>
+			<% if student.flagged? %>
+				<tr class="danger">
+			<% else %>
+				<tr>
+			<% end %>
+					<td><%= link_to "#{student.name}", cohort_student_path(student.cohort_id, student.id) %></td>
+					<td><%= student.presents %></td>
+					<td><%= student.lates %></td>
+					<td><%= student.absences %></td>
+					<td><%= student.excuseds %></td>
+			</tr>
+	<% end %>
+</table>
+>>>>>>> 0aef3648df8d19c36f01f21faf6d2b1156f70bc0
