@@ -5,6 +5,7 @@
 		<th>Lates</th>
 		<th>Absences</th>
 		<th>Excuseds</th>
+	</tr>
 	<% @students.each do |student| %>
 			<% if student.flagged? %>
 				<tr class="danger">
