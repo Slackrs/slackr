@@ -1,1 +1,6 @@
-edit.html.erb
+<%= form_for @user do |user| %>
+	<%= render user %>
+	<div class="action">
+		<%= user.submit 'Edit Profile' %>
+	</div>
+<% end %>
