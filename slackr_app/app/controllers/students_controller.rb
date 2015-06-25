@@ -1,11 +1,4 @@
 class StudentsController < ApplicationController
-<<<<<<< HEAD
-def index
-	
-end
-=======
-
-
 	before_action :authorize
 	#before_action :students_only, only: [:index, :show]
 	# before_action :students_only, except: [:edit, :new]
@@ -54,8 +47,6 @@ end
 			redirect_to '/'
 		end
 	end
->>>>>>> 6be888a3037fcbd7f0e67b8500bb88bffb1d9a39
-
 
 end
 
