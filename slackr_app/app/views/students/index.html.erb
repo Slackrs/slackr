@@ -1,7 +1,4 @@
 
-Welcome <%= @current_user.type %> with name <%= @current_user.name %>
-
-
 <%= render "students/rostertotals" %>
  <script>
   $(function() {
@@ -13,7 +10,7 @@ Welcome <%= @current_user.type %> with name <%= @current_user.name %>
 
 
 <% if @current_user.producer? %>
-  <%= render "navs/producers" %>
+
   <script type="text/javascript">
    // $(this).ready(function(){
       $("#all-cohorts").hide();
@@ -22,7 +19,7 @@ Welcome <%= @current_user.type %> with name <%= @current_user.name %>
   </script>
 
 <% elsif @current_user.instructor? %>
-    <%= render "navs/instructor" %>
+
   <script type="text/javascript">
    // $(this).on('click', ".cohort-view", function(){
       $(".cohort-view").hide();

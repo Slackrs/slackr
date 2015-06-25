@@ -1,20 +1,22 @@
-<table class="table-striped">
-	<tr>
-		<th>Name</th>
-		<th>Presents</th>
-		<th>Lates</th>
-		<th>Absences</th>
-		<th>Excuseds</th>
-	</tr>
-		<% if @student.flagged? %>
-			<tr class="danger">
-		<% else %>
-			<tr>
-		<% end %>
-			<td><%= link_to "#{@student.name}", cohort_student_path(@student.cohort_id, @student.id) %></td>
-			<td><%= @student.presents %></td>
-			<td><%= @student.lates %></td>
-			<td><%= @student.absences %></td>
-			<td><%= @student.excuseds %></td>
-			</tr>
-</table>
+
+
+
+<div class="table-head">
+	<div class="tr">
+		<div class="td name">Student</div>
+		<div class="td check">Presents</div>
+		<div class="td check">Lates</div>
+		<div class="td check">Absences</div>
+		<div class="td check">Excuseds</div>
+	</div>
+</div>
+<div class="table">
+		<% flagged = (@student.flagged? ? 'flagged' : nil) %>
+		<div class="tr odd <%= flagged %>">
+				<div class="td name"><%= @student.name %></div>
+				<div class="td check"><%= @student.presents %></div>
+				<div class="td check"><%= @student.lates %></div>
+				<div class="td check"><%= @student.absences %></div>
+				<div class="td check"><%= @student.absences %></div>
+		</div>
+</div>

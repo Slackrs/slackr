@@ -1,35 +1,37 @@
+<!-- NAVIGATION -->
 
-<table class="table-striped">
-	<tr>
-		<th>Name</th>
-		<th>Present</th>
-		<th>Late</th>
-		<th>Absent</th>
-		<th>Excused</th>
-	</tr>
-</table>
+<!-- MAIN CONTENT -->
+<div class="table-head">
+	<div class="tr">
+		<div class="td name">Student</div>
+		<div class="td check">Present</div>
+		<div class="td check">Late</div>
+		<div class="td check">Absent</div>
+		<div class="td check">Excused</div>
+	</div>
+</div>
 <%= form_tag cohort_attendance_path(@cohort, params[:id]), method: "patch" do %>
-	<table class="table-striped">
-		<% binding.pry %>
-		<% @attendances.each do |attendance| %>
-			<tr>
-				<td>
+	<div class="table">
+		<% @attendances.each_with_index do |attendance, i| %>
+		<% even_odd = ((i % 2 == 0) ? 'even' : 'odd')%>
+			<div class="tr <%= even_odd %>">
+				<div class="td name">
 					<p><%= attendance.student.name %></p>
-				</td>
-				<td>
+				</div>
+				<div class="td check">
 					<input type="checkbox" name="students[<%= attendance.student_id %>][present]" <%= attendance.present == true ? 'checked' : nil %> >
-				</td>
-				<td>
+				</div>
+				<div class="td check">
 					<input type="checkbox" name="students[<%= attendance.student_id %>][late]" <%= attendance.late == true ? 'checked' : nil %> >
-				</td>
-				<td>
+				</div>
+				<div class="td check">
 					<input type="checkbox" name="students[<%= attendance.student_id %>][absent]" <%= attendance.absent == true ? 'checked' : nil %> >
-				</td>
-				<td>
+				</div>
+				<div class="td check">
 					<input type="checkbox" name="students[<%= attendance.student_id %>][excused]" <%= attendance.excused == true ? 'checked' : nil %> >
-				</td>
-			</tr>
+				</div>
+			</div>
 		<% end %>
-	</table>
+	</div>
 	<%= submit_tag %>
 <% end %>
