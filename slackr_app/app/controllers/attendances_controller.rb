@@ -1,19 +1,23 @@
 class AttendancesController < ApplicationController
 
 	def show
+		current_user
 		@cohort = Cohort.find(params[:cohort_id])
-		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :users => {:cohort_id => params[:cohort_id]})
+		@attendances = Attendance.joins(:student).includes(:student).where(:id => params[:id], :users => {:cohort_id => params[:cohort_id]})
 	end
 
 	def edit
+		# binding.pry
+
 		@cohort = Cohort.find(params[:cohort_id])
-		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :users => {:cohort_id => params[:cohort_id]})
+		@attendances = Attendance.joins(:student).includes(:student).where(:id => params[:id], :users => {:cohort_id => params[:cohort_id]})
 	end
 
 	def update
 		students = params[:students]
+
 		students.each do |s|
-			attendance = Attendance.where({student_id: s[0], date: params[:id]}).first
+			attendance = Attendance.where({student_id: s[0], id: params[:id]}).first
 			attendance.present = (s[1][:present].nil? ? false : true)
 			attendance.late = (s[1][:late].nil? ? false : true)
 			attendance.absent = (s[1][:absent].nil? ? false : true)

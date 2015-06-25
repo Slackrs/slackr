@@ -1,4 +1,3 @@
-
 <table class="table-striped">
 	<tr>
 		<th>Name</th>
@@ -10,6 +9,7 @@
 </table>
 <%= form_tag cohort_attendance_path(@cohort, params[:id]), method: "patch" do %>
 	<table class="table-striped">
+<% binding.pry %>
 		<% @attendances.each do |attendance| %>
 			<tr>
 				<td>
