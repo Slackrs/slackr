@@ -1,14 +1,35 @@
 
-<%#= render :partial "attendance", locals: {attendances: @attendances} %>
-
-<%#= render :partial "attendance", collection: @attendances %>
-
-<%#= render @attendances %>
-
-<!-- attendance list -->
-
-
-<h1>Cohort <%= @cohort %>Attendance for <%= @today.date %></h1>
-
-<%= render 'attendances/editday' %>
+<table class="table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Present</th>
+		<th>Late</th>
+		<th>Absent</th>
+		<th>Excused</th>
+	</tr>
+</table>
+<%= form_tag cohort_attendance_path(@cohort, params[:id]), method: "patch" do %>
+	<table class="table-striped">
+		<% @attendances.each do |attendance| %>
+			<tr>
+				<td>
+					<p><%= attendance.student.name %></p>
+				</td>
+				<td>
+					<input type="checkbox" name="students[<%= attendance.student_id %>][present]" <%= attendance.present == true ? 'checked' : nil %> >
+				</td>
+				<td>
+					<input type="checkbox" name="students[<%= attendance.student_id %>][late]" <%= attendance.late == true ? 'checked' : nil %> >
+				</td>
+				<td>
+					<input type="checkbox" name="students[<%= attendance.student_id %>][absent]" <%= attendance.absent == true ? 'checked' : nil %> >
+				</td>
+				<td>
+					<input type="checkbox" name="students[<%= attendance.student_id %>][excused]" <%= attendance.excused == true ? 'checked' : nil %> >
+				</td>
+			</tr>
+		<% end %>
+	</table>
+	<%= submit_tag %>
+<% end %>
 

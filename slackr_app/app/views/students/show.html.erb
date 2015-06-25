@@ -1,4 +1,24 @@
 Hello <%= @current_user.type %>, name of <%= @current_user.name %>
 
+<% if @current_user.student?  %>
+	<%= render 'navs/students' %>
+	<script type="text/javascript">
+		$('#student-history').addClass('ghosted')
+		$('#student-history').prop('disabled', true)
+	</script>
+<% elsif @current_user.instructor? %>
+	<%= render 'navs/instructor' %>
+	<script type="text/javascript">
+		$('#student-history').addClass('ghosted')
+		$('#student-history').prop('disabled', true)
+	</script>
+<% end %>
+
+<%= render "/students/studenttotals" %>
 <br>
-You're looking at Cohort name <%= @current_user.cohort.name %>
+<% if @attendances != [] %>
+	<%= render "/students/studenthistory" %>
+<% else %>
+	<p><%= @student.name %> has been present for all class days, from cohort start to today<p> 
+<% end %>
+
