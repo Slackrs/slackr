@@ -8,10 +8,15 @@
 </head>
 <body>
 
-	<div class="header">S &nbsp;L &nbsp;A &nbsp;C &nbsp;K &nbsp;R</div>
+	<div class="header">
+		<p>S &nbsp;L &nbsp;A &nbsp;C &nbsp;K &nbsp;R</p>
+	</div>
 
 	<div class="container">
 		<div class="nav">
+			<%= form_tag('/login', method: 'delete') do %>
+				<%= submit_tag('LOG OUT') %>
+			<% end %> 
 			
 		</div>
 
@@ -19,10 +24,11 @@
 			<%= yield %>
 		</div>
 	</div>
+
+	<div class="footer">
+
+	</div>
 	
-	<%= form_tag('/login', method: 'delete') do %>
-		<%= submit_tag('LOG OUT') %>
-	<% end %> 
 
 </body>
 </html>
