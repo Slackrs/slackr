@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :get, :edit, :update]
 
-  root 'sessions#landing'
+  # root 'sessions#landing'
+  root 'sessions#new'
 
   get     '/login' => 'sessions#new'
   post    '/login' => 'sessions#create'
