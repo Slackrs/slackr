@@ -1,9 +1,3 @@
 
-<% if @current_user.type == "Producer" %>
-<%= button_to "edit profile" ,  edit_user_path(@current_user),  :class => "edit_profile" %>
-<% elsif @current_user.type == "Instructor" %>
 <%= button_to "edit profile" , edit_user_path(@current_user), :class => "edit_profile" %>
-<% else %>
-<%= button_to "edit profile" , edit_user_path(@current_user), :class => "edit_profile" %>
-<% end %>
 
