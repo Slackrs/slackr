@@ -1,14 +1,31 @@
 
-<%#= render :partial "attendance", locals: {attendances: @attendances} %>
-
-<%#= render :partial "attendance", collection: @attendances %>
-
-<%#= render @attendances %>
-
-<!-- attendance list -->
-
-
-<h1>Cohort #name#: Attendance for #date#</h1>
-
-<%= render 'attendances/editday' %>
-
+<table class=".table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Present</th>
+		<th>Late</th>
+		<th>Absent</th>
+		<th>Excused</th>
+	</tr>
+</table>
+<%= form_tag cohort_attendance_path(@cohort, params[:id]), method: "patch" do %>
+	<table class=".table-striped">
+		<% @attendances.each do |attendance| %>
+			<tr>
+				<td>
+					<p><%= attendance.student.name %></p>
+				</td>
+				<td>
+					<input type="checkbox" name="student[<%= attendance.student_id %>][late]">
+				</td>
+				<td>
+					<input type="checkbox" name="student[<%= attendance.student_id %>][absent]">
+				</td>
+				<td>
+					<input type="checkbox" name="student[<%= attendance.student_id %>][excused]">
+				</td>
+			</tr>
+		<% end %>
+	</table>
+	<%= submit_tag %>
+<% end %>
