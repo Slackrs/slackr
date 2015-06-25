@@ -11,7 +11,16 @@ class AttendancesController < ApplicationController
 	end
 
 	def update
-		binding.pry
+		students = params[:students]
+		students.each do |s|
+			attendance = Attendance.where({student_id: s[0], date: params[:id]}).first
+			attendance.present = (s[1][:present].nil? ? false : true)
+			attendance.late = (s[1][:late].nil? ? false : true)
+			attendance.absent = (s[1][:absent].nil? ? false : true)
+			attendance.excused = (s[1][:excused].nil? ? false : true)		
+			attendance.save
+		end
+		redirect_to "/cohorts/#{params[:cohort_id]}/attendances/#{params[:id]}"
 	end
 
 	private
