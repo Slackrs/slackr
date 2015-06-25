@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
-	def get
-	end
-
 	def index
 		@users = User.all
+	end
+
+	def get
 	end
 
 	def show
@@ -21,6 +21,12 @@ class UsersController < ApplicationController
 	end
 
 	def update
+		@user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to "/users/#{@user.id}"
+    else
+      render :edit
+    end
 	end
 
 end
