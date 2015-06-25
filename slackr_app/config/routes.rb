@@ -4,13 +4,13 @@ Rails.application.routes.draw do
 
   get '/students/troubled' => 'students#troubled'
 
-  resources :cohorts do
-    resources :students
+  resources :cohorts, only: [:index, :show] do
+    resources :students, only: [:index, :show]
     # resources :instructors
-    resources :attendances, only: [:show, :edit]
+    resources :attendances, only: [:show, :edit, :update]
   end
 
-  resources :users
+  resources :users, only: [:index, :get, :edit, :update]
 
   root 'sessions#landing'
 
