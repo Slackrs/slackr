@@ -41,7 +41,7 @@ class StudentsController < ApplicationController
 	def show
 		if @current_user.producer? || @current_user.instructor?
 			@student = Student.find(params[:id])
-		elsif @current_user.id == params[:id]
+		elsif @current_user.id == params[:id].to_i
 			@student = @current_user
 		else
 			redirect_to '/'
