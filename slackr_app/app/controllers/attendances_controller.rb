@@ -3,14 +3,14 @@ class AttendancesController < ApplicationController
 	def show
 		current_user
 		@cohort = Cohort.find(params[:cohort_id])
-		@attendances = Attendance.joins(:student).includes(:student).where(:id => params[:id], :users => {:cohort_id => params[:cohort_id]})
+		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :users => {:cohort_id => params[:cohort_id]})
 	end
 
 	def edit
 		# binding.pry
 
 		@cohort = Cohort.find(params[:cohort_id])
-		@attendances = Attendance.joins(:student).includes(:student).where(:id => params[:id], :users => {:cohort_id => params[:cohort_id]})
+		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :users => {:cohort_id => params[:cohort_id]})
 	end
 
 	def update

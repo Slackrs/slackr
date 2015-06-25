@@ -51,6 +51,11 @@ class StudentsController < ApplicationController
 		end
 	end
 
+	def history
+		@current_user
+
+	end
+
 end
 
 
