@@ -139,14 +139,14 @@
 
 }
 
-.td:hover {
+.td a:hover {
 	background: rgb(250,210,55);
 	/*border: solid 1px rgb(250,230,40);*/
 /*	margin-top: 2px;
 	margin-bottom: 2px;
 	margin-right: -2px;*/
 }
-.td:hover * {
+.td a:hover * {
 	color: white;
 }
 
