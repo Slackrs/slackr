@@ -1,0 +1,17 @@
+<table class=".table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Present</th>
+		<th>Late</th>
+		<th>Absent</th>
+		<th>Excused</th>
+	<% @students.each do |student| %>
+		<tr>
+			<td><%= link_to "#{student.name}", cohort_student_path(student.cohort_id, student.id) %></td>
+			<td><%= check_box_tag(:present) %></td>
+			<td><%= check_box_tag(:late) %></td>
+			<td><%= check_box_tag(:absent) %></td>
+			<td><%= check_box_tag(:excused) %></td>
+		</tr>
+	<% end %>
+</table>

@@ -1,7 +1,8 @@
-<%= render :partial "attendances/attendance", locals: {attendances: @attendances} %>
+<!-- this is the producer's view of all of his/her cohorts -->
+Welcome <%= @current_user.name %>
+<table>
+	<% @current_user.cohorts.each do |cohort| %>
 
-<%= render :partial "attendances/attendance", collection: @attendances %>
-
-<%= render @attendances %>
-
-<!-- students vers of this may be stripped. -->
+		<tr><td><a href="/cohort/<%= cohort.id %>"><%= cohort.name %></a></td></tr>
+	<% end %>
+</table>

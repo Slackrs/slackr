@@ -1,0 +1,17 @@
+	<!-- whatever view you render this partial in must have a @troubled query in its route in it's controller -->
+	<tr>
+		<td>Name</td>
+		<td>Tardies</td>
+		<td>Absences</td>
+		<td>Official Absences</td>
+	</tr>
+
+<% @troubled.each do |student| %>
+
+	<tr>
+		<td><%= student.name %></td>
+		<td><%= student.lates %></td>
+		<td><%= student.absences %></td>
+		<td><%= student.official_absences %></td>
+	</tr>
+<% end %>

@@ -8,19 +8,12 @@
 </head>
 <body>
 
-	<nav>
-		<ul>
-			<% if @current_user.instructor? %>
-				<li><%=link_to "Attendance" %></li>
-			<% elsif @current_user.producer? %>
-				<li><%= link_to "Producer Attendance" %></li>
-			<% elsif @current_user.student? %>
-				<li><%= link_to "Student" %></li>
-			<% end %>
-		</ul>
-	</nav>
-
 <%= yield %>
+	
+	
+	<%= form_tag('/login', method: 'delete') do %>
+		<%= submit_tag('LOG OUT') %>
+	<% end %> 
 
 </body>
 </html>

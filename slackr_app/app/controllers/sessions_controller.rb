@@ -1,33 +1,38 @@
 class SessionsController < ApplicationController
 
+  def landing
+    user = User.find(session[:user_id])
+    if session[:user_id]
+      if user.producer?
+        redirect_to cohorts_path
+      elsif user.instructor?
+        redirect_to cohort_students_path(user)
+      else
+        redirect_to cohort_student_path(user.cohort_id, user.id)
+      end
+    else
+      render :new
+    end
+  end
+
 	# render login form
   def new
   end
 
 # creates session
   def create
-    producer   = Producer.find_by({email: params[:email]})
-    instructor = Instructor.find_by({email: params[:email]})
-    student    = Student.find_by({email: params[:email]})
-
-    if producer && producer.authenticate(params[:password])
+    user = User.find_by({email: params[:email]})
+    if user && user.authenticate(params[:password])
       # store their id in session
-      session[:user_type] = 'producer'
-      session[:producer_id] = producer.id
-      redirect_to producer_path(producer)
-    elsif instructor && instructor.authenticate(params[:password])
-      # store their id in session
-      session[:user_type] = 'instructor'
-      session[:instructor_id] = instructor.id
-      redirect_to instructor_path(instructor)
-      # rerender the form
-    elsif student && student.authenticate(params[:password])
-      # store their id in session
-      session[:user_type] = 'student'
-      session[:student_id] = student.id
-      redirect_to student_path(student)
-      # rerender the form
-    else 
+      session[:user_id] = user.id
+      if user.producer?
+        redirect_to cohorts_path
+      elsif user.instructor?
+        redirect_to cohort_students_path(user.cohort_id)
+      else
+        redirect_to cohort_student_path(user.cohort_id, user.id)
+      end
+    else
       redirect_to '/login'
     end
   end
