@@ -5,6 +5,10 @@ class AttendancesController < ApplicationController
 	end
 
 	def edit
+		@today = Attendance.find_by(date: Date.today)
+
+		@cohort = Cohort.where(id: params[:cohort_id]).first.name
+		@students = Student.where(cohort_id: params[:cohort_id])
 		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :students => {:cohort_id => params[:cohort_id]})
 	end
 

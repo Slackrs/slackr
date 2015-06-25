@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create, :landing, :destroy]
 
   get '/students/troubled' => 'students#troubled'
 
@@ -10,12 +10,13 @@ Rails.application.routes.draw do
     resources :attendances, only: [:show, :edit, :update]
   end
 
-  resources :users, only: [:index, :get, :edit, :update]
+  resources :users, only: [:index,:get, :show, :edit, :update]
 
-  root 'sessions#landing'
+  root 'sessions#new'
 
   get     '/login' => 'sessions#new'
   post    '/login' => 'sessions#create'
   delete '/login' => 'sessions#destroy'
  
 end
+ 
