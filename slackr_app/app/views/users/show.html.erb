@@ -1,9 +1,6 @@
-<h1> This is <%= @user.name %>!</h1>
-
-<!-- <#%= render :partial => 'gravatar', :locals => { user: @user, size: '200x200' } %> 
-to be added later -->
-
 <p><strong>Name:</strong> <%= @user.name %><br /><strong>Email:</strong> <%= @user.email %><br /><strong>Phone #:</strong> <%= @user.phone_num %></p>
 
-<%= link_to "edit profile", edit_user_path(current_user), :class => "button"  %>
-<%= link_to "change password", user_edit_pass_path(current_user), :class => "button" %>
+<% if @current_user.id == params[:id].to_i %>
+	<%= link_to "edit profile", edit_user_path(current_user), :class => "button"  %>
+	<%= link_to "change password", user_edit_pass_path(current_user), :class => "button" %>
+<% end %>

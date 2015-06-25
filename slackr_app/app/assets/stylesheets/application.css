@@ -1,4 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Cabin+Sketch:700);
+
 
 * {
 	margin: 0;
@@ -6,37 +8,46 @@
 	text-decoration: none;
 	list-style: none;
 	line-height: 1;
-	color: rgb(34,34,34);
 	cursor: default;
 	/*background: #effffa;*/
 }
 
+a {
+	color: #333;
+}
+
+body {
+	background: #f4f4f4;
+}
+
 .header {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin Sketch', cursive;
 	position: fixed;
 	width: 100%;
 	height: 60px;
 	line-height: 60px;
 	top: 0;
 	text-align: center;
-	font-size: 44px;
+	font-size: 50px;
 	background: rgb(25,180,170);
 	background: #eee;
 	color: rgb(250,210,55);
 	color: rgb(25,180,170);
-	color: white;
 	color: #333;
+	color: white;
+	background: #266;
 
 }
 
 .header p {
 	/*font-family: Impact;*/
 	display: inline-block;
-	line-height: 0.8;
+	line-height: 1;
 	vertical-align: bottom;
 }
 
 .footer {
+	display: none;
 	position: fixed;
 	width: 100%;
 	bottom: 0;
@@ -47,16 +58,18 @@
 .container {
 	margin-top: 70px;
 	display: flex;
-	height: 88vh;
+	height: 91vh;
 }
 
 .nav {
 	width: 20%;
 	margin: 60px;
 	margin-right: 20px;
+	background: white;
 }
 
 .content {
+	background: white;
 	display: flex;
 	flex-direction: column;
 	margin: 60px;
