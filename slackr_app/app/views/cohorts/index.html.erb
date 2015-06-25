@@ -3,6 +3,6 @@ Welcome <%= @current_user.name %>
 <table>
 	<% @current_user.cohorts.each do |cohort| %>
 
-		<tr><td><a href="/cohort/<%= cohort.id %>"><%= cohort.name %></a></td></tr>
+		<tr><td><a href="/cohorts/<%= cohort.id %>/students"><%= cohort.name %></a></td></tr>
 	<% end %>
 </table>
