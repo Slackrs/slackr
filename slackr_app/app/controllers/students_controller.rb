@@ -17,6 +17,8 @@ class StudentsController < ApplicationController
 		elsif @current_user.instructor?
 			@cohort = Cohort.find(@current_user.cohort_id)
 			@students = @cohort.students
+		elsif @curren_user.student?
+			redirect_to cohort_student_path(user.cohort_id, user.id)
 		else
 			redirect_to '/'
 		end
@@ -39,13 +41,12 @@ class StudentsController < ApplicationController
 
 	#Attendance History for a Student
 	def show
-		if @current_user.producer? || @current_user.instructor?
+		if current_user.producer? || current_user.instructor?
 			@student = Student.find(params[:id])
-		elsif @current_user.id == params[:id].to_i
-			@student = @current_user
+		elsif current_user.id == params[:id].to_i
+			@student = current_user
 		else
-			@current_user.id == params[:id]
-			@student = @current_user
+			redirect_to '/'
 		end
 	end
 
