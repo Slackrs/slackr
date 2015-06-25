@@ -1,7 +1,7 @@
 Hello <%= @current_user.type %>, name of <%= @current_user.name %>
 
 <% if @current_user.student?  %>
-	<%= render 'navs/student/students' %>
+	<%= render 'navs/students' %>
 	<script type="text/javascript">
 		$('#student-history').addClass('ghosted')
 		$('#student-history').prop('disabled', true)

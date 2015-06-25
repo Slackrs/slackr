@@ -9,7 +9,7 @@ class StudentsController < ApplicationController
 	#Roster of Students in Cohort
 		#NEED TO REFACTOR STUDENTS MODEL/SO MANY QUERIES
 	def index
-		@today = Attendance.find_by(date: Date.today)
+		@today = Date.today
 		if @current_user.producer?  
 			@cohort = Cohort.find(params[:cohort_id])
 			@students = @cohort.students
