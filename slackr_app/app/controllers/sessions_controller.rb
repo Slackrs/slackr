@@ -31,8 +31,6 @@ class SessionsController < ApplicationController
         redirect_to cohort_students_path(user.cohort_id)
       elsif user.student?
         redirect_to cohort_student_path(user.cohort_id, user.id)
-
-
       end
     else
       redirect_to '/login'
