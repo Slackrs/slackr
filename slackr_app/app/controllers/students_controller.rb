@@ -1,4 +1,9 @@
 class StudentsController < ApplicationController
+<<<<<<< HEAD
+def index
+	
+end
+=======
 
 
 	before_action :authorize
@@ -47,6 +52,7 @@ class StudentsController < ApplicationController
 			redirect_to '/'
 		end
 	end
+>>>>>>> 6be888a3037fcbd7f0e67b8500bb88bffb1d9a39
 
 
 end
