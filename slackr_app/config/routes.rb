@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :producers
   resources :students
   resources :instructors
+  post '/email/:producer_id' => 'email#create'
 
   root 'sessions#new'
 
