@@ -44,7 +44,8 @@ class StudentsController < ApplicationController
 		elsif @current_user.id == params[:id].to_i
 			@student = @current_user
 		else
-			redirect_to '/'
+			@current_user.id == params[:id]
+			@student = @current_user
 		end
 	end
 

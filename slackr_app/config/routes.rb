@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/students/troubled' => 'students#troubled'
 
-  resources :cohorts, only: [:index, :show] do
+  resources :cohorts, only: [:index] do
     resources :students, only: [:index, :show]
     # resources :instructors
     resources :attendances, only: [:show, :edit, :update]
@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :get, :edit, :update]
 
-  root 'sessions#landing'
+  # root 'sessions#landing'
+  root 'sessions#new'
 
   get     '/login' => 'sessions#new'
   post    '/login' => 'sessions#create'

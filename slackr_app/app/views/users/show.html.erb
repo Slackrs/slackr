@@ -1,0 +1,6 @@
+<h1> Welcome <%= @player.name %>!</h1>
+<h2>Email: <%= @player.email %></h2>
+
+<%= render :partial => 'gravatar', :locals => { user: @user, size: '200x200' } %>
+<%= link_to "Logout", logout_path, method: "DELETE" %>
+<!-- link logout can be  -->
