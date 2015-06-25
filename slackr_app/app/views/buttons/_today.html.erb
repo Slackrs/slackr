@@ -1,4 +1,17 @@
 <!-- this partial should basically be a calendar with search text_field, value => current date -->
 
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<%= form_tag do %>
+				<%= text_field_tag(:date) %>
+				<%= submit_tag("Submit", class: 'btn btn-sm btn-info') %>
+			
+				<%= button_to "Today", edit_cohort_attendance_path(@current_user.cohort_id, params[:cohort_id]) %>
+			<% end %>
+		</div>
+	</div>
+</div> 
+
 		
 <a href="attendances/<%= @today.id %>/edit">Today</a>

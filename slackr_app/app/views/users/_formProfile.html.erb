@@ -1,0 +1,22 @@
+<%= form_for @user, url: user_path(@user) do |form| %>
+	<div>
+		<%= form.label :name %><br />
+		<%= form.text_field :name %>
+	</div>
+
+	<div>
+		<%= form.label :email %><br />
+		<%= form.text_field :email %>
+	</div>
+
+	<div>
+		<%= form.label :phone_num %><br />
+		<%= form.text_field :phone_num %>
+	</div>
+
+	<div class="action">
+	 		<%= form.submit 'Save Profile' %>
+	</div>
+<% end %>
+
+<!-- this needs to get worked on after lunch. -->
