@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :attendances, only: [:show, :edit, :update]
   end
 
-  resources :users, only: [:index, :get, :edit, :update, :show]
+  resources :users, only: [:index, :get, :edit, :update, :show]  
   # post '/users/:id/edit', :to => 'users#edit'
 
   # root 'sessions#landing' # this kink needs to be ironed out

@@ -1,8 +1,6 @@
-<%= form_for @user.type do |profile| %>
- <%= render profile %>
- 	<div class="action">
- 		<%= profile.submit 'Edit Profile' %>
- 	</div>
- <% end %>
+<%= form_for @user.type do |form| %>
+ <%= render form %>
+<% end %>
 
 <h1>Testings</h1>
+<!-- <#%= button_to "New User", new_user_path, :class => "button", :method => :get  %><br /> -->
