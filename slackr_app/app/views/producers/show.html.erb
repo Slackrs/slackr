@@ -1,0 +1,13 @@
+<h1>Welcome back <%= @producer.name %> !!!</h1>
+<%= link_to 'See the cohorts', cohorts_path %>
+
+<form action="MAILTO:bensayeg@gmail.com" method="post" enctype="text/plain">
+Name:<br>
+<input type="text" name="name" value="your name"><br>
+E-mail:<br>
+<input type="text" name="mail" value="your email"><br>
+Comment:<br>
+<input type="text" name="comment" value="your comment" size="50"><br><br>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
+</form>
