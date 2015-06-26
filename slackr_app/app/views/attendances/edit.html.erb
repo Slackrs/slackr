@@ -33,5 +33,9 @@
 			</div>
 		<% end %>
 	</div>
-	<%= submit_tag %>
+	<button type="submit" class="submit"></button>
+<% end %>
+<% if @attendances.first.nil? %>
+	<p>No class has been held on this date</p>
+	<script>$('.submit').hide()</script>
 <% end %>

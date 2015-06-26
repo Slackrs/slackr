@@ -31,7 +31,7 @@ class StudentsController < ApplicationController
 			end
 			@troubled = Student.troubled_array(@students)
 		elsif @current_user.instructor?
-			@troubled = Student.troubled.where(cohort_id: params[:cohort_id])
+			@troubled = Student.troubled_array(Student.where({cohort_id: params[:cohort_id]}))
 		else
 			redirect_to '/'
 		end	

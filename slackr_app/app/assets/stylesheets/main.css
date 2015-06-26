@@ -72,10 +72,10 @@ body {
 }
 
 .line-vector {
-	width: 1px;
+/*	width: 1px;
 	background: rgb(235,185,50);
 	margin-top: 46px;
-	margin-bottom: 46px;
+	margin-bottom: 46px;*/
 }
 
 .container {
@@ -88,8 +88,12 @@ body {
 	width: 20%;
 	margin: 60px;
 	margin-right: 20px;
-	/*background: white;*/
+	background: white;
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
 }
+
 
 .nav button {
 	border-radius: 4px;
@@ -97,6 +101,8 @@ body {
 	margin: 5%;
 	margin-bottom: 0;
 	background: #44bad1;
+	background: #256;
+	background: #3f9faf;
 	border: none;
 	padding-top: 16px;
 	padding-bottom: 16px;
@@ -109,7 +115,18 @@ body {
 	background: #cdd;
 	color: #4bc;
 }
+button.ghosted {
+	background: #cdd;
+	color: #555;
+}
+.nav button.ghosted:hover {
+	background: #cdd;
+	color: #555;
+}
 
+.flex-vertical {
+
+}
 
 .content {
 	border-radius: 4px;
