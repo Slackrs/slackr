@@ -1,15 +1,53 @@
 
-<%= render "students/rostertotals" %>
-<!--  <script>
-  $(function() {
-    $( "#datepicker" ).datepicker();
-  });
-  </script>
-  <%#= form_for [:date, params[:date]] %>
-  <p>Date: <input type="text" id="datepicker" name="date"></p> -->
 
+Welcome <%= @current_user.type %> with name <%= @current_user.name %>
+
+
+
+
+<%= render "students/rostertotals" %>
+
+<script>
+ $(function(){
+  $('#date-picker').datepicker()
+})
+
+ var searchDate = function(cohort_id, date){
+  $.ajax({
+    url: "/cohorts/" + cohort_id + "/attendances/" + date,
+    type: "GET",
+    dataType: 'json',
+    data: {
+      cohort_id: cohort_id,
+      date: date
+    }
+  }).done(function(response){
+    console.log(response)
+  });
+};
+
+$("#date-picker").keypress(function(e) {
+  debugger
+    e.preventDefault();
+    if(e.which == 13) {
+      console.log("enter")
+      var date = $("#date-picker").val()
+      var cohort_id = $("#cohort_id").val()
+        searchDate(cohort_id, date )
+    }
+});
+
+</script>
+
+<form action="/cohorts/<%= params[:cohort_id] %>/attendances/<%= params[:date] %>" method ="GET"class="search-date">
+  <input type="text" name="date" placeholder="enter date" id="date-picker">
+  <input type="hidden" id="cohort_id" name="cohort_id" value="<%= params[:cohort_id] %>">
+  <input type="submit" value="go to date">
+</form>
 
 <% if @current_user.producer? %>
+
+  <%= render "navs/producers" %>
 
   <script type="text/javascript">
    // $(this).ready(function(){
@@ -25,6 +63,7 @@
       $(".cohort-view").hide();
    // });
   </script>
+
 
  
 <% end %>

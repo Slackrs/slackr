@@ -1,3 +1,4 @@
+
 <!-- NAVIGATION -->
 
 <!-- MAIN CONTENT -->
@@ -16,6 +17,7 @@
 		<% even_odd = ((i % 2 == 0) ? 'even' : 'odd')%>
 			<div class="tr <%= even_odd %>">
 				<div class="td name">
+
 					<p><%= attendance.student.name %></p>
 				</div>
 				<div class="td check">
@@ -35,3 +37,4 @@
 	</div>
 	<%= submit_tag %>
 <% end %>
+

@@ -1,22 +1,22 @@
-<%= render template: "students/index" %>
+<%#= render template: "students/index" %>
 <div class="table-head">
 	<div class="td name">
 		Student
 	</div>
-<!-- 	<div class="td date">
+	<div class="td date">
 		Date
-	</div> -->
-	<div class="td check">
-		Present
 	</div>
 	<div class="td check">
-		Late
+		Present?
 	</div>
 	<div class="td check">
-		Absent
+		Late?
 	</div>
 	<div class="td check">
-		Excused
+		Absent?
+	</div>
+	<div class="td check">
+		Excused?
 	</div>
 </div>
 <div class="table">
@@ -26,9 +26,9 @@
 			<div class="td name">
 				<%= attendance.student.name %>
 			</div>
-			<!-- <div class="td date">
+			<div class="td date">
 				<%= attendance.date %>
-			</div> -->
+			</div>
 			<div class="td check">
 				<%= attendance.present %>
 			</div>
