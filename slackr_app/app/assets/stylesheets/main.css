@@ -7,53 +7,123 @@
 	padding: 0;
 	text-decoration: none;
 	list-style: none;
-	font-family: 'Open Sans', sans-serif;
 	line-height: 1;
-	color: rgb(34,34,34);
 	cursor: default;
 	/*background: #effffa;*/
 }
 
+button, a {
+	cursor: pointer;
+}
+
+a {
+	color: #333;
+}
+
+body {
+	background: #f4f4f4;
+}
+
 .header {
+	font-family: 'Cabin Sketch', 'Open Sans', Impact;
 	position: fixed;
 	width: 100%;
-	height: 60px;
-	line-height: 60px;
+	height: 90px;
+	/*line-height: 110px;*/
 	top: 0;
 	text-align: center;
-	font-size: 34px;
-	background: rgb(25,180,170);
+	font-size: 54px;
+/*	background: rgb(25,180,170);
 	background: #eee;
-	color: rgb(250,210,55);
 	color: rgb(25,180,170);
 	color: white;
-	color: #333;
+	background: #266;
+	background: rgb(250,210,55);*/
+	color: #256;
+}
 
-	font-family: Impact;
+.header p {
+	/*font-family: Impact;*/
+	display: inline-block;
+	line-height: 0.3;
+	vertical-align: bottom;
+}
+
+.tagline {
+	margin-right: 60px;
+	margin-left: 60px;
+	margin-top: 26px;
+	height: 10px;
+	font-size: 13px;
+	font-family: Helvetica Neue;
+	color: #3bb;
+	/*background: #ddd;	*/
+	/*border-top: solid 1px rgb(235,185,50);*/
+	border-bottom: solid 1px rgb(235,185,50);
+}
+
+.footer {
+	display: none;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	height: 30px;
+	background: #333;
+}
+
+.line-vector {
+	width: 1px;
+	background: rgb(235,185,50);
+	margin-top: 46px;
+	margin-bottom: 46px;
 }
 
 .container {
 	margin-top: 70px;
 	display: flex;
-	height: 80vh;
+	height: 91vh;
 }
 
 .nav {
 	width: 20%;
-	height: 100%;
-	margin: 30px;
+	margin: 60px;
+	margin-right: 20px;
+	/*background: white;*/
 }
 
+.nav button {
+	border-radius: 4px;
+	width: 90%;
+	margin: 5%;
+	margin-bottom: 0;
+	background: #44bad1;
+	border: none;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	color: white;
+	font-size: 20px;
+	font-family: Helvetica Neue;
+	font-weight: 300;
+}
+.nav button:hover {
+	background: #cdd;
+	color: #4bc;
+}
+
+
 .content {
+	border-radius: 4px;
+	background: white;
 	display: flex;
 	flex-direction: column;
-	margin: 30px;
+	margin: 60px;
+	margin-left: 20px;
 	width: 70%;
 	overflow: hidden;
 }
 
 .table {
-	flex-shrink: 2;
+	margin: 5px;
 	overflow: auto;
 }
 
@@ -69,16 +139,18 @@
 	padding-top: 6px;
 	padding-bottom: 6px;
 	/*border: solid 0.5px #aaa;*/
-	/*border-radius: 6px;*/
+	border-radius: 3px;
 	background: #f0fff3;
 	margin-top: 3px;
 	margin-bottom: 3px;
 	margin: 3px;
 
-	background: rgb(250,210,55);	
+	background: rgb(250,210,55);
+	font-family: courier;	
 }
 
 .table-head {
+	margin: 5px;
 	height: 54px;
 }
 
@@ -87,6 +159,8 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 	color: #fff;
+	font-weight: 600;
+	/*font-family: 'Open Sans';*/
 }
 
 .name {
@@ -104,24 +178,37 @@
 .even .td {
 	background: #e5f2ea;
 
-	background: rgb(250,230,150);
+	background: rgb(255,255,240);
 	background: #fff;		
 }
 
 .odd .td {
-	background: rgb(250,245,220);
+	background: rgb(250,240,210);
 }
 
-.td:hover {
+.flagged .td {
+	background: rgb(250,100,100);
+	color: white;
+}
+.flagged .td * {
+	color: white;
+}
+
+.f2 {
+
+}
+
+.td a:hover {
 	background: rgb(250,210,55);
 	/*border: solid 1px rgb(250,230,40);*/
 /*	margin-top: 2px;
 	margin-bottom: 2px;
 	margin-right: -2px;*/
 }
-.td:hover * {
+.td a:hover * {
 	color: white;
 }
+
 
  
 /*---LOGIN PAGE--------------*/
