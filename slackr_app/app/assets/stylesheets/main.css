@@ -1,0 +1,234 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Cabin+Sketch:700);
+
+
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1;
+	color: rgb(34,34,34);
+	cursor: default;
+	/*background: #effffa;*/
+}
+
+.header {
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	top: 0;
+	text-align: center;
+	font-size: 34px;
+	background: rgb(25,180,170);
+	background: #eee;
+	color: rgb(250,210,55);
+	color: rgb(25,180,170);
+	color: white;
+	color: #333;
+
+	font-family: Impact;
+}
+
+.container {
+	margin-top: 70px;
+	display: flex;
+	height: 80vh;
+}
+
+.nav {
+	width: 20%;
+	height: 100%;
+	margin: 30px;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	margin: 30px;
+	width: 70%;
+	overflow: hidden;
+}
+
+.table {
+	flex-shrink: 2;
+	overflow: auto;
+}
+
+.tr {
+	display: flex;
+	width: 100%;
+}
+
+.td {
+	flex-grow: 2;
+	display: inline-block;
+	padding-left: 5px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	/*border: solid 0.5px #aaa;*/
+	/*border-radius: 6px;*/
+	background: #f0fff3;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	margin: 3px;
+
+	background: rgb(250,210,55);	
+}
+
+.table-head {
+	height: 54px;
+}
+
+.table-head .td {
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #fff;
+}
+
+.name {
+	width: 30%;
+}
+
+.td.date {
+	width: 15%;
+}
+
+.check {
+	width: 10%;
+}
+
+.even .td {
+	background: #e5f2ea;
+
+	background: rgb(250,230,150);
+	background: #fff;		
+}
+
+.odd .td {
+	background: rgb(250,245,220);
+}
+
+.td:hover {
+	background: rgb(250,210,55);
+	/*border: solid 1px rgb(250,230,40);*/
+/*	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-right: -2px;*/
+}
+
+.td:hover * {
+	color: white;
+}
+
+
+html { height: 100% }
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+body { background-image: radial-gradient( cover, rgba(92,100,111,1) 0%,rgba(31,35,40,1) 100%), url('http://i.minus.com/io97fW9I0NqJq.png') }
+.login {
+  background: #eceeee;
+  border: 1px solid #42464b;
+  border-radius: 6px;
+  height: 257px;
+  margin: 0 auto;
+ 	width: 400px;
+ 	margin-top: 20px;
+}
+
+.logo {
+	font-family: 'cabin Sketch';
+	font-size: 200px;
+	text-align: center;
+}
+.logo-helper {
+	font-size: 30px;
+	text-align: center;
+}
+input[type="password"], input[type="email"] {
+  background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
+  border: 1px solid #a1a3a3;
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #696969;
+  height: 39px;
+ 	padding-left: 37px;
+ 	margin-left: 80px;
+ 	margin-top:30px;
+  transition: box-shadow 0.3s;
+  width: 240px;
+}
+input[type="password"]:focus, input[type="email"]:focus {
+  box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3);
+  outline: 0;
+}
+.show-password {
+  display: block;
+  height: 16px;
+  margin: 26px 0 0 28px;
+}
+
+input[type="submit"] {
+  width:240px;
+  height:35px;
+  display:block;
+  font-family:Arial, "Helvetica", sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  color:#fff;
+  text-decoration:none;
+  text-transform:uppercase;
+  text-align:center;
+  text-shadow:1px 1px 0px #37a69b;
+  padding-top:6px;
+  margin-left: 80px;
+ 	margin-top:30px;
+  position:relative;
+  cursor:pointer;
+  border: none;  
+  background-color: #37a69b;
+  background-image: linear-gradient(top,#3db0a6,#3111);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
+}
+
+.shadow {
+  background: #000;
+  border-radius: 12px 12px 4px 4px;
+  box-shadow: 0 0 20px 10px #000;
+  height: 12px;
+	opacity: 0.2;
+  width: 370px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+
+input[type="submit"]:active {
+  top:3px;
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
+}
+.nav-top {
+	top:0;
+	width: 100%;
+	background: #b2b2b2;
+}
+
+.nav-top img {
+	height: 50px;
+	margin-left: 45%;
+}
+footer {
+  background-color: #b2b2b2;
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  height: 50px;
+}

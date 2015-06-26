@@ -1,34 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Slackr</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="utf-8">
+ 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 	<title></title>
+ 	<link rel="stylesheet" href="">
+ 	<%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-	<div class="row">
-		<br>
-		<div class="col-md-offset-4 col-md-4 well well-lg">
-			<h1 class="text-center">Slackrs App Login</h1>	
+ </head>
+ <body>
+ 	<h1 class="logo">Slackr</h1>
+ 		<p class="logo-helper">It’s 9am, do you know where your students are?</p>
+ 		<div class="login">
 			<%= form_tag sessions_path, method: 'POST'  do %>
-				<div class="form-group">
-					<div class="input-group">
-						<span class="input-group-addon">&#x1f4e7;</span>
-						<input type="email" name="email" placeholder="e-mail" class="form-control">
-					</div>
-					<br>
-					<div class="input-group">
-						<span class="input-group-addon">&#x1f512;</span>
-						<%= password_field_tag 'password', nil, placeholder: 'password', class: 'form-control'%>
-					</div>
-				</div>
-		<%= submit_tag 'Log in', class: 'btn btn-primary' %>
-	<% end %>
-
-</div>
-</div>
-
-</body>
-</html>
+				<input type="email" name="email" placeholder="e-mail" class="form-control">
+  			<%= password_field_tag 'password', nil, placeholder: 'password'%>
+				<%= submit_tag 'Log in' %>
+			<% end %>	
+	</div>
+	<div class="shadow"></div>
+ </body>
+ </html>

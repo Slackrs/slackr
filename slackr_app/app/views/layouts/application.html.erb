@@ -12,17 +12,29 @@
 		<!-- <p>S &nbsp;L &nbsp;A &nbsp;C &nbsp;K &nbsp;R</p> -->
 		<p>s&nbsp;l&nbsp;a&nbsp;c&nbsp;k&nbsp;r</p>
 		<!-- <p>SLACKR</p> -->
+		<div class="tagline"></div>
 	</div>
+
 
 	<div class="container">
 		<div class="nav">
-			<h1> <%= @current_user.name %></h1>
-			<p> Logged in as a <%= @current_user.type %></p>
-			<%= form_tag('/login', method: 'delete') do %>
-				<%= submit_tag('LOG OUT') %>
-			<% end %> 
-			<%= link_to "Profile", user_path(@current_user) %>
+
+				<%= form_tag('/login', method: 'delete') do %>
+					<button type="submit">LOG &nbsp;OUT</button>
+				<% end %>
+				<%= form_tag('/login', method: 'delete') do %>
+					<button type="submit">LOG &nbsp;OUT</button>
+				<% end %> 
+				<%= form_tag('/login', method: 'delete') do %>
+					<button type="submit">LOG &nbsp;OUT</button>
+				<% end %> 
+				<%= form_tag('/login', method: 'delete') do %>
+					<button type="submit">LOG &nbsp;OUT</button>
+				<% end %>  
+
 		</div>
+
+		<div class="line-vector"></div>
 
 		<div class="content">
 			<%= yield %>
@@ -36,3 +48,4 @@
 
 </body>
 </html>
+<footer class="well"></footer>
