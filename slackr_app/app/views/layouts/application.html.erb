@@ -18,20 +18,10 @@
 
 	<div class="container">
 		<div class="nav">
-
-				<%= form_tag('/login', method: 'delete') do %>
-					<button type="submit">LOG &nbsp;OUT</button>
-				<% end %>
-				<%= form_tag('/login', method: 'delete') do %>
-					<button type="submit">LOG &nbsp;OUT</button>
-				<% end %> 
-				<%= form_tag('/login', method: 'delete') do %>
-					<button type="submit">LOG &nbsp;OUT</button>
-				<% end %> 
-				<%= form_tag('/login', method: 'delete') do %>
-					<button type="submit">LOG &nbsp;OUT</button>
-				<% end %>  
-
+ 
+			<% if @current_user.producer? %>
+				<%= render 'navs/producer' %>
+			<% end %>
 		</div>
 
 		<div class="line-vector"></div>
