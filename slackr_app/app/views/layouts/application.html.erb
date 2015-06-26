@@ -8,21 +8,31 @@
 </head>
 <body>
 
-	<div class="header">S &nbsp;L &nbsp;A &nbsp;C &nbsp;K &nbsp;R</div>
+	<div class="header">
+		<!-- <p>S &nbsp;L &nbsp;A &nbsp;C &nbsp;K &nbsp;R</p> -->
+		<p>s&nbsp;l&nbsp;a&nbsp;c&nbsp;k&nbsp;r</p>
+		<!-- <p>SLACKR</p> -->
+	</div>
 
 	<div class="container">
 		<div class="nav">
-			
+			<h1> <%= @current_user.name %></h1>
+			<p> Logged in as a <%= @current_user.type %></p>
+			<%= form_tag('/login', method: 'delete') do %>
+				<%= submit_tag('LOG OUT') %>
+			<% end %> 
+			<%= link_to "Profile", user_path(@current_user) %>
 		</div>
 
 		<div class="content">
 			<%= yield %>
 		</div>
 	</div>
+
+	<div class="footer">
+
+	</div>
 	
-	<%= form_tag('/login', method: 'delete') do %>
-		<%= submit_tag('LOG OUT') %>
-	<% end %> 
 
 </body>
 </html>

@@ -8,10 +8,12 @@ class UsersController < ApplicationController
 	end
 
 	def show
+		current_user
 		@user = User.find(params[:id])
 	end
 
 	def edit
+		current_user
 		@user = User.find(params[:id])
 		if current_user.id == @user.id
 			render :edit
@@ -21,6 +23,7 @@ class UsersController < ApplicationController
 	end
 
 	def update
+		current_user
 		@user = User.find(params[:id])
 		if @user.instructor?
 			info = params['instructor']
@@ -55,16 +58,11 @@ class UsersController < ApplicationController
 			info = params['producer']
 		end
 		user = User.find(current_user.id)
-    if user.authenticate(info[:password])
-    	password_hash = {'password' => info[:password_new], 'password_confirmation' => info[:password_confirmation]}
-    	if user.update(password_hash.permit(:password, :password_confirmation))
-    		redirect_to "/users/#{user.id}"
-    	else
-    		render :edit_pass
-    	end
-    else
-    	render :edit_pass
-    end
+  	if user.update(info.permit(:password, :password_confirmation))
+  		redirect_to "/users/#{user.id}"
+  	else
+  		render :edit_pass
+  	end
 	end
 
 	private
