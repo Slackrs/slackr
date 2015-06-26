@@ -94,7 +94,6 @@ body {
 	flex-direction: column;
 }
 
-
 .nav button {
 	border-radius: 4px;
 	width: 90%;
@@ -137,6 +136,24 @@ button.ghosted {
 	margin-left: 20px;
 	width: 70%;
 	overflow: hidden;
+}
+
+.content button {
+	border-radius: 3px;
+	padding: 5px;
+	background: #44bad1;
+	background: #256;
+	background: #3f9faf;
+	border: none;
+	color: white;
+	font-size: 16px;
+	font-family: Helvetica Neue;
+	font-weight: 300;
+	margin: 3px;
+}
+
+.content button.submit {
+	align-self: stretch;
 }
 
 .table {
