@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
 	# render login form
   def new
+    render :new, :layout => false
   end
 
 # creates session
@@ -23,8 +24,8 @@ class SessionsController < ApplicationController
   end
 
   def landing
-    user = User.find(session[:user_id])
     if session[:user_id]
+      user = User.find(session[:user_id])
       if user.producer?
         redirect_to cohorts_path
       elsif user.instructor?
@@ -33,7 +34,7 @@ class SessionsController < ApplicationController
         redirect_to cohort_student_path(user.cohort_id, user.id)
       end
     else
-      render :new
+      redirect_to login_path
     end
   end
 
