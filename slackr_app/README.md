@@ -15,40 +15,40 @@ Students have a read-only view on their current attendance totals from class sta
 
 ###Team Members
 
-+Kelly Stevens [github](https://github.com/kllystvns)
++ Kelly Stevens [github](https://github.com/kllystvns)
 
-+Ryan Burke [github](https://github.com/ryaneburke)
++ Ryan Burke [github](https://github.com/ryaneburke)
 
-+Bryant Novas [github](https://github.com/bryantnovas)
++ Bryant Novas [github](https://github.com/bryantnovas)
 
-+James Kim [github](https://github.com/jajuki13)
++ James Kim [github](https://github.com/jajuki13)
 
-+Ben Sayeg [github](https://github.com/humanman)
++ Ben Sayeg [github](https://github.com/humanman)
 
 
 ###Technologies Used
 
-+Ruby
++ Ruby
 
-+Rails
++ Rails
 
-+HTML/CSS
++ HTML/CSS
 
-+JavaScript
++ JavaScript
 
-+jQuery
++ jQuery
 
 
 ###Nitty Gritty
 
-+[Project Tracker, on Trello](https://trello.com/b/C1AuihLE/slackrs-attendence-app)
++ [Project Tracker, on Trello](https://trello.com/b/C1AuihLE/slackrs-attendence-app)
 
-+[Kickoff Brainstorm, on gDrive](https://drive.google.com/folderview?id=0ByAsl7bt7udefncwc0p3Vy1xc2R4d0NtOEVWVW1zX010Mk54Wi16c1B4UkktcGJpajlCMEk&usp=sharing)
++ [Kickoff Brainstorm, on gDrive](https://drive.google.com/folderview?id=0ByAsl7bt7udefncwc0p3Vy1xc2R4d0NtOEVWVW1zX010Mk54Wi16c1B4UkktcGJpajlCMEk&usp=sharing)
 
-+[ERD, on gDrive](https://drive.google.com/file/d/0ByAsl7bt7udeT2NNRHZ1Y3RVMkk/view?usp=sharing)
++ [ERD, on gDrive](https://drive.google.com/file/d/0ByAsl7bt7udeT2NNRHZ1Y3RVMkk/view?usp=sharing)
 
-+[UX Sketches, on gDrive](https://drive.google.com/folderview?id=0ByAsl7bt7udefmJQa0QzMjRWSkxhYzlDUTl3OGpVT0hzSHhZbFJ3aWpVNTVTNGlZT1dkYzg&usp=sharing)
++ [UX Sketches, on gDrive](https://drive.google.com/folderview?id=0ByAsl7bt7udefmJQa0QzMjRWSkxhYzlDUTl3OGpVT0hzSHhZbFJ3aWpVNTVTNGlZT1dkYzg&usp=sharing)
 
-+[Formal Wireframes, on Balsamiq](https://slackrs.mybalsamiq.com/projects/slackrs/grid)
++ [Formal Wireframes, on Balsamiq](https://slackrs.mybalsamiq.com/projects/slackrs/grid)
 
 
