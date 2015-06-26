@@ -26,7 +26,7 @@ Welcome <%= @current_user.type %> with name <%= @current_user.name %>
 // };
 
  $(function(){
-  $('#date-picker').datepicker()
+  $('#date-picker').datepicker({ dateFormat: 'yy-mm-dd' });
 })
 
 // $("#date-picker").on('click',function(e) {

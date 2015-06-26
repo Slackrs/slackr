@@ -2,9 +2,12 @@ class AttendancesController < ApplicationController
 
 	def index	
 
-		date = Date.parse(params[:date]).strftime("%d %m %Y")
+		# datr = Date.parse(params[:date]).strftime("%F")
 
-		datetime = DateTime.strptime(params[:date], "%Y/%m/%d")
+		date = params[:date]
+	
+		# date.strftime('%F')
+		# datetime = DateTime.strpftime(params[:date], "%d/%m/%Y")
 
 	# reformat it
 		# date = datetime.strftime("%Y-%m-%d")
