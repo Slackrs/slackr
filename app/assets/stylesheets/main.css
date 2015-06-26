@@ -109,6 +109,7 @@ body {
 	font-size: 20px;
 	font-family: Helvetica Neue;
 	font-weight: 300;
+	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
 }
 .nav button:hover {
 	background: #cdd;
@@ -262,7 +263,7 @@ button.ghosted {
 
 .login {
   background: #eceeee;
-  border: 1px solid #42464b;
+  border: 1px solid #256;
   border-radius: 6px;
   height: 200px;
   margin: 0 auto; 
@@ -274,12 +275,12 @@ button.ghosted {
 	font-family: 'Cabin Sketch';
 	font-size: 200px;
 	text-align: center;
-	margin-top: 150px;
+	margin-top: 130px;
 	color: #256;
 }
 .logo-helper {
 	font-size: 30px;
-	font-color: #434343;
+	color: #363636;
 	text-align: center;
 	font-family: courier;
 }
@@ -316,35 +317,35 @@ input[type="password"]:focus, input[type="email"]:focus {
   font-family:Arial, "Helvetica", sans-serif;
   font-size:16px;
   font-weight:bold;
-  color:#fff;
+  color: white;
   text-decoration:none;
   text-transform:uppercase;
   text-align:center;
-  text-shadow:1px 1px 0px #37a69b;
+  text-shadow:1px 1px 0px rgb(194,163,45);
   padding-top:6px;
   margin-left: 110px;
  	margin-top:20px;
   position:relative;
   cursor:pointer;
   border: none;  
-  background-color: #37a69b;
+  background-color: rgb(250,210,55);
   background-image: linear-gradient(top,#3db0a6,#3111);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius:5px;
-  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78;
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px rgb(194,163,45);
 }
 
 .shadow {
   background: #000;
   border-radius: 12px 12px 4px 4px;
   box-shadow: 0 0 20px 10px #000;
-  height: 12px;
-	opacity: 0.2;
+  height: 8px;
+	opacity: 0.1;
   width: 400px;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 
