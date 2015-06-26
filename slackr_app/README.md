@@ -41,7 +41,7 @@ Students have a read-only view on their current attendance totals from class sta
 
 ###Nitty Gritty
 
-+[Trello Project Manager](https://trello.com/b/C1AuihLE/slackrs-attendence-app)
++[Project Tracker, on Trello](https://trello.com/b/C1AuihLE/slackrs-attendence-app)
 
 +[Kickoff Brainstorm, on gDrive](https://drive.google.com/folderview?id=0ByAsl7bt7udefncwc0p3Vy1xc2R4d0NtOEVWVW1zX010Mk54Wi16c1B4UkktcGJpajlCMEk&usp=sharing)
 
