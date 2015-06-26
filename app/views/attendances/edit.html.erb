@@ -35,6 +35,7 @@
 			</div>
 		<% end %>
 		<div class="tr">
+			<div class="flex-horizontal"></div>
 			<button type="submit" class="submit">SAVE</button>
 		</div>
 	<% end %>
@@ -44,3 +45,8 @@
 	<script>$('.submit').hide()</script>
 <% end %>
 
+<% if Date.today.to_s == params[:id] %>
+  <script type="text/javascript">
+      $(".today").addClass('ghosted');
+  </script>
+<% end %>
