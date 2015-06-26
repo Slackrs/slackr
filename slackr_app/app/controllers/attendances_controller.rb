@@ -1,8 +1,13 @@
 class AttendancesController < ApplicationController
 
 	def index	
-		date = Date.parse(params[:date]).strftime("%d-%m-%Y")
+		datetime = DateTime.strptime(params[:date], "%Y/%m/%d")
+
+	# reformat it
+		# date = datetime.strftime("%Y-%m-%d")
+		# date = Date.parse(params[:date]).strftime("%d-%m-%Y")
 		redirect_to "/cohorts/" + params[:cohort_id]+ "/attendances/" + date
+		# binding.pry
 	end
 
 	def show
