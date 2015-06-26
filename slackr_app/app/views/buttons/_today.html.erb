@@ -7,7 +7,7 @@
 				<%= text_field_tag(:date) %>
 				<%= submit_tag("Submit", class: 'btn btn-sm btn-info') %>
 			
-				<%= button_to "Today", edit_cohort_attendance_path(@current_user.cohort_id, params[:cohort_id]) %>
+				<%= button_to "Today", edit_cohort_attendance_path(params[:cohort_id], Date.today) %>
 			<% end %>
 		</div>
 	</div>

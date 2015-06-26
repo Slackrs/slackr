@@ -1,43 +1,24 @@
 	<!-- whatever view you render this partial in must have a @troubled query in its route in it's controller -->
-	<tr>
-		<td>Name</td>
-		<td>Tardies</td>
-		<td>Absences</td>
-		<td>Official Absences</td>
-	</tr>
-
-<% @troubled.each do |student| %>
-
-	<tr>
-		<td><%= student.name %></td>
-		<td><%= student.lates %></td>
-		<td><%= student.absences %></td>
-		<td><%= student.official_absences %></td>
-	</tr>
-<% end %>
 
 
 <div class="table-head">
 	<div class="tr">
 		<div class="td name">Student</div>
-		<div class="td check">Presents</div>
 		<div class="td check">Lates</div>
 		<div class="td check">Absences</div>
-		<div class="td check">Excuseds</div>
+		<div class="td check">Official Absences</div>
 	</div>
 </div>
 
-
 <div class="table">
-	<% @students.each_with_index do |student, i| %>
+	<% @troubled.each_with_index do |student, i| %>
 		<% flagged = (student.flagged? ? 'flagged' : nil) %>
-		<% even_odd = ((i % 2 == 0) ? 'even' : 'odd')%>
-		<div class="tr <%= even_odd %> <%= flagged %>">
+		<% even_odd = ((i % 2 == 0) ? 'odd' : 'even')%>
+		<div class="tr <%= even_odd %> <%= flagged %> f<%= student.official_absences %>">
 				<div class="td name"><%= link_to "#{student.name}", cohort_student_path(student.cohort_id, student.id) %></div>
-				<div class="td check"><%= student.presents %></div>
 				<div class="td check"><%= student.lates %></div>
 				<div class="td check"><%= student.absences %></div>
-				<div class="td check"><%= student.absences %></div>
+				<div class="td check"><%= student.official_absences %></div>
 		</div>
 	<% end %>
 </div>

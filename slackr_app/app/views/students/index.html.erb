@@ -47,11 +47,6 @@ Welcome <%= @current_user.type %> with name <%= @current_user.name %>
   <input type="submit" value="go to date">
 </form>
 
-<%#= form_for cohort_attendance_path(@current_user) do |f|%>
-<%= date_field(:attendance, :id )%>
-<%#= f.submit %>
-<%#= end  %>
-
 
 <% if @current_user.producer? %>
 

@@ -5,7 +5,7 @@
 	<%= button_to "Cohort View", cohort_students_path(@current_user.cohort_id,@current_user.id), :class => "cohort-view" %>
 >>>>>>> master
 <% elsif @current_user.type == "Producer" %>
-	<%= button_to "Cohort View", cohort_students_path(params[:id]), :class => "cohort-view"%>
+	<%= button_to "Cohort View", cohort_students_path(params[:cohort_id]), :class => "cohort-view"%>
 <% else %>
 <!-- this will be essentially a "back" button to redirect to student#show -->
 	<%= button_to "Back", cohort_student_path(@current_user.cohort_id ,@current_user.id), :class => "back" %>

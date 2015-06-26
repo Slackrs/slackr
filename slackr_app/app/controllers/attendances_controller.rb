@@ -1,9 +1,26 @@
 class AttendancesController < ApplicationController
 
+	def index	
+		date = Date.parse(params[:date]).strftime("%d-%m-%Y")
+		redirect_to "/cohorts/" + params[:cohort_id]+ "/attendances/" + date
+	end
+
 	def show
 		current_user
 		@cohort = Cohort.find(params[:cohort_id])
 		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :users => {:cohort_id => params[:cohort_id]})
+		@today = Date.today
+		if @current_user.producer?  
+			@cohort = Cohort.find(params[:cohort_id])
+			@students = @cohort.students
+		elsif @current_user.instructor?
+			@cohort = Cohort.find(@current_user.cohort_id)
+			@students = @cohort.students
+		elsif @current_user.student?
+			redirect_to cohort_student_path(user.cohort_id, user.id)
+		else
+			redirect_to 'cohort'
+		end
 	end
 
 	def edit
