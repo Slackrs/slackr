@@ -9,15 +9,18 @@
   <%= javascript_include_tag 'application' %>
  </head>
  <body>
- 	<h1 class="logo">slackr</h1>
- 		<p class="logo-helper">It’s 9am, do you know <br>where your students are?</p>
- 		<div class="login">
-			<%= form_tag sessions_path, method: 'POST'  do %>
-				<input type="email" name="email" placeholder="e-mail" class="form-control">
-  			<%= password_field_tag 'password', nil, placeholder: 'password'%>
-				<%= submit_tag 'Log in' %>
-			<% end %>	
+	<div id="login_body">
 	</div>
-	<div class="shadow"></div>
+	 	<h1 class="logo">slackr</h1>
+	 		<p class="logo-helper">It’s 9am, do you know <br>where your students are?</p>
+	 		<div class="login">
+				<%= form_tag sessions_path, method: 'POST'  do %>
+					<input type="email" name="email" placeholder="e-mail" class="form-control">
+	  			<%= password_field_tag 'password', nil, placeholder: 'password'%>
+					<%= submit_tag 'Log in' %>
+				<% end %>	
+		</div>
+		<div class="shadow"></div>
+
  </body>
  </html>
