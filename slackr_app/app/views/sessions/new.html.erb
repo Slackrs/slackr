@@ -1,5 +1,12 @@
-
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slackr</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
 
 	<div class="row">
 		<br>
@@ -19,6 +26,9 @@
 				</div>
 		<%= submit_tag 'Log in', class: 'btn btn-primary' %>
 	<% end %>
+
 </div>
 </div>
-</div>
+
+</body>
+</html>
