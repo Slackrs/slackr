@@ -1,1 +1,4 @@
-<%= link_to 'Student History', cohort_student_path(@current_user.cohort_id, @current_user.id) %>
+
+<%= form_tag(cohort_student_path(@current_user.cohort_id, @current_user.id), method: 'get') do %>
+  <button type="submit" class="student-history">Student History</button>
+<% end %>

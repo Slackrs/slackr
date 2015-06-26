@@ -21,7 +21,12 @@
  
 			<% if @current_user.producer? %>
 				<%= render 'navs/producer' %>
+			<% elsif @current_user.instructor? %>
+				<%= render 'navs/instructor' %>
+			<% else %>
+				<%= render 'navs/student' %>
 			<% end %>
+
 		</div>
 
 		<div class="line-vector"></div>
