@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   patch '/users/:id/update_pass' => 'users#update_pass', as: 'user_update_pass'
   # post '/users/:id/edit', :to => 'users#edit'
 
-  root 'sessions#landing'
+  # root 'sessions#landing'
+  root 'sessions#new'
 
   get     '/login' => 'sessions#new'  
   post    '/login' => 'sessions#create'
