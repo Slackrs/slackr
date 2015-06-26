@@ -16,10 +16,12 @@
 
 	<div class="container">
 		<div class="nav">
+			<h1> <%= @current_user.name %></h1>
+			<p> Logged in as a <%= @current_user.type %></p>
 			<%= form_tag('/login', method: 'delete') do %>
 				<%= submit_tag('LOG OUT') %>
 			<% end %> 
-			
+			<%= link_to "Profile", user_path(@current_user) %>
 		</div>
 
 		<div class="content">
