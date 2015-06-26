@@ -47,5 +47,6 @@ group :development, :test do
   gem 'spring'
   gem 'jquery-ui-rails'
   gem 'sass-rails', '>= 3.2'
+  gem 'rails_12factor'
 end
 

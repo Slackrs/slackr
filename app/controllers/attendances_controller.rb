@@ -12,6 +12,11 @@ class AttendancesController < ApplicationController
 
 		redirect_to "/cohorts/" + params[:cohort_id]+ "/attendances/" + date
 		# binding.pry
+		if instructor?
+      redirect_to "/cohorts/" + params[:cohort_id]+ "/attendances/" + date + "/edit"
+    elsif producer?
+      redirect_to "/cohorts/" + params[:cohort_id]+ "/attendances/" + date 
+    end
 	end
 
 
