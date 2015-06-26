@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-<%= button_to "All Cohorts",  cohorts_path, :id => "all_cohorts"%>
-=======
-<%= button_to "All Cohorts",  cohorts_path :id => "all-cohorts"%>
->>>>>>> ab544843866564ce676ef8818dcb99cce09d6be0
+
+<%= form_tag('/cohorts', method: 'get') do %>
+  <button type="submit">My Cohorts</button>
+<% end %>
+

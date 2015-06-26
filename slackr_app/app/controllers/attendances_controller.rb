@@ -1,4 +1,5 @@
 class AttendancesController < ApplicationController
+	before_action :authorize
 
 	def index	
 
@@ -12,6 +13,8 @@ class AttendancesController < ApplicationController
 		redirect_to "/cohorts/" + params[:cohort_id]+ "/attendances/" + date
 		# binding.pry
 	end
+
+
 
 	def show
 		current_user

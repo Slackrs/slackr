@@ -1,3 +1,6 @@
 
-<%= button_to 'Logout', session_path(@current_user) %>
+
+<%= form_tag('/login', method: 'delete') do %>
+  <button type="submit" class="logout">LOG &nbsp;OUT</button>
+<% end %>
 

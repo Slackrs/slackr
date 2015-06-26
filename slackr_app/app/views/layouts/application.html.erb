@@ -18,20 +18,13 @@
 
 	<div class="container">
 		<div class="nav">
-
-				<%= form_tag('/login', method: 'delete') do %>
-					<button type="submit">LOG &nbsp;OUT</button>
-				<% end %>
-				<%= form_tag('/login', method: 'delete') do %>
-					<button type="submit">LOG &nbsp;OUT</button>
-				<% end %> 
-				<%= form_tag('/login', method: 'delete') do %>
-					<button type="submit">LOG &nbsp;OUT</button>
-				<% end %> 
-				<%= form_tag('/login', method: 'delete') do %>
-					<button type="submit">LOG &nbsp;OUT</button>
-				<% end %>  
-
+			<% if @current_user.producer? %>
+				<%= render 'navs/producer' %>
+			<% elsif @current_user.instructor? %>
+				<%= render 'navs/instructor' %>
+			<% else %>
+				<%= render 'navs/student' %>
+			<% end %>
 		</div>
 
 		<div class="line-vector"></div>
@@ -40,11 +33,6 @@
 			<%= yield %>
 		</div>
 	</div>
-
-	<div class="footer">
-
-	</div>
 	
-
 </body>
 </html>

@@ -1,3 +1,5 @@
 
-<%= button_to "edit profile" , edit_user_path(@current_user), :class => "edit_profile" %>
+<%= form_tag(edit_user_path(@current_user), method: 'get') do %>
+  <button type="submit" class="edit-profile">Edit Profile</button>
+<% end %>
 

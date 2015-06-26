@@ -1,1 +1,3 @@
-<% link_to "Troubled Students",  students_troubled_path, :id => "troubled" %>
+<%= form_tag(students_troubled_path, method: 'get') do %>
+  <button type="submit" class="flagged-students">Flagged Students</button>
+<% end %>
