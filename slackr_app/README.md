@@ -28,15 +28,11 @@ Students have a read-only view on their current attendance totals from class sta
 
 ###Technologies Used
 
-+ Ruby
-
-+ Rails
++ Ruby, Rails, PostgreSQL
 
 + HTML/CSS
 
-+ JavaScript
-
-+ jQuery
++ JavaScript, jQuery
 
 
 ###Nitty Gritty
