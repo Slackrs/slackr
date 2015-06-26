@@ -1,3 +1,4 @@
+
 <!-- NAVIGATION -->
 
 <!-- MAIN CONTENT -->
@@ -10,12 +11,13 @@
 		<div class="td check">Excused</div>
 	</div>
 </div>
-<%= form_tag cohort_attendance_path(@cohort, params[:id]), method: "patch" do %>
-	<div class="table">
+<div class="table">
+	<%= form_tag cohort_attendance_path(@cohort, params[:id]), method: "patch" do %>
 		<% @attendances.each_with_index do |attendance, i| %>
-		<% even_odd = ((i % 2 == 0) ? 'even' : 'odd')%>
+			<% even_odd = ((i % 2 == 0) ? 'even' : 'odd')%>
 			<div class="tr <%= even_odd %>">
 				<div class="td name">
+
 					<p><%= attendance.student.name %></p>
 				</div>
 				<div class="td check">
@@ -32,6 +34,13 @@
 				</div>
 			</div>
 		<% end %>
-	</div>
-	<%= submit_tag %>
+		<div class="tr">
+			<button type="submit" class="submit">SAVE</button>
+		</div>
+	<% end %>
+</div>
+<% if @attendances.first.nil? %>
+	<p>No class has been held on this date</p>
+	<script>$('.submit').hide()</script>
 <% end %>
+
