@@ -1,9 +1,13 @@
 
 <%= render 'gravatar' %>	
 
-<p><strong>Name:</strong> <%= @user.name %><br /><strong>Email:</strong> <%= @user.email %><br /><strong>Phone #:</strong> <%= @user.phone_num %></p>
+<div class="pro-text"> 
+<p><span>Name: </span><%= @user.name %></p>
+ <p><span>Email: </span> <%= @user.email %></p>
+<p><span>Phone#: </span> <%= @user.phone_num %></p> 
 
 <% if @current_user.id == params[:id].to_i %>
 	<%= link_to "edit profile", edit_user_path(current_user), :class => "button"  %>
 	<%= link_to "change password", user_edit_pass_path(current_user), :class => "button" %>
 <% end %>
+</div>

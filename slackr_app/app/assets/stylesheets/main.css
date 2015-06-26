@@ -221,3 +221,21 @@ footer {
   position: fixed;
   height: 50px;
 }
+.pro-text span {
+	font-weight: 800;
+	background: rgb(25,180,170);
+	background: #eee;
+	color: rgb(250,210,55);
+	color: rgb(25,180,170);
+	color: white;
+	color: #333;
+	
+}
+.pro-text p {
+	line-height: 10px;
+	margin-top: 10px;
+
+}
+.pro-pic img {
+	border-radius: 10%;
+}
