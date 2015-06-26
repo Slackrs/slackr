@@ -243,6 +243,18 @@ button.ghosted {
 	color: white;
 }
 
+.tr.heading {
+	/*background: #3f9faf;*/
+	font-family: courier;	
+	height: 3em;
+	width: 98%;
+	margin: 3px auto 2px auto;
+	padding-top: 10px;
+	border-bottom: 1px solid #256;
+/*	border-top: 1px solid #256;*/
+	color: #256;
+	font-weight: bolder;
+}
 
  
 /*---LOGIN PAGE--------------*/
@@ -255,19 +267,23 @@ button.ghosted {
   height: 200px;
   margin: 0 auto; 
  	width: 450px;
- 	margin-top: 60px;
+ 	margin-top: 30px;
 }
 
 .logo {
 	font-family: 'Cabin Sketch';
 	font-size: 200px;
 	text-align: center;
-	margin-top:50px;
+	margin-top: 150px;
+	color: #256;
 }
 .logo-helper {
 	font-size: 30px;
+	font-color: #434343;
 	text-align: center;
+	font-family: courier;
 }
+
 input[type="password"], input[type="email"], .edit input[type="text"]{
   background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
   border: 1px solid #a1a3a3;
@@ -276,7 +292,8 @@ input[type="password"], input[type="email"], .edit input[type="text"]{
   box-sizing: border-box;
   color: #696969;
   height: 39px;
- 	padding-left: 37px;
+  font-family: courier;
+ 	padding-left: 10px;
  	margin-left: 80px;
  	margin-top:	20px;
   transition: box-shadow 0.3s;
@@ -316,7 +333,7 @@ input[type="password"]:focus, input[type="email"]:focus {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius:5px;
-  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78;
 }
 
 .shadow {
@@ -344,13 +361,11 @@ footer {
   height: 50px;
 }
 .pro-text span {
-	font-weight: 800;
-	background: rgb(25,180,170);
-	background: #eee;
+	font-family: courier;
+	background: #d1a244;
 	color: rgb(250,210,55);
 	color: rgb(25,180,170);
 	color: white;
-	color: #333;
 	
 }
 .pro-text{
@@ -361,7 +376,8 @@ footer {
 	line-height: 10px;
 	margin-top: 10px;
 	margin-left: 10px;
-	font-size: 30px;
+	font-size: 20px;
+	font-family: courier;
 }
 .pro-pic {
 	float: left;
