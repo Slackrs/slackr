@@ -1,0 +1,22 @@
+
+
+
+<div class="table-head">
+	<div class="tr">
+		<div class="td name">Student</div>
+		<div class="td check">Presents</div>
+		<div class="td check">Lates</div>
+		<div class="td check">Absences</div>
+		<div class="td check">Excuseds</div>
+	</div>
+</div>
+<div class="table">
+		<% flagged = (@student.flagged? ? 'flagged' : nil) %>
+		<div class="tr odd <%= flagged %>">
+				<div class="td name"><%= @student.name %></div>
+				<div class="td check"><%= @student.presents %></div>
+				<div class="td check"><%= @student.lates %></div>
+				<div class="td check"><%= @student.absences %></div>
+				<div class="td check"><%= @student.absences %></div>
+		</div>
+</div>

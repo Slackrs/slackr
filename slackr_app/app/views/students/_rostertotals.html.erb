@@ -1,43 +1,23 @@
-<div class="container-fluid">
-<nav class="nav navbar-default navbar-static-top ">
-<h1 class="text-center">Slackr</h1>
-</nav>
-	<div class="row">
-		<div class="col-md-4">
-			<aside>
-				
-			</aside>
-		</div>
-		<div class="col-md-8 table-area">
-			<table class="table table-condensed table-striped table-hover">
-				<thead>
-					<tr>
-					<th>Name</th>
-					<th>Presents</th>
-					<th>Lates</th>
-					<th>Absences</th>
-					<th>Excuseds</th>
-				</tr>
-			</thead>
-			<tbody >
-					<% @students.each do |student| %>
-						<% if student.flagged? %>
-							<tr class="danger">
-						<% else %>
-							<tr>
-						<% end %>
-								<td><%= link_to "#{student.name}", cohort_student_path(student.cohort_id, student.id) %></td>
-								<td><%= student.presents %></td>
-								<td><%= student.lates %></td>
-								<td><%= student.absences %></td>
-								<td><%= student.absences %></td>
-						</tr>
-				<% end %>
-			</tbody>
-		</table>
-		</div>
+
+<div class="table-head">
+	<div class="tr">
+		<div class="td name">Student</div>
+		<div class="td check">Presents</div>
+		<div class="td check">Lates</div>
+		<div class="td check">Absences</div>
+		<div class="td check">Excuseds</div>
 	</div>
 </div>
-<nav class="nav navbar-default navbar-static-bottom ">
-<p>Hello</p>
-</nav>
+<div class="table">
+	<% @students.each_with_index do |student, i| %>
+		<% flagged = (student.flagged? ? 'flagged' : nil) %>
+		<% even_odd = ((i % 2 == 0) ? 'even' : 'odd')%>
+		<div class="tr <%= even_odd %> <%= flagged %>">
+				<div class="td name"><%= link_to "#{student.name}", cohort_student_path(student.cohort_id, student.id) %></div>
+				<div class="td check"><%= student.presents %></div>
+				<div class="td check"><%= student.lates %></div>
+				<div class="td check"><%= student.absences %></div>
+				<div class="td check"><%= student.absences %></div>
+		</div>
+	<% end %>
+</div>

@@ -1,5 +1,23 @@
-	<%= form_tag sessions_path, method: 'POST'  do %>
-		<input type="email" name="email" placeholder="e-mail" class="form-control">
-		<%= password_field_tag 'password', nil, placeholder: 'password'%>
-		<%= submit_tag 'Log in', class: 'btn btn-primary' %>
-	<% end %>
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="utf-8">
+ 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 	<title></title>
+ 	<link rel="stylesheet" href="">
+ 	<%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+ </head>
+ <body>
+ 		<div class="nav-top"><img src="/img/transparent_text_effect.png" alt="logo"></div>
+ 		<div class="login">
+			<%= form_tag sessions_path, method: 'POST'  do %>
+				<input type="email" name="email" placeholder="e-mail" class="form-control">
+  			<%= password_field_tag 'password', nil, placeholder: 'password'%>
+				<%= submit_tag 'Log in' %>
+			<% end %>	
+	</div>
+	<div class="shadow"></div>
+	<footer></footer>
+ </body>
+ </html>

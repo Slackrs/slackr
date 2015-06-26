@@ -1,1 +1,31 @@
+
 <%= render "students/rostertotals" %>
+ <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
+  <%#= form_for [:date, params[:date]] %>
+  <p>Date: <input type="text" id="datepicker" name="date"></p>
+
+
+<% if @current_user.producer? %>
+
+  <script type="text/javascript">
+   // $(this).ready(function(){
+      $("#all-cohorts").hide();
+      $(".cohort-view").hide();
+   // });
+  </script>
+
+<% elsif @current_user.instructor? %>
+
+  <script type="text/javascript">
+   // $(this).on('click', ".cohort-view", function(){
+      $(".cohort-view").hide();
+   // });
+  </script>
+
+ 
+<% end %>
+

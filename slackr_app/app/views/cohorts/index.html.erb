@@ -1,8 +1,11 @@
 <!-- this is the producer's view of all of his/her cohorts -->
 Welcome <%= @current_user.name %>
 <table>
-	<% @current_user.cohorts.each do |cohort| %>
-
-		<tr><td><a href="/cohort/<%= cohort.id %>"><%= cohort.name %></a></td></tr>
+	<% @cohorts.each do |cohort| %>
+		<tr>
+			<td>
+				<%= link_to "#{cohort.name}", cohort_students_path(cohort.id) %>
+			</td>
+		</tr>
 	<% end %>
 </table>

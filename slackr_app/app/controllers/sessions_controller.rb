@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
 	# render login form
   def new
+    render :layout => false
   end
 
 # creates session
