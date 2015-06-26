@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  <!DOCTYPE html>
  <html>
  <head>
@@ -22,3 +23,27 @@
  </body>
  </html>
 
+=======
+	<nav class="well">	</nav>
+	<div class="row">
+		<br>
+		<div class="col-md-offset-4 col-md-4 well well-lg">
+			<h1 class="text-center">Slackrs App Login</h1>	
+			<%= form_tag sessions_path, method: 'POST'  do %>
+				<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon">&#x1f4e7;</span>
+						<input type="email" name="email" placeholder="e-mail" class="form-control">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">&#x1f512;</span>
+						<%= password_field_tag 'password', nil, placeholder: 'password', class: 'form-control'%>
+					</div>
+				</div>
+		<%= submit_tag 'Log in', class: 'btn btn-primary' %>
+	<% end %>
+</div>
+</div>
+<footer class="well fixed-bot"></footer>
+>>>>>>> bryant

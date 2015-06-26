@@ -9,6 +9,14 @@ Rails.application.routes.draw do
     resources :students, only: [:index, :show]
     resources :attendances, only: [:show, :edit, :update]
   end
+<<<<<<< HEAD
+=======
+  
+  resources :producers
+  resources :students
+  resources :instructors
+  post '/email/:producer_id' => 'email#create'
+>>>>>>> bryant
 
   resources :users, only: [:index, :get, :edit, :update, :show]
   get '/users/:id/edit_pass' => 'users#edit_pass', as: 'user_edit_pass'

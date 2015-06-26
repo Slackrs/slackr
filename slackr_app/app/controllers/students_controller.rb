@@ -1,8 +1,11 @@
 class StudentsController < ApplicationController
+<<<<<<< HEAD
 	before_action :authorize
 	#before_action :students_only, only: [:index, :show]
 	# before_action :students_only, except: [:edit, :new]
 
+=======
+>>>>>>> bryant
 
 
 # INSTRUCTOR & PRODUCER %%%%%%%%%%%%%%%%%%%%%%%%
