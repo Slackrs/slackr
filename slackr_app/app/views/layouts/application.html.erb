@@ -9,21 +9,32 @@
 <body>
 
 	<div class="header">
-		<p>S &nbsp;L &nbsp;A &nbsp;C &nbsp;K &nbsp;R</p>
-		<!-- <p>s&nbsp;l&nbsp;a&nbsp;c&nbsp;k&nbsp;r</p> -->
+		<!-- <p>S &nbsp;L &nbsp;A &nbsp;C &nbsp;K &nbsp;R</p> -->
+		<p>s&nbsp;l&nbsp;a&nbsp;c&nbsp;k&nbsp;r</p>
 		<!-- <p>SLACKR</p> -->
-		<div class="tagline">It's 9 AM; do you know where your students are?</div>
+		<div class="tagline"></div>
 	</div>
+
 
 	<div class="container">
 		<div class="nav">
 
 				<%= form_tag('/login', method: 'delete') do %>
-					<%= submit_tag('LOG OUT') %>
-					<button type="submit">LOG OUT</button>
+					<button type="submit">LOG &nbsp;OUT</button>
+				<% end %>
+				<%= form_tag('/login', method: 'delete') do %>
+					<button type="submit">LOG &nbsp;OUT</button>
 				<% end %> 
+				<%= form_tag('/login', method: 'delete') do %>
+					<button type="submit">LOG &nbsp;OUT</button>
+				<% end %> 
+				<%= form_tag('/login', method: 'delete') do %>
+					<button type="submit">LOG &nbsp;OUT</button>
+				<% end %>  
 
 		</div>
+
+		<div class="line-vector"></div>
 
 		<div class="content">
 			<%= yield %>
