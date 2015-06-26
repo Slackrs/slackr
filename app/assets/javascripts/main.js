@@ -1,6 +1,6 @@
 $(function(){
-	$('#date-picker').datepicker()
-})
+  $('#date-picker').datepicker({ dateFormat: 'yy-mm-dd' });
+});
 
 // var searchDate = function(cohort_id, date){
 // 	debugger

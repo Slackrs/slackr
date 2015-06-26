@@ -24,6 +24,10 @@ body {
 	background: #f4f4f4;
 }
 
+* button:focus {
+	outline: none;
+}
+
 .header {
 	font-family: 'Cabin Sketch', 'Open Sans', Impact;
 	position: fixed;
@@ -124,8 +128,65 @@ button.ghosted {
 	color: #555;
 }
 
-.flex-vertical {
 
+.flex-vertical {
+	flex-grow: 1;
+}
+.nav .logout {
+	margin-bottom: 5%;
+}
+
+.nav .date-picker {
+	display: flex;
+	align-items: stretch;
+	width: 90%;
+	margin: 5%;
+}
+.nav .date-picker * {
+	width: 100%;
+	margin: 0;
+}
+.nav .date-picker button {
+	padding-top: 14px;
+	padding-bottom: 14px;
+	margin-bottom: 5px;
+}
+.nav .date-picker input {
+	width: 98%;
+}
+#date-picker:focus {
+	box-shadow: none;
+}
+#ui-datepicker-div {
+	font-family: helvetica, sans-serif;
+	font-size: 1.9vh;
+}
+#ui-datepicker-div * {
+	color: #3f9faf;
+	cursor: pointer;
+}
+.nav input[type=text], textarea {
+  -webkit-transition: all 0.20s ease-in-out;
+  -moz-transition: all 0.20s ease-in-out;
+  -ms-transition: all 0.20s ease-in-out;
+  -o-transition: all 0.20s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+  color: #3f9faf;
+}
+.nav input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 10px #3f9faf;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #3f9faf;
+}
+.date-highlight {
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #3f9faf;
+  box-shadow: 0 0 10px #3f9faf;
 }
 
 .content {
@@ -148,13 +209,13 @@ button.ghosted {
 	border: none;
 	color: white;
 	font-size: 16px;
-	font-family: Helvetica Neue;
+	font-family: Helvetica Neue, Helvetica;
 	font-weight: 300;
 	margin: 3px;
 }
 
-.content button.submit {
-	align-self: stretch;
+.flex-horizontal {
+	flex-grow: 1;
 }
 
 .table {

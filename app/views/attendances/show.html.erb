@@ -48,3 +48,9 @@
 	<% end %>
 </div>
 <!-- attendance list -->
+
+<% if Date.today.to_s == params[:id] %>
+  <script type="text/javascript">
+      $(".today").addClass('ghosted');
+  </script>
+<% end %>
