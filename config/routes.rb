@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   post '/email/:producer_id' => 'email#create'
 
-
+  get '/email' => 'notification#new'
 
   resources :users, only: [:index, :get, :edit, :update, :show]
   get '/users/:id/edit_pass' => 'users#edit_pass', as: 'user_edit_pass'

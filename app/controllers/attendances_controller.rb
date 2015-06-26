@@ -10,13 +10,12 @@ class AttendancesController < ApplicationController
 		date = datetime.strftime("%Y-%m-%d")
 		# date = Date.parse(params[:date]).strftime("%d-%m-%Y")
 
-		redirect_to "/cohorts/" + params[:cohort_id]+ "/attendances/" + date
-		# binding.pry
-		if instructor?
-      redirect_to "/cohorts/" + params[:cohort_id]+ "/attendances/" + date + "/edit"
-    elsif producer?
-      redirect_to "/cohorts/" + params[:cohort_id]+ "/attendances/" + date 
-    end
+		if current_user.instructor? 
+  		redirect_to "/cohorts/" + params[:cohort_id]+ "/attendances/" + date + "/edit"
+		elsif current_user.producer?
+  		redirect_to "/cohorts/" + params[:cohort_id]+ "/attendances/" + date 
+		end
+
 	end
 
 
