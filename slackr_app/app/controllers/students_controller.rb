@@ -9,6 +9,7 @@ class StudentsController < ApplicationController
 	#Roster of Students in Cohort
 		#NEED TO REFACTOR STUDENTS MODEL/SO MANY QUERIES
 	def index
+		@today = Date.today
 		if @current_user.producer?  
 			@cohort = Cohort.find(params[:cohort_id])
 			@students = @cohort.students
@@ -18,7 +19,7 @@ class StudentsController < ApplicationController
 		elsif @current_user.student?
 			redirect_to cohort_student_path(user.cohort_id, user.id)
 		else
-			redirect_to '/'
+			redirect_to 'cohort'
 		end
 	end
 
@@ -46,9 +47,11 @@ class StudentsController < ApplicationController
 			@student = current_user
 			@attendances = @student.attendances.where.not(present: true).order(date: :asc)
 		else
-			redirect_to '/'
+			redirect '/'
 		end
 	end
+
+
 
 end
 
