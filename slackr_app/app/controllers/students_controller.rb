@@ -16,7 +16,7 @@ class StudentsController < ApplicationController
 		elsif @current_user.instructor?
 			@cohort = Cohort.find(@current_user.cohort_id)
 			@students = @cohort.students
-		elsif @curren_user.student?
+		elsif @current_user.student?
 			redirect_to cohort_student_path(user.cohort_id, user.id)
 		else
 			redirect_to 'cohort'
@@ -51,10 +51,7 @@ class StudentsController < ApplicationController
 		end
 	end
 
-	def history
-		@current_user
 
-	end
 
 end
 

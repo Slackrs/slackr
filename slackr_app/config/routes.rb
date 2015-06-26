@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :cohorts, only: [:index] do
     resources :students, only: [:index, :show]
-    resources :attendances, only: [:show, :edit, :update]
+    resources :attendances, only: [:show, :index, :edit, :update]
   end
 
 
@@ -21,8 +21,8 @@ Rails.application.routes.draw do
   root 'sessions#landing'
 
 
-  get     '/login' => 'sessions#new'
-  post    '/login' => 'sessions#create'
+  get    '/login' => 'sessions#new'
+  post   '/login' => 'sessions#create'
   delete '/login' => 'sessions#destroy'
  
 end

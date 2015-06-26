@@ -7,13 +7,24 @@ Welcome <%= @current_user.type %> with name <%= @current_user.name %>
 
 <%= render "students/rostertotals" %>
 
- <script>
+<!-- <script>
   $(function() {
-    $( "#datepicker" ).datepicker();
+    $( "datepicker" ).click(function(e){
+      e.preventDefault();
+      var data = $('#id').serializeArray()[0];
+      var value = data.value;
+     
+      document.location.href = "/cohorts/"
+    })
   });
-  </script>
-  <%#= form_for [:date, params[:date]] %>
-  <p>Date: <input type="text" id="datepicker" name="date"></p>
+</script>
+ -->
+<form action="/cohorts/<%= params[:cohort_id] %>/attendances" method ="GET"class="date-picker">
+  <textarea name="date" placeholder="enter date" id="datepicker">
+  </textarea>
+  <input type="hidden" class="create-card" name="cohort_id" value="<%= params[:cohort_id] %>">
+  <input type="submit" value="go to date">
+</form>
 
 
 <% if @current_user.producer? %>
