@@ -119,16 +119,14 @@
 	margin-bottom: 2px;
 	margin-right: -2px;*/
 }
-
 .td:hover * {
 	color: white;
 }
 
+ 
+/*---LOGIN PAGE--------------*/
 
-html { height: 100% }
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
-body { background-image: radial-gradient( cover, rgba(92,100,111,1) 0%,rgba(31,35,40,1) 100%), url('http://i.minus.com/io97fW9I0NqJq.png') }
+
 .login {
   background: #eceeee;
   border: 1px solid #42464b;
