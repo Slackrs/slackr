@@ -1,3 +1,6 @@
+
+<%= render 'gravatar' %>	
+
 <p><strong>Name:</strong> <%= @user.name %><br /><strong>Email:</strong> <%= @user.email %><br /><strong>Phone #:</strong> <%= @user.phone_num %></p>
 
 <% if @current_user.id == params[:id].to_i %>
