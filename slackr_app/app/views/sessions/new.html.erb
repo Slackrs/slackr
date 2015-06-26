@@ -9,7 +9,8 @@
   <%= javascript_include_tag 'application' %>
  </head>
  <body>
- 		<div class="nav-top"><img src="/img/transparent_text_effect.png" alt="logo"></div>
+ 	<h1 class="logo">Slackr</h1>
+ 		<p class="logo-helper">It’s 9am, do you know where your students are?</p>
  		<div class="login">
 			<%= form_tag sessions_path, method: 'POST'  do %>
 				<input type="email" name="email" placeholder="e-mail" class="form-control">
@@ -18,6 +19,5 @@
 			<% end %>	
 	</div>
 	<div class="shadow"></div>
-	<footer></footer>
  </body>
  </html>

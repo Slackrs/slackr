@@ -135,22 +135,18 @@ body { background-image: radial-gradient( cover, rgba(92,100,111,1) 0%,rgba(31,3
   border-radius: 6px;
   height: 257px;
   margin: 0 auto;
- 	width: 298px;
- 	margin-top: 10%;
+ 	width: 400px;
+ 	margin-top: 20px;
 }
-.login h1 {
-  background-image: linear-gradient(top, #f1f3f3, #d4dae0);
-  border-bottom: 1px solid #a6abaf;
-  border-radius: 6px 6px 0 0;
-  box-sizing: border-box;
-  color: #727678;
-  display: block;
-  height: 43px;
-  font: 600 14px/1 'Open Sans', sans-serif;
-  padding-top: 14px;
-  margin: 0;
-  text-align: center;
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.2), 0 1px 0 #fff;
+
+.logo {
+	font-family: 'cabin Sketch';
+	font-size: 200px;
+	text-align: center;
+}
+.logo-helper {
+	font-size: 30px;
+	text-align: center;
 }
 input[type="password"], input[type="email"] {
   background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
@@ -160,8 +156,9 @@ input[type="password"], input[type="email"] {
   box-sizing: border-box;
   color: #696969;
   height: 39px;
-  margin: 31px 0 0 29px;
-  padding-left: 37px;
+ 	padding-left: 37px;
+ 	margin-left: 80px;
+ 	margin-top:30px;
   transition: box-shadow 0.3s;
   width: 240px;
 }
@@ -188,7 +185,8 @@ input[type="submit"] {
   text-align:center;
   text-shadow:1px 1px 0px #37a69b;
   padding-top:6px;
-  margin: 29px 0 0 29px;
+  margin-left: 80px;
+ 	margin-top:30px;
   position:relative;
   cursor:pointer;
   border: none;  
@@ -207,7 +205,7 @@ input[type="submit"] {
   box-shadow: 0 0 20px 10px #000;
   height: 12px;
 	opacity: 0.2;
-  width: 270px;
+  width: 370px;
   margin: 0 auto;
   margin-top: 30px;
 }
