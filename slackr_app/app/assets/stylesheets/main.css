@@ -257,7 +257,7 @@ input[type="password"]:focus, input[type="email"]:focus {
   margin: 26px 0 0 28px;
 }
 
-input[type="submit"] {
+.login input[type="submit"] {
   width:240px;
   height:35px;
   display:block;
@@ -296,7 +296,7 @@ input[type="submit"] {
 }
 
 
-input[type="submit"]:active {
+.login input[type="submit"]:active {
   top:3px;
   box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
 }
