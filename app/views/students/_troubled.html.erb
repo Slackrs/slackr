@@ -11,12 +11,10 @@
 </div>
 
 <div class="table">
-	<%# @troubled.each_with_index do |student, i| %>
-	<% @troubled.each do |student| %>
-	
-		<%# flagged = (student.flagged? ? 'flagged' : nil) %>
-		<%# even_odd = ((i % 2 == 0) ? 'odd' : 'even')%>
-		<div class="tr <%#= even_odd %> <%#= flagged %> f<%= student.official_absences %>">
+	<% @troubled.each_with_index do |student, i| %>
+		<% flagged = (student.flagged? ? 'flagged' : nil) %>
+		<% even_odd = ((i % 2 == 0) ? 'odd' : 'even')%>
+		<div class="tr <%= even_odd %> <%= flagged %> f<%= student.official_absences %>">
 				<div class="td name"><%= link_to "#{student.name}", cohort_student_path(student.cohort_id, student.id) %></div>
 				<div class="td check"><%= student.lates %></div>
 				<div class="td check"><%= student.absences %></div>
