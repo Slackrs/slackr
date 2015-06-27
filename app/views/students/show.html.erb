@@ -1,4 +1,6 @@
-
+<div class="tr heading">
+  Student: <%= @student.name %>
+</div>
 
 <!-- MAIN CONTENT -->
 <%= render "/students/studenttotals" %>
@@ -6,7 +8,7 @@
 <% if @attendances != [] %>
 	<%= render "/students/studenthistory" %>
 <% else %>
-	<p><%= @student.name %> has been present for all class days<p> 
+	<div class="student-message"><p><%= @student.name %> has been present for all class days</p></div>
 <% end %>
 
 
