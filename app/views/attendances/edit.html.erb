@@ -2,6 +2,9 @@
 <!-- NAVIGATION -->
 
 <!-- MAIN CONTENT -->
+<div class="tr heading">
+	Cohort: <%= @cohort.name %> || Date: <%= @attendances.first.date %> 
+</div>
 <div class="table-head">
 	<div class="tr">
 		<div class="td name">Student</div>
@@ -35,6 +38,7 @@
 			</div>
 		<% end %>
 		<div class="tr">
+			<div class="flex-horizontal"></div>
 			<button type="submit" class="submit">SAVE</button>
 		</div>
 	<% end %>
@@ -44,3 +48,8 @@
 	<script>$('.submit').hide()</script>
 <% end %>
 
+<% if Date.today.to_s == params[:id] %>
+  <script type="text/javascript">
+      $(".today").addClass('ghosted');
+  </script>
+<% end %>

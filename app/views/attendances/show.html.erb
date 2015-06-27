@@ -1,4 +1,7 @@
-<%#= render template: "students/index" %>
+<div class="tr heading">
+	Cohort: <%= @cohort.name %> | Date: <%= @attendances.first.date %> 
+</div>
+
 <div class="table-head">
 	<div class="td name">
 		Student
@@ -45,3 +48,9 @@
 	<% end %>
 </div>
 <!-- attendance list -->
+
+<% if Date.today.to_s == params[:id] %>
+  <script type="text/javascript">
+      $(".today").addClass('ghosted');
+  </script>
+<% end %>

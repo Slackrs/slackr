@@ -1,0 +1,17 @@
+<div class="date-picker">
+	<form action="/cohorts/<%= params[:cohort_id] %>/attendances/" method ="GET"class="search-date">
+	  <button type="submit" id="go-to">Go to Date</button>
+	  <input type="text" name="date" placeholder="enter date" id="date-picker">
+	</form>
+</div>
+
+<script>
+	var dateHighlight = function() {
+		$('#date-picker').addClass('date-highlight');
+	}
+	var dateUnhighlight = function() {
+		$('#date-picker').removeClass('date-highlight');
+	}
+
+	$('#go-to').hover(dateHighlight, dateUnhighlight);
+</script>
