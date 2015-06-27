@@ -276,7 +276,7 @@ button.ghosted {
 }
 
 .table.studenttotals {
-	flex: 5;
+	flex: 10;
 }
 
 .table.studenthistory {
@@ -398,7 +398,7 @@ button.ghosted {
 	font-family: 'Cabin Sketch';
 	font-size: 200px;
 	text-align: center;
-	margin-top: 160px;
+	margin-top: 180px;
 	color: white;
 }
 .logo-helper {
@@ -457,6 +457,18 @@ input[type="password"]:focus, input[type="email"]:focus {
   box-shadow: 0px 5px 0px 0px rgb(194,163,45);
 }
 
+/*.shadow {
+  background: #000;
+  border-radius: 12px 12px 4px 4px;
+  box-shadow: 0 0 20px 10px #000;
+  height: 8px;
+	opacity: 0.1;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 40px;
+}*/
+
+
 .login input[type="submit"]:active, .edit input[type="text"]:active {
   top:3px;
   box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
@@ -480,14 +492,15 @@ footer {
 .pro-text span {
 	padding: 2px 5px 2px 5px;
  	border-radius: 3px;
- 	background: #256;
+ 	background: rgb(194,163,45);
 	color: white;
 	font-family: courier;
 	font-size: 16px;
+	
 }
 .pro-text{
 	float: left;
-	margin-top: 50px;
+	margin-top: 60px;
 }
 .pro-text p {
 	line-height: 10px;
@@ -503,8 +516,12 @@ footer {
 .pro-pic img {
 	border-radius: 10%;
 }
-.profile-footer {
-}
+/*.profile-footer {
+	order: 3;
+  flex-shrink: 0;
+  flex-basis: 50px;
+  background: blue;
+}*/
 
 /*---EDIT PROFILE--------------*/
 
@@ -523,17 +540,14 @@ footer {
  	margin-top: 10px;
  	padding: 2px 5px 2px 5px;
  	border-radius: 3px;
- 	background: #256;
-	color: white;
-	font-family: courier;
-	font-size: 16px;
-}
-.button {
-	padding: 1px 5px 2px 5px;
-	margin-left: 10px;
- 	border-radius: 3px;
  	background: rgb(194,163,45);
 	color: white;
 	font-family: courier;
 	font-size: 16px;
 }
+/*
+
+
+*/
+
+
