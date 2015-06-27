@@ -1,13 +1,25 @@
+<div class="tr heading">
+	Profile: <%= @user.name %>
+</div>
+
 <div class="profile">
 	<%= render 'gravatar' %>	
 
 	<div class="pro-text"> 
-	<p><span>Name: </span><%= @user.name %></p>
-	 <p><span>Email: </span> <%= @user.email %></p>
-	<p><span>Phone#: </span> <%= @user.phone_num %></p> 
+	<p><span>&nbsp;Name&nbsp;</span>&nbsp;<%= @user.name %></p>
+	<p><span>&nbsp;User&nbsp;</span>&nbsp;<%= @user.type %></p> 
+	<p><span>&nbsp;Email&nbsp;</span>&nbsp;<%= @user.email %></p>
+	<p><span>&nbsp;Phone#&nbsp;</span>&nbsp;<%= @user.phone_num %></p>
+	</div>
+
+	<% if @current_user.id == params[:id].to_i %>
+		<div class="profile-footer">
+			<%= link_to "edit profile", edit_user_path(current_user), :class => "button"  %>
+			<%= link_to "change password", user_edit_pass_path(current_user), :class => "button" %>
+		</div>
+	<% end %>
 </div>
-<% if @current_user.id == params[:id].to_i %>
-	<%= link_to "edit profile", edit_user_path(current_user), :class => "button"  %>
-	<%= link_to "change password", user_edit_pass_path(current_user), :class => "button" %>
-<% end %>
-</div>
+
+<script type="text/javascript">
+    $(".my-profile").addClass('ghosted');
+</script>

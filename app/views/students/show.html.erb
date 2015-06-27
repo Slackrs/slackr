@@ -1,15 +1,6 @@
-<!--  NAVIGATION -->
-<% if @current_user.student?  %>
-	<script type="text/javascript">
-		$('#student-history').addClass('ghosted')
-		$('#student-history').prop('disabled', true)
-	</script>
-<% elsif @current_user.instructor? %>
-	<script type="text/javascript">
-		$('#student-history').addClass('ghosted')
-		$('#student-history').prop('disabled', true)
-	</script>
-<% end %>
+<div class="tr heading">
+  Student: <%= @student.name %>
+</div>
 
 <!-- MAIN CONTENT -->
 <%= render "/students/studenttotals" %>
@@ -17,6 +8,10 @@
 <% if @attendances != [] %>
 	<%= render "/students/studenthistory" %>
 <% else %>
-	<p><%= @student.name %> has been present for all class days<p> 
+	<div class="student-message"><p><%= @student.name %> has been present for all class days</p></div>
 <% end %>
 
+
+<script type="text/javascript">
+    $(".student-history").addClass('ghosted');
+</script>
