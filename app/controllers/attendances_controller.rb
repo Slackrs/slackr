@@ -1,6 +1,6 @@
 class AttendancesController < ApplicationController
 	before_action :authorize
-	
+
 	def index
 		date = params[:date]
 		# date_to_use = params[:date].to_s
@@ -50,6 +50,7 @@ class AttendancesController < ApplicationController
 	end
 
 	def update
+		binding.pry
 		students = params[:students]
 
 		students.each do |s|
