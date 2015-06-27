@@ -10,9 +10,9 @@ class AttendancesController < ApplicationController
 	# 	date = datetime.strftime("%Y-%m-%d")
 	# 	# date = Date.parse(params[:date]).strftime("%d-%m-%Y")
 		if current_user.instructor? 
-  		redirect_to "/cohorts/" + params[:cohort_id]+ "/attendances/" + date + "/edit"
+  		redirect_to "/cohorts/#{@current_user.cohort_id}/attendances/#{date}/edit"
 		elsif current_user.producer?
-  		redirect_to "/cohorts/" + params[:cohort_id]+ "/attendances/" + date 
+  		redirect_to "/cohorts/#{params[:cohort_id]}/attendances/#{date}" 
 		end
 	end
 
@@ -47,14 +47,22 @@ class AttendancesController < ApplicationController
 		students = params[:students]
 
 		students.each do |s|
-			attendance = Attendance.where({student_id: s[0], id: params[:id]}).first
-			attendance.present = (s[1][:present].nil? ? false : true)
-			attendance.late = (s[1][:late].nil? ? false : true)
-			attendance.absent = (s[1][:absent].nil? ? false : true)
+			student = Student.find(s[0])
+			already_flagged = student.flagged?
+
+			attendance = Attendance.where({student_id: s[0], date: params[:id]}).first
+			attendance.present = (s[1][:presence] == 'present' ? true : false)
+			attendance.late = (s[1][:presence] == 'late' ? true : false)
+			attendance.absent = (s[1][:presence] == 'absent' ? true : false)
 			attendance.excused = (s[1][:excused].nil? ? false : true)		
 			attendance.save
+
+			if !already_flagged && student.flagged?
+				NotificationMailer.alert_troubled_student(s).deliver_now
+			end
 		end
-		redirect_to "/cohorts/#{params[:cohort_id]}/attendances/#{params[:id]}"
+
+		redirect_to "/cohorts/#{params[:cohort_id]}/attendances/#{params[:id]}/edit"
 	end
 
 	private
