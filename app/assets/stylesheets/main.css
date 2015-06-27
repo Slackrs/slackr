@@ -246,11 +246,42 @@ button.ghosted {
 	font-weight: bolder;
 }
 
+.table-head {
+	order: 2;
+	flex: 1;
+	flex-shrink: 0;
+  flex-basis: 10px;
+	margin: 5px;
+	/*height: 54px;*/
+}
+
+.table-head .td {
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #fff;
+	font-weight: 600;
+	/*font-family: 'Open Sans';*/
+}
+
 .table {
 	order: 3;
 	flex: 20;
 	margin: 5px;
 	overflow: auto;
+}
+
+.table-head.studenthistory {
+	order: 4;
+}
+
+.table.studenttotals {
+	flex: 10;
+}
+
+.table.studenthistory {
+	flex: 10;
+	order: 5;
 }
 
 .tr {
@@ -273,24 +304,6 @@ button.ghosted {
 
 	background: rgb(250,210,55);
 	font-family: courier;	
-}
-
-.table-head {
-	order: 2;
-	flex: 1;
-	flex-shrink: 0;
-  flex-basis: 10px;
-	margin: 5px;
-	/*height: 54px;*/
-}
-
-.table-head .td {
-	padding-left: 5px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	color: #fff;
-	font-weight: 600;
-	/*font-family: 'Open Sans';*/
 }
 
 .name {
@@ -343,17 +356,18 @@ button.ghosted {
 	background: #3f9faf;
 	 order: 1;
     flex-shrink: 0;
-    flex-basis: 30px;
+    flex-basis: 25px;
 	font-family: courier;	
 	width: 98%;
 	margin: 8px auto 2px auto;
-	padding-top: 10px;
+	padding-top: 12px;
+	padding-bottom: 5px;
 	border-radius: 3px;
 	background: #cdd;
 	
 }
 .student-message p {
-	margin-left: 5px;
+	margin-left: 6px;
 	color: #555;
 }
 
