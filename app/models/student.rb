@@ -25,7 +25,7 @@ class Student < User
 	end
 
 	def flagged?
-		self.official_absences > 4
+		self.official_absences > 3
 	end
 
 	def official_absences
