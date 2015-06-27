@@ -8,7 +8,7 @@
 <% if @attendances != [] %>
 	<%= render "/students/studenthistory" %>
 <% else %>
-	<p><%= @student.name %> has been present for all class days<p> 
+	<div class="student-message"><p><%= @student.name %> has been present for all class days</p></div>
 <% end %>
 
 
