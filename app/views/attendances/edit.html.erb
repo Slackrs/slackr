@@ -20,21 +20,26 @@
 			<% even_odd = ((i % 2 == 0) ? 'even' : 'odd')%>
 			<div class="tr <%= even_odd %>">
 				<div class="td name">
-
 					<p><%= attendance.student.name %></p>
 				</div>
+				<!-- each row needs to be in its own for it to have one selection only -->
 				<div class="td check">
-					<input type="checkbox" name="students[<%= attendance.student_id %>][present]" <%= attendance.present == true ? 'checked' : nil %> >
+					<input type="radio" name="check<%= i %>" value="students[<%= attendance.student_id %>][present]" <%= attendance.present == true ? 'checked' : nil %> id="present" >
+					<label for="present">present</label>
 				</div>
 				<div class="td check">
-					<input type="checkbox" name="students[<%= attendance.student_id %>][late]" <%= attendance.late == true ? 'checked' : nil %> >
+					<input type="radio" name="check<%= i %>" value="students[<%= attendance.student_id %>][late]" <%= attendance.late == true ? 'checked' : nil %> id="late" >
+					<label for="late">late</label>
 				</div>
 				<div class="td check">
-					<input type="checkbox" name="students[<%= attendance.student_id %>][absent]" <%= attendance.absent == true ? 'checked' : nil %> >
+					<input type="radio" name="check<%= i %>" value="students[<%= attendance.student_id %>][absent]" <%= attendance.absent == true ? 'checked' : nil %> id="absent" >
+					<label for="absent">absent</label>
 				</div>
 				<div class="td check">
-					<input type="checkbox" name="students[<%= attendance.student_id %>][excused]" <%= attendance.excused == true ? 'checked' : nil %> >
+					<input type="checkbox" name="check<%= i %>" value="students[<%= attendance.student_id %>][excused]" <%= attendance.excused == true ? 'checked' : nil %> id="excused" >
+					<label for="excused">excused</label>
 				</div>
+				<!-- placement marker ==================== -->
 			</div>
 		<% end %>
 		<div class="tr">
