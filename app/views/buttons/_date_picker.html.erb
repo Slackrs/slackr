@@ -1,5 +1,5 @@
 <div class="date-picker">
-	<form action="/cohorts/<%= params[:cohort_id] %>/attendances/" method ="GET"class="search-date">
+	<form action="/cohorts/<%= params[:cohort_id] || @current_user.cohort_id %>/attendances/" method ="GET"class="search-date">
 	  <button type="submit" id="go-to">Go to Date</button>
 	  <input type="text" name="date" placeholder="enter date" id="date-picker">
 	</form>
