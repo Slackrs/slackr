@@ -3,7 +3,7 @@ class AttendancesController < ApplicationController
 
 	def index	
 
-	# 	date_to_use = params[:date].to_s
+		date = params[:date].to_s
 	# 	datetime = DateTime.strptime(date_to_use, "%m/%d/%Y")
 
 	# # reformat it
