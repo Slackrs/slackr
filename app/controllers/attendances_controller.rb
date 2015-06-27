@@ -3,12 +3,12 @@ class AttendancesController < ApplicationController
 
 	def index	
 
-		date_to_use = params[:date].to_s
-		datetime = DateTime.strptime(date_to_use, "%m/%d/%Y")
+		date = params[:date].to_s
+	# 	datetime = DateTime.strptime(date_to_use, "%m/%d/%Y")
 
-	# reformat it
-		date = datetime.strftime("%Y-%m-%d")
-		# date = Date.parse(params[:date]).strftime("%d-%m-%Y")
+	# # reformat it
+	# 	date = datetime.strftime("%Y-%m-%d")
+	# 	# date = Date.parse(params[:date]).strftime("%d-%m-%Y")
 		if current_user.instructor? 
   		redirect_to "/cohorts/" + params[:cohort_id]+ "/attendances/" + date + "/edit"
 		elsif current_user.producer?
