@@ -248,9 +248,9 @@ button.ghosted {
 
 .table-head {
 	order: 2;
-	flex: 1;
+	flex-grow: 0;
 	flex-shrink: 0;
-  flex-basis: 10px;
+  flex-basis: 40px;
 	margin: 5px;
 	/*height: 54px;*/
 }
@@ -390,6 +390,10 @@ button.ghosted {
 	border-radius: 3px;
 	padding: 10px;
 	color: #555;
+}
+
+.cohort a:hover {
+	border-bottom: 3px solid #256;
 }
 
  
