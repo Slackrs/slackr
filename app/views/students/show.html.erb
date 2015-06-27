@@ -1,14 +1,13 @@
 <div class="tr heading">
-  Student: <%= @student.name %>
+  Single Student Totals and History
 </div>
 
 <!-- MAIN CONTENT -->
 <%= render "/students/studenttotals" %>
-<br>
 <% if @attendances != [] %>
 	<%= render "/students/studenthistory" %>
 <% else %>
-	<div class="student-message"><p><%= @student.name %> has been present for all class days</p></div>
+	<div class="student-message"><p>Student has been present for all class days</p></div>
 <% end %>
 
 

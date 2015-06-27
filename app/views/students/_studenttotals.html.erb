@@ -1,7 +1,7 @@
 
 
 
-<div class="table-head">
+<div class="table-head studenttotals">
 	<div class="tr">
 		<div class="td name">Student</div>
 		<div class="td check">Presents</div>
@@ -10,13 +10,13 @@
 		<div class="td check">Excuseds</div>
 	</div>
 </div>
-<div class="table">
+<div class="table studenttotals">
 		<% flagged = (@student.flagged? ? 'flagged' : nil) %>
 		<div class="tr odd <%= flagged %>">
 				<div class="td name"><%= @student.name %></div>
 				<div class="td check"><%= @student.presents %></div>
 				<div class="td check"><%= @student.lates %></div>
 				<div class="td check"><%= @student.absences %></div>
-				<div class="td check"><%= @student.absences %></div>
+				<div class="td check"><%= @student.excuseds %></div>
 		</div>
 </div>
