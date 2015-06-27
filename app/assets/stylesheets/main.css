@@ -21,6 +21,8 @@ a {
 }
 
 body {
+	/*width: 100vw;
+	height: 100vh;*/
 	background: #f4f4f4;
 }
 
@@ -30,9 +32,10 @@ body {
 
 .header {
 	font-family: 'Cabin Sketch', 'Open Sans', Impact;
-	position: fixed;
+	position: absolute;
 	width: 100%;
-	height: 90px;
+	/*height: 90px;*/
+	height: 8vh;
 	/*line-height: 110px;*/
 	top: 0;
 	text-align: center;
@@ -85,10 +88,11 @@ body {
 .container {
 	margin-top: 70px;
 	display: flex;
-	height: 91vh;
+	height: 76vh;
 }
 
 .nav {
+	height: 100%;
 	width: 20%;
 	margin: 60px;
 	margin-right: 20px;
@@ -107,17 +111,22 @@ body {
 	background: #256;
 	background: #3f9faf;
 	border: none;
-	padding-top: 16px;
-	padding-bottom: 16px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	color: white;
-	font-size: 20px;
-	font-family: Helvetica Neue;
-	font-weight: 300;
-	box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
+	font-size:16px;
+  font-weight: bold;
+	font-family: Arial;
+	text-transform:uppercase;
+	text-shadow:1px 1px 1px #256;
+	font-weight: bold;
+	box-shadow: 0px 3px 0px 0px #256;
 }
 .nav button:hover {
 	background: #cdd;
 	color: #4bc;
+	box-shadow: none;
+	text-shadow:1px 1px 1px white;
 }
 button.ghosted {
 	background: #cdd;
@@ -147,8 +156,8 @@ button.ghosted {
 	margin: 0;
 }
 .nav .date-picker button {
-	padding-top: 14px;
-	padding-bottom: 14px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	margin-bottom: 5px;
 }
 .nav .date-picker input {
@@ -197,6 +206,7 @@ button.ghosted {
 	margin: 60px;
 	margin-left: 20px;
 	width: 70%;
+	height: 100%;
 	overflow: hidden;
 }
 
@@ -218,7 +228,24 @@ button.ghosted {
 	flex-grow: 1;
 }
 
+.tr.heading {
+	/*background: #3f9faf;*/
+	 order: 1;
+    flex-shrink: 0;
+    flex-basis: 30px;
+	font-family: courier;	
+	width: 98%;
+	margin: 8px auto 0px auto;
+	padding-top: 10px;
+	border-bottom: 1px solid #256;
+/*	border-top: 1px solid #256;*/
+	color: #256;
+	font-weight: bolder;
+}
+
 .table {
+	order: 3;
+	flex: 20;
 	margin: 5px;
 	overflow: auto;
 }
@@ -246,8 +273,12 @@ button.ghosted {
 }
 
 .table-head {
+	order: 2;
+	flex: 1;
+	flex-shrink: 0;
+  flex-basis: 10px;
 	margin: 5px;
-	height: 54px;
+	/*height: 54px;*/
 }
 
 .table-head .td {
@@ -305,17 +336,21 @@ button.ghosted {
 	color: white;
 }
 
-.tr.heading {
-	/*background: #3f9faf;*/
+.student-message {
+	background: #3f9faf;
+	 order: 3;
+    flex-shrink: 0;
+    flex-basis: 30px;
 	font-family: courier;	
-	height: 3em;
 	width: 98%;
-	margin: 3px auto 2px auto;
+	margin: 8px auto 8px auto;
 	padding-top: 10px;
-	border-bottom: 1px solid #256;
-/*	border-top: 1px solid #256;*/
 	color: #256;
-	font-weight: bolder;
+	color: white;
+	border-radius: 3px;
+}
+.student-message p {
+	margin-left: 5px;
 }
 
  
@@ -384,15 +419,15 @@ input[type="password"]:focus, input[type="email"]:focus {
   width:240px;
   height:35px;
   display:block;
-  font-family:Arial, "Helvetica", sans-serif;
-  font-size:16px;
+  font-family:Arial;
+  font-size:15px;
   font-weight:bold;
   color: white;
   text-decoration:none;
   text-transform:uppercase;
   text-align:center;
   text-shadow:1px 1px 0px rgb(194,163,45);
-  padding-top:6px;
+  padding-top:1px;
   margin-left: 110px;
  	margin-top:20px;
   position:relative;
@@ -400,11 +435,8 @@ input[type="password"]:focus, input[type="email"]:focus {
   border: none;  
   background-color: rgb(250,210,55);
   background-image: linear-gradient(top,#3db0a6,#3111);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius:5px;
-  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px rgb(194,163,45);
+  border-radius: 5px;
+  box-shadow: 0px 5px 0px 0px rgb(194,163,45);
 }
 
 /*.shadow {
@@ -431,12 +463,21 @@ footer {
   position: fixed;
   height: 50px;
 }
+
+/*---PROFILE PAGE--------------*/
+
+.profile {
+	order: 2;
+	flex: 8;
+}
+
 .pro-text span {
-	font-family: courier;
-	background: #d1a244;
-	color: rgb(250,210,55);
-	color: rgb(25,180,170);
+	padding: 2px 5px 2px 5px;
+ 	border-radius: 3px;
+ 	background: rgb(194,163,45);
 	color: white;
+	font-family: courier;
+	font-size: 16px;
 	
 }
 .pro-text{
@@ -445,9 +486,8 @@ footer {
 }
 .pro-text p {
 	line-height: 10px;
-	margin-top: 10px;
-	margin-left: 10px;
-	font-size: 20px;
+	margin: 10px 0px 20px 10px;
+	font-size: 16px;
 	font-family: courier;
 }
 .pro-pic {
@@ -458,8 +498,19 @@ footer {
 .pro-pic img {
 	border-radius: 10%;
 }
+/*.profile-footer {
+	order: 3;
+  flex-shrink: 0;
+  flex-basis: 50px;
+  background: blue;
+}*/
+
+/*---EDIT PROFILE--------------*/
+
 .edit {
-	margin-top: 40px;
+	/*margin-top: 40px;*/
+	order: 2;
+	margin: 40px auto 0px auto;
 }
 .edit input {
 	margin-bottom: 10px;
@@ -468,11 +519,11 @@ footer {
 .edit label {
 	margin-left: 80px;
  	margin-bottom: 10px;
- 	background: rgb(25,180,170);
-	background: #eee;
-	color: rgb(250,210,55);
-	color: rgb(25,180,170);
+ 	margin-top: 10px;
+ 	padding: 2px 5px 2px 5px;
+ 	border-radius: 3px;
+ 	background: rgb(194,163,45);
 	color: white;
-	color: #333;
-	
+	font-family: courier;
+	font-size: 16px;
 }
