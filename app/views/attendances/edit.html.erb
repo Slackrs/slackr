@@ -3,7 +3,12 @@
 
 <!-- MAIN CONTENT -->
 <div class="tr heading">
-	Cohort: <%= @cohort.name %> || Date: <%= params[:date] %> 
+	Cohort: <%= @cohort.name %> | 
+		<% if @attendances.first.nil? %> 
+			Date: N/A
+		<% else %>
+			Date: <%= params[:date] %> 
+		<% end %>
 </div>
 <div class="table-head">
 	<div class="tr">
@@ -44,7 +49,7 @@
 	<% end %>
 </div>
 <% if @attendances.first.nil? %>
-	<p>No class has been held on this date</p>
+	<div class="student-message"><p>No scheduled classes for this date</p></div>
 	<script>$('.submit').hide()</script>
 <% end %>
 
