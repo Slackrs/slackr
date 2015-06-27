@@ -47,12 +47,14 @@ class AttendancesController < ApplicationController
 		students = params[:students]
 
 		students.each do |s|
-			attendance = Attendance.where({student_id: s[0], id: params[:id]}).first
-			attendance.present = (s[1][:present].nil? ? false : true)
-			attendance.late = (s[1][:late].nil? ? false : true)
-			attendance.absent = (s[1][:absent].nil? ? false : true)
-			attendance.excused = (s[1][:excused].nil? ? false : true)		
-			attendance.save
+			attendance = Attendance.where({student_id: s[0], id: params[:id]})
+			binding.pry
+			
+			attendance.first.present = (s[1][:present].nil? ? false : true)
+			attendance.first.late = (s[1][:late].nil? ? false : true)
+			attendance.first.absent = (s[1][:absent].nil? ? false : true)
+			attendance.first.excused = (s[1][:excused].nil? ? false : true)		
+			attendance.first.save
 		end
 		redirect_to "/cohorts/#{params[:cohort_id]}/attendances/#{params[:id]}"
 	end
