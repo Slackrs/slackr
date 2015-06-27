@@ -34,6 +34,7 @@ class StudentsController < ApplicationController
 				NotificationMailer.alert_troubled_student(s).deliver_now
 			end
 		elsif @current_user.instructor?
+			students = Student.where(cohort_id: @current_user.cohort_id)
 			@troubled = Student.troubled_array(Student.where({cohort_id: params[:cohort_id]}))
 		else
 			redirect_to '/'

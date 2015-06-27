@@ -3,11 +3,13 @@
 Welcome <%= @current_user.type %> with name <%= @current_user.name %>
 
 
+<% if @current_user.student? && @current_user.flagged? %>
+  <%= render "students/emailform"%>
+<% else %>
+  <%= render "students/rostertotals" %>
 
-
-<%= render "students/rostertotals" %>
-
-<script>
+<% end %>
+<script>@current_user
 
 
 //  var searchDate = function(cohort_id, date){
@@ -66,7 +68,6 @@ Welcome <%= @current_user.type %> with name <%= @current_user.name %>
       $(".cohort-view").addClass('ghosted');
    // });
   </script>
-
 
  
 <% end %>
