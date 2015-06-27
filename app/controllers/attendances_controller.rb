@@ -1,23 +1,29 @@
 class AttendancesController < ApplicationController
 	before_action :authorize
 
-	def index	
+	def index
+		date = params[:date]
+		# date_to_use = params[:date].to_s
+		# datetime = DateTime.strptime(date_to_use, "%m/%d/%Y")
+		# date = datetime.strftime("%Y-%m-%d") # reformat datetime and assign it to date
+			# date = Date.parse(params[:date]).strftime("%d-%m-%Y")
 
-		date = params[:date].to_s
-	# 	datetime = DateTime.strptime(date_to_use, "%m/%d/%Y")
-
-	# # reformat it
-	# 	date = datetime.strftime("%Y-%m-%d")
-	# 	# date = Date.parse(params[:date]).strftime("%d-%m-%Y")
 		if current_user.instructor? 
   		redirect_to "/cohorts/#{@current_user.cohort_id}/attendances/#{date}/edit"
 		elsif current_user.producer?
   		redirect_to "/cohorts/#{params[:cohort_id]}/attendances/#{date}" 
 		end
 	end
-
-
-
+=begin
+	clicking on go to date with no dates specified throws an error.
+	invalid date has returned, needs rebase.
+# wip
+		# begin
+  # 		specify the var and run the code that might throw an error
+		#rescue ArgumentError #=> e
+  		#flash[:error] = e.message # didn't add a message, KISS.
+  		redirect_to "/cohorts/" + params[:cohort_id] + "/students"
+=end
 	def show
 		current_user
 		@cohort = Cohort.find(params[:cohort_id])
