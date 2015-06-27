@@ -248,9 +248,9 @@ button.ghosted {
 
 .table-head {
 	order: 2;
-	flex: 1;
+	flex-grow: 0;
 	flex-shrink: 0;
-  flex-basis: 10px;
+  flex-basis: 40px;
 	margin: 5px;
 	/*height: 54px;*/
 }
@@ -371,6 +371,31 @@ button.ghosted {
 	color: #555;
 }
 
+.cohort {
+	 order: 1;
+    flex-shrink: 0;
+    flex-basis: 25px;
+	font-family: courier;	
+	width: 98%;
+	margin: 12px auto 0px auto;
+	padding-top: 12px;
+	padding-bottom: 5px;
+	border-radius: 3px;
+	background: white;
+}
+
+.cohort a {
+	margin-left: 6px;
+	background: #cdd;
+	border-radius: 3px;
+	padding: 10px;
+	color: #555;
+}
+
+.cohort a:hover {
+	border-bottom: 3px solid #256;
+}
+
  
 /*---LOGIN PAGE--------------*/
 
@@ -398,7 +423,7 @@ button.ghosted {
 	font-family: 'Cabin Sketch';
 	font-size: 200px;
 	text-align: center;
-	margin-top: 160px;
+	margin-top: 180px;
 	color: white;
 }
 .logo-helper {
@@ -528,6 +553,7 @@ footer {
 	font-family: courier;
 	font-size: 16px;
 }
+
 .button {
 	padding: 1px 5px 2px 5px;
 	margin-left: 10px;
