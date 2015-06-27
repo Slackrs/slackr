@@ -14,4 +14,12 @@
 	}
 
 	$('#go-to').hover(dateHighlight, dateUnhighlight);
+
+	var validateDate = function(e) {
+		if ($('#date-picker').val() === "") {
+			e.preventDefault();
+		} 
+	}
+
+	$('#go-to').click(validateDate)
 </script>

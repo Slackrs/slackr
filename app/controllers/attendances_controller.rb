@@ -28,7 +28,7 @@ class AttendancesController < ApplicationController
 	def show
 		current_user
 		@cohort = Cohort.find(params[:cohort_id])
-		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :users => {:cohort_id => params[:cohort_id]})
+		@attendance = Attendance.joins(:student).includes(:student).where(:date => params[:id], :users => {:cohort_id => params[:cohort_id]})
 		@today = Date.today
 		if @current_user.producer?  
 			@cohort = Cohort.find(params[:cohort_id])
@@ -37,14 +37,13 @@ class AttendancesController < ApplicationController
 			@cohort = Cohort.find(@current_user.cohort_id)
 			@students = @cohort.students
 		elsif @current_user.student?
-			redirect_to cohort_student_path(user.cohort_id, user.id)
+			redirect_to cohort_stusdent_path(user.cohort_id, user.id)
 		else
 			redirect_to 'cohort'
 		end
 	end
 
 	def edit
-		# binding.pry
 		# @today = Date.today
 		@cohort = Cohort.find(params[:cohort_id])
 		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :users => {:cohort_id => params[:cohort_id]})
@@ -72,14 +71,6 @@ class AttendancesController < ApplicationController
 
 		redirect_to "/cohorts/#{params[:cohort_id]}/attendances/#{params[:id]}/edit"
 	end
-
-	private
-
-	
-
-# 	def show
-# 		@attendances = Attendance.joins(:student).includes(:student).where(:date => params[:id], :students => {:cohort_id => @cohort.id}})
-# 	end
 
 # 	private
 

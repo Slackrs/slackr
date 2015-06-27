@@ -7,7 +7,7 @@
 		<% if @attendances.first.nil? %> 
 			Date: N/A
 		<% else %>
-			Date: <%= params[:date] %> 
+			Date: <%= @attendances.first.date %>
 		<% end %>
 </div>
 <div class="table-head">
