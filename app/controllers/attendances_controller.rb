@@ -48,7 +48,7 @@ class AttendancesController < ApplicationController
 
 		students.each do |s|
 			attendance = Attendance.where({student_id: s[0], id: params[:id]})
-			binding.pry
+			# binding.pry
 			
 			attendance.first.present = (s[1][:present].nil? ? false : true)
 			attendance.first.late = (s[1][:late].nil? ? false : true)
