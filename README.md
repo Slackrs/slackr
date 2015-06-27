@@ -1,5 +1,7 @@
 # slackr README
 
+[Heroku deployment, v1.0](https://aqueous-crag-2327.herokuapp.com/)
+
 ###App Description
 
 **slackr** is an attendance taking application for use by Producers (more commonly: Administrators), Instructors, and Students that tracks four different types of attendances: present, late, absent, and excused. 

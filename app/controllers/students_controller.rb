@@ -31,7 +31,6 @@ class StudentsController < ApplicationController
 			end
 			@troubled = Student.troubled_array(@students)
 			@troubled.each do |s|
-				NotificationMailer.alert_troubled_student(s).deliver_now
 			end
 		elsif @current_user.instructor?
 			@troubled = Student.troubled_array(Student.where({cohort_id: params[:cohort_id]}))

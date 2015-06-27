@@ -1,12 +1,13 @@
 class AttendancesController < ApplicationController
 	before_action :authorize
-
+	
 	def index
 		date = params[:date]
 		# date_to_use = params[:date].to_s
 		# datetime = DateTime.strptime(date_to_use, "%m/%d/%Y")
 		# date = datetime.strftime("%Y-%m-%d") # reformat datetime and assign it to date
 			# date = Date.parse(params[:date]).strftime("%d-%m-%Y")
+
 		if current_user.instructor? 
 			redirect_to "/cohorts/" + params[:cohort_id] + "/attendances/" + date + "/edit"
 		elsif current_user.producer?
