@@ -13,6 +13,7 @@ class AttendancesController < ApplicationController
 		elsif current_user.producer?
   		redirect_to "/cohorts/#{params[:cohort_id]}/attendances/#{date}" 
 		end
+
 	end
 =begin
 	clicking on go to date with no dates specified throws an error.

@@ -492,7 +492,7 @@ footer {
 .pro-text span {
 	padding: 2px 5px 2px 5px;
  	border-radius: 3px;
- 	background: rgb(194,163,45);
+ 	background: #256;
 	color: white;
 	font-family: courier;
 	font-size: 16px;
@@ -500,7 +500,7 @@ footer {
 }
 .pro-text{
 	float: left;
-	margin-top: 60px;
+	margin-top: 50px;
 }
 .pro-text p {
 	line-height: 10px;
@@ -516,12 +516,9 @@ footer {
 .pro-pic img {
 	border-radius: 10%;
 }
-/*.profile-footer {
-	order: 3;
-  flex-shrink: 0;
-  flex-basis: 50px;
-  background: blue;
-}*/
+.profile-footer {
+	margin-left: 10px;
+}
 
 /*---EDIT PROFILE--------------*/
 
@@ -539,6 +536,15 @@ footer {
  	margin-bottom: 10px;
  	margin-top: 10px;
  	padding: 2px 5px 2px 5px;
+ 	border-radius: 3px;
+ 	background: #256;
+	color: white;
+	font-family: courier;
+	font-size: 16px;
+}
+
+.button {
+	padding: 1px 5px 2px 5px;
  	border-radius: 3px;
  	background: rgb(194,163,45);
 	color: white;

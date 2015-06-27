@@ -1,8 +1,51 @@
+
+
+
+<% if @current_user.student? && @current_user.flagged? %>
+  <%= render "students/emailform"%>
+<% else %>
+  <%= render "students/rostertotals" %>
+
+<% end %>
+<script>@current_user
+
+
+//  var searchDate = function(cohort_id, date){
+//   debugger
+//   $.ajax({
+//     url: "/cohorts/" + cohort_id + "/attendances/" + date,
+//     type: "GET",
+//     dataType: 'json',
+//     data: {
+//       // cohort_id: cohort_id,
+//       date: date
+//     }
+//   }).done(function(response){
+//     console.log(response)
+//   });
+// };
+
+ $(function(){
+  $('#date-picker').datepicker({ dateFormat: 'yy-mm-dd' });
+})
+
+// $("#date-picker").on('click',function(e) {
+//   console.log('hello')
+//     e.preventDefault();
+//     if(e.which == 13) {
+//       console.log("enter")
+//       var date = $("#date-picker").val()
+//       var cohort_id = $("#cohort_id").val()
+//         searchDate(cohort_id, date )
+//     }
+// });
+
+</script>
+
+
 <div class="tr heading">
   Cohort: <%= @cohort.name %> | Class Roster
 </div>
-
-<%= render "students/rostertotals" %>
 
 
 
