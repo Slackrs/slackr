@@ -260,8 +260,8 @@ button.ghosted {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	color: #fff;
-	text-shadow:1px 1px 1px rgb(194,163,45);
 	font-weight: 600;
+	/*font-family: 'Open Sans';*/
 }
 
 .table {
@@ -371,27 +371,27 @@ button.ghosted {
 	color: #555;
 }
 
-.cohort-block {
-	background: #3f9faf;
+.cohort {
 	 order: 1;
     flex-shrink: 0;
-    flex-basis: 40px;
+    flex-basis: 25px;
 	font-family: courier;	
 	width: 98%;
-	margin: 8px auto 2px auto;
-	padding-top: 20px;
+	margin: 12px auto 0px auto;
+	padding-top: 12px;
+	padding-bottom: 5px;
 	border-radius: 3px;
-	background: #cdd;
-}
-.cohort-block a {
-	margin-left: 10px;
-	color: #555;
-	text-shadow: 1px 1px 1px white;
+	background: white;
 }
 
-.cohort-block a:hover {
-	border-bottom: 1px solid #256;
+.cohort a {
+	margin-left: 6px;
+	background: #cdd;
+	border-radius: 3px;
+	padding: 10px;
+	color: #555;
 }
+
  
 /*---LOGIN PAGE--------------*/
 
@@ -419,7 +419,7 @@ button.ghosted {
 	font-family: 'Cabin Sketch';
 	font-size: 200px;
 	text-align: center;
-	margin-top: 160px;
+	margin-top: 180px;
 	color: white;
 }
 .logo-helper {
@@ -549,6 +549,7 @@ footer {
 	font-family: courier;
 	font-size: 16px;
 }
+
 .button {
 	padding: 1px 5px 2px 5px;
 	margin-left: 10px;

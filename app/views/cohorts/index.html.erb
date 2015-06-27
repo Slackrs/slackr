@@ -2,7 +2,7 @@
 	My Cohorts
 </div>
 <% @cohorts.each do |cohort| %>
-	<div class="cohort-block">
+	<div class="cohort">
 		<%= link_to "#{cohort.name}", cohort_students_path(cohort.id) %>
 	</div>
 <% end %>
