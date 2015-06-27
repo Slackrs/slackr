@@ -33,8 +33,14 @@ class StudentsController < ApplicationController
 			@troubled.each do |s|
 			end
 		elsif @current_user.instructor?
+<<<<<<< HEAD
 			students = Student.where(cohort_id: @current_user.cohort_id)
 			@troubled = Student.troubled_array(students)
+=======
+
+			@troubled = Student.troubled_array(Student.where(cohort_id: @current_user.cohort_id))
+
+>>>>>>> 295283c7266949cdc912370bce15857b484e2d0c
 		else
 			redirect_to '/'
 		end	

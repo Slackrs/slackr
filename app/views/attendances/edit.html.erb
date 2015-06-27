@@ -3,7 +3,12 @@
 
 <!-- MAIN CONTENT -->
 <div class="tr heading">
-	Cohort: <%= @cohort.name %> || Date: <%= params[:date] %> 
+	Cohort: <%= @cohort.name %> | 
+		<% if @attendances.first.nil? %> 
+			Date: N/A
+		<% else %>
+			Date: <%= params[:date] %> 
+		<% end %>
 </div>
 <div class="table-head">
 	<div class="tr">
@@ -20,21 +25,26 @@
 			<% even_odd = ((i % 2 == 0) ? 'even' : 'odd')%>
 			<div class="tr <%= even_odd %>">
 				<div class="td name">
-
 					<p><%= attendance.student.name %></p>
 				</div>
+				<!-- each row needs to be in its own for it to have one selection only -->
 				<div class="td check">
-					<input type="checkbox" name="students[<%= attendance.student_id %>][present]" <%= attendance.present == true ? 'checked' : nil %> >
+					<input type="radio" name="students[<%= attendance.student_id %>][presence]" value="present" <%= attendance.present == true ? "checked='checked'" : nil %> >
+					<label for="present">present</label>
 				</div>
 				<div class="td check">
-					<input type="checkbox" name="students[<%= attendance.student_id %>][late]" <%= attendance.late == true ? 'checked' : nil %> >
+					<input type="radio" name="students[<%= attendance.student_id %>][presence]" value="late" <%= attendance.late == true ? "checked='checked'" : nil %> >
+					<label for="late">late</label>
 				</div>
 				<div class="td check">
-					<input type="checkbox" name="students[<%= attendance.student_id %>][absent]" <%= attendance.absent == true ? 'checked' : nil %> >
+					<input type="radio" name="students[<%= attendance.student_id %>][presence]" value="absent" <%= attendance.absent == true ? "checked='checked'" : nil %> >
+					<label for="absent">absent</label>
 				</div>
 				<div class="td check">
-					<input type="checkbox" name="students[<%= attendance.student_id %>][excused]" <%= attendance.excused == true ? 'checked' : nil %> >
+					<input type="checkbox" name="students[<%= attendance.student_id %>][excused]" value="excused" <%= attendance.excused == true ? 'checked' : nil %> >
+					<label for="excused">excused</label>
 				</div>
+				<!-- placement marker ==================== -->
 			</div>
 		<% end %>
 		<div class="tr">
@@ -44,7 +54,7 @@
 	<% end %>
 </div>
 <% if @attendances.first.nil? %>
-	<p>No class has been held on this date</p>
+	<div class="student-message"><p>No scheduled classes for this date</p></div>
 	<script>$('.submit').hide()</script>
 <% end %>
 

@@ -34,7 +34,7 @@ class Student < User
 
 	def self.troubled_array(students)
 		students.select do |student|
-			student.flagged?
+			student.flagged? 
 		end
 	end
 
