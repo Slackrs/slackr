@@ -657,3 +657,18 @@ div.form {
 .form input[type="text"] {
 	margin-bottom: 20px;
 }
+
+#egggif {
+	position: absolute; 
+	top: 33%; 
+	left: 25%; 
+	display: none; 
+}
+
+#hammer { 
+	display: none;
+}
+
+/*audio { 
+	display: none;
+}*/

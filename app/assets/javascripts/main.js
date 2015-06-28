@@ -16,40 +16,18 @@ $(function(){
 });
 
 
-// var searchDate = function(cohort_id, date){
-// 	debugger
-// 	$.ajax({
-// 		url: "/cohorts/" + cohort_id + "/attendances/" + date,
-// 		type: "GET",
-// 		dataType: 'json',
-// 		data: {
-// 			cohort_id: cohort_id,
-// 			date: date
-// 		}
-// 	}).done(function(response){
-// 		console.log(response)
-// 	});
-// };
+function moveDiv() {
+  var $span = $("#egggif");
 
-// $('li').click(function(){
-//   var template = $("#editcard-temp").html();
-// 	var id = $(this)[0].id
-// 	var text = $(this).text();
-//   $(this).text('');
-//   // var editcard = Mustache.render(template, text);
-//   $(template).appendTo($(this)).val(text).select().blur(".update",function(){
-//       var newText = $(this).val();
-//       $(this).parent().text(newText).find('textarea').remove();
-//   editCard(id,newText);
-//    });
-// });
+  $span.fadeOut(100, function() {
+      var maxLeft = $(window).width() - $span.width();
+      var maxTop = $(window).height() - $span.height();
+      var leftPos = Math.floor(Math.random() * (maxLeft + 1))
+      var topPos = Math.floor(Math.random() * (maxTop + 1))
 
-// $("#date-picker").keypress(function(e) {
-// 		e.preventDefault();
-//     if(e.which == 13) {
-//     	debugger
-//     	var date = $("#date-picker").val()
-//     	var cohort_id = $("#cohort_id").val()
-//         searchDate(cohort_id, date )
-    // }
-// });
+      $span.css({ left: leftPos, top: topPos }).fadeIn(100);
+    });
+  };
+
+
+
