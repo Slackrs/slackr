@@ -56,7 +56,7 @@ class AttendancesController < ApplicationController
 		students.each do |s|
 
 			student = Student.find(s[0])
-			already_flagged = student.flagged?
+			
 
 			attendance = Attendance.where({student_id: s[0], date: params[:id]}).first
 			attendance.present = (s[1][:presence] == 'present' ? true : false)
@@ -65,14 +65,12 @@ class AttendancesController < ApplicationController
 			attendance.excused = (s[1][:excused].nil? ? false : true)		
 
 
-			attendance.save
-
-			if !already_flagged && student.flagged?
-		
+			if student.flagged? && !student.was_flagged?
+				
 				NotificationMailer.alert_troubled_student(student).deliver_now
 			end
-		end
 
+		end
 		redirect_to "/cohorts/#{params[:cohort_id]}/attendances/#{params[:id]}/edit"
 	end
 
