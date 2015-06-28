@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/students/troubled' => 'students#troubled'
   get '/students/:id/history' => 'students#history', as: 'student_history'
+  get 'students/:id/contact' => 'students#contact', as: 'student_contact'
 
   resources :cohorts, only: [:index] do
     resources :students, only: [:index, :show]
