@@ -41,7 +41,7 @@
 					<label for="absent">absent</label>
 				</div>
 				<div class="td check">
-					<input type="checkbox" name="students[<%= attendance.student_id %>][excused]" value="excused" <%= attendance.excused == true ? 'checked' : nil %> >
+					<input type="radio" name="students[<%= attendance.student_id %>][presence]" value="excused" <%= attendance.excused == true ? "checked='checked'" : nil %> >
 					<label for="excused">excused</label>
 				</div>
 				<!-- placement marker ==================== -->
