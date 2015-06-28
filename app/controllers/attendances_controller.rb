@@ -62,11 +62,13 @@ class AttendancesController < ApplicationController
 			attendance.late = (s[1][:presence] == 'late' ? true : false)
 			attendance.absent = (s[1][:presence] == 'absent' ? true : false)
 			attendance.excused = (s[1][:excused].nil? ? false : true)		
+
+
 			attendance.save
 
 			# if !already_flagged && student.flagged?
-			if s.flagged?
-				NotificationMailer.alert_troubled_student(s).deliver_now
+			if student.flagged?
+				NotificationMailer.alert_troubled_student(student).deliver_now
 			end
 		end
 
