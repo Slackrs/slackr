@@ -91,6 +91,7 @@ b = Student.first
 
 b.attendances.each do |a|
 	a.present = false  	
+	a.absent = true
 	a.save
 end  
 
