@@ -107,8 +107,6 @@ body {
 	width: 90%;
 	margin: 5%;
 	margin-bottom: 0;
-	background: #44bad1;
-	background: #256;
 	background: #3f9faf;
 	border: none;
 	padding-top: 10px;
@@ -336,9 +334,11 @@ button.ghosted {
 .flagged .td * {
 	color: white;
 }
-
-.f2 {
-
+.f3 .td {
+	background: rgb(250,180,150);
+}
+.f2 .td {
+	background: rgb(250,200,150);
 }
 
 .td a:hover {
@@ -386,7 +386,7 @@ button.ghosted {
 
 .cohort a {
 	margin-left: 6px;
-	background: #cdd;
+	background: rgb(250,210,55);
 	border-radius: 3px;
 	padding: 10px;
 	color: #555;
@@ -394,6 +394,7 @@ button.ghosted {
 
 .cohort a:hover {
 	border-bottom: 3px solid #256;
+	border-bottom: 3px solid #cdd;
 }
 
  
@@ -536,7 +537,7 @@ footer {
 .edit {
 	/*margin-top: 40px;*/
 	order: 2;
-	margin: 40px auto 0px auto;
+	margin: 10vh auto 0px auto;
 }
 .edit input {
 	margin-bottom: 10px;
@@ -552,6 +553,10 @@ footer {
 	color: white;
 	font-family: courier;
 	font-size: 16px;
+}
+
+.edit input, .edit label, .edit input[type=submit], .edit input[type=text] {
+	margin-left: 0; 
 }
 
 .button {
