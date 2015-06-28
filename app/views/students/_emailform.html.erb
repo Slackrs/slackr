@@ -1,4 +1,27 @@
-<form action="_emailform_submit" method="get" accept-charset="utf-8">
+<form action="_emailform_submit" method="post" accept-charset="utf-8">
+	<label for'name', 'Name'>
 	<input type="text" name="" value="" placeholder="">
-	<input type="week" name="" value="" placeholder="">
+	<label for'message', 'Message'>
+	<textarea type="message" name="" value="" placeholder="">
+	<input type="submit" value="Submit">
 </form>
+
+<div class="container-content">
+    <div class="container">
+       
+            <div class="form-group">
+                <%= f.label 'name', 'Name' %>
+                <%= f.text_field 'name', nil, class: 'form-control', placeholder: 'Your Name' %>
+            </div>
+           <div class="form-group">
+               <%= f.label 'email', 'Email' %>
+               <%= f.email 'email', nil, class: 'form-control', placeholder: 'Your Email Address' %>
+           </div>
+           <div class="form-group">
+               <%= f.label 'comments', 'Comments' %>
+               <%= f.text_area 'comments', nil, class: 'form-control', rows: 4, placeholder: 'Comments...' %>
+           </div>
+           <%= f.submit nil, class: 'btn btn-default btn-about pull-right' %>
+       <% end %>
+  </div>
+</div>
