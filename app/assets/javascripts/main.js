@@ -1,5 +1,18 @@
 $(function(){
   $('#date-picker').datepicker({ dateFormat: 'yy-mm-dd' });
+  var $modal = $('#modal')
+  var $overlay = $('#overlay')
+  var $content = $('#content')
+  var $close = $('#close')
+  var close = function () {
+    $modal.hide();
+    $overlay.hide();
+    $content.empty();
+	}
+	$close.click(function(e){
+    e.preventDefault();
+    close();
+	})
 });
 
 // var searchDate = function(cohort_id, date){

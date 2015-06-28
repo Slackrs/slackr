@@ -1,12 +1,5 @@
+<%= render "students/rostertotals" %>
 
-
-
-<% if @current_user.student? && @current_user.flagged? %>
-  <%= render "students/emailform"%>
-<% else %>
-  <%= render "students/rostertotals" %>
-
-<% end %>
 <script>@current_user
 
 
@@ -67,3 +60,8 @@
  
 <% end %>
 
+<div>
+  <%= form_tag "/email/", method: 'POST' do %>
+    <%= text_area_tag :message, nil , size: "24x6" %>
+  <% end %>
+</div>

@@ -408,7 +408,7 @@ button.ghosted {
 	font-family: courier;
 }
 
-input[type="password"], input[type="email"], .edit input[type="text"]{
+input[type="password"], input[type="email"], .edit input[type="text"], .form input[type="text"] {
   background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
   border: 1px solid #a1a3a3;
   border-radius: 4px;
@@ -423,7 +423,7 @@ input[type="password"], input[type="email"], .edit input[type="text"]{
   transition: box-shadow 0.3s;
   width: 300px;
 }
-input[type="password"]:focus, input[type="email"]:focus {
+input[type="password"]:focus, input[type="email"]:focus, .form input:focus{
   box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3);
   outline: 0;
 }
@@ -433,7 +433,7 @@ input[type="password"]:focus, input[type="email"]:focus {
   margin: 26px 0 0 28px;
 }
 
-.login input[type="submit"], .edit input[type="submit"] {
+.login input[type="submit"], .edit input[type="submit"], .form input[type="submit"] {
   width:240px;
   height:35px;
   display:block;
@@ -469,7 +469,7 @@ input[type="password"]:focus, input[type="email"]:focus {
 }*/
 
 
-.login input[type="submit"]:active, .edit input[type="text"]:active {
+.login input[type="submit"]:active, .edit input[type="text"]:active{
   top:3px;
   box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
 }
@@ -553,4 +553,67 @@ footer {
 	color: white;
 	font-family: courier;
 	font-size: 16px;
+}
+
+/*---- contact form ----*/
+div.form {
+	width: 450px;
+}
+.form label {
+	margin-left: 80px;
+ 	padding: 2px 5px 2px 5px;
+ 	border-radius: 3px;
+ 	background: #215465;
+	color: #fff;
+	text-shadow:1px 1px 0px #215465;
+	font-family: courier;
+	font-size: 16px;
+}
+.form textarea {
+	background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
+  border: 1px solid #a1a3a3;
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #696969;
+  font-family: courier;
+ 	padding-left: 10px;
+ 	margin-left: 80px;
+ 	margin-top:	20px;
+  transition: box-shadow 0.3s;
+}
+#overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+#modal {
+    position:absolute;
+    background:rgba(0,0,0,0.2);
+    border-radius:14px;
+    padding:8px;
+}
+
+#content {
+    border-radius:8px;
+    background:#fff;
+    padding:20px;
+}
+#close {
+    position:absolute;
+    background:url(/img/close.png) 0 0 no-repeat;
+    width:28px;
+    height:28px;
+    display:block;
+    text-indent:-9999px;
+    top:-7px;
+    right:-7px;
+}
+.form input[type="text"] {
+	margin-bottom: 20px;
 }

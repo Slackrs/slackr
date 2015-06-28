@@ -1,4 +1,14 @@
-<form action="_emailform_submit" method="get" accept-charset="utf-8">
-	<input type="text" name="" value="" placeholder="">
-	<input type="week" name="" value="" placeholder="">
-</form>
+<div id='overlay'></div>
+<div id='modal'>
+  <div id='content' class="form">
+    <h3>You have more than 3 official absences. Please contact your producer immediately.</h3><br>
+    <%= form_tag "/email/#{@cohort.producer_id}", method: 'POST' do %>
+      <%= label :subject, 'Subject' %><br>
+      <%= text_field_tag :subject %><br>
+      <%= label :message, 'message' %><br>
+      <%= text_area_tag :message, nil , size: "35x10" %><br>
+      <%= submit_tag 'Send e-mail' %>
+    <% end %>
+  </div>
+    <a href='#' id='close'>close</a>
+</div>
