@@ -6,7 +6,7 @@ class NotificationMailer < ApplicationMailer
   def alert_troubled_student(student)
     @student = student
 
-    mail(from: student.cohort.prodecer.email, to: student.email, subject: "Alert! You Have Excessive Absences!")
+    mail(from: student.cohort.producer.email, to: student.email, subject: "Alert! You Have Excessive Absences!")
   end
 
 end

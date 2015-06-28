@@ -59,6 +59,7 @@ s = Student.create({
 })
 students.push(s)
 
+
 25.times do
 	s = Student.create({
 		name: FFaker::Name.name,
@@ -86,5 +87,15 @@ students.each do |student|
 			excused: false
 		})
 	end
+b = Student.first
+
+b.attendances.each do |a|
+	a.present = false  	
+	a.absent = true
+	a.save
+end  
+
+
+
 end
 

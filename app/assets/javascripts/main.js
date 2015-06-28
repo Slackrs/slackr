@@ -15,6 +15,7 @@ $(function(){
 	})
 });
 
+
 // var searchDate = function(cohort_id, date){
 // 	debugger
 // 	$.ajax({

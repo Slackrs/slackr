@@ -108,6 +108,8 @@ body {
 	width: 90%;
 	margin: 5%;
 	margin-bottom: 0;
+	background: #44bad1;
+	background: #256;
 	background: #3f9faf;
 	border: none;
 	padding-top: 10px;
@@ -200,18 +202,6 @@ button.ghosted {
   box-shadow: 0 0 10px #3f9faf;
 }
 
-.nav .heading {
-	font-family: courier;	
-	width: 90%;
-	margin: 5%;
-	padding-top: 5px;
-	padding-bottom: 14px;
-	border-bottom: 1px solid #256;
-/*	border-top: 1px solid #256;*/
-	color: #256;
-	font-weight: bolder;
-}
-
 .content {
 	border-radius: 4px;
 	background: white;
@@ -259,9 +249,9 @@ button.ghosted {
 
 .table-head {
 	order: 2;
-	flex-grow: 0;
+	flex: 1;
 	flex-shrink: 0;
-  flex-basis: 40px;
+  flex-basis: 10px;
 	margin: 5px;
 	/*height: 54px;*/
 }
@@ -287,7 +277,7 @@ button.ghosted {
 }
 
 .table.studenttotals {
-	flex: 5;
+	flex: 10;
 }
 
 .table.studenthistory {
@@ -347,11 +337,9 @@ button.ghosted {
 .flagged .td * {
 	color: white;
 }
-.f3 .td {
-	background: rgb(250,180,150);
-}
-.f2 .td {
-	background: rgb(250,200,150);
+
+.f2 {
+
 }
 
 .td a:hover {
@@ -382,32 +370,6 @@ button.ghosted {
 .student-message p {
 	margin-left: 6px;
 	color: #555;
-}
-
-.cohort {
-	 order: 1;
-    flex-shrink: 0;
-    flex-basis: 25px;
-	font-family: courier;	
-	width: 98%;
-	margin: 12px auto 0px auto;
-	padding-top: 12px;
-	padding-bottom: 5px;
-	border-radius: 3px;
-	background: white;
-}
-
-.cohort a {
-	margin-left: 6px;
-	background: rgb(250,210,55);
-	border-radius: 3px;
-	padding: 10px;
-	color: #555;
-}
-
-.cohort a:hover {
-	border-bottom: 3px solid #256;
-	border-bottom: 3px solid #cdd;
 }
 
  
@@ -447,7 +409,7 @@ button.ghosted {
 	font-family: courier;
 }
 
-input[type="password"], input[type="email"], .edit input[type="text"], .form input[type="text"] {
+input[type="password"], input[type="email"], .edit input[type="text"]{
   background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
   border: 1px solid #a1a3a3;
   border-radius: 4px;
@@ -462,7 +424,7 @@ input[type="password"], input[type="email"], .edit input[type="text"], .form inp
   transition: box-shadow 0.3s;
   width: 300px;
 }
-input[type="password"]:focus, input[type="email"]:focus, .form input:focus{
+input[type="password"]:focus, input[type="email"]:focus {
   box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3);
   outline: 0;
 }
@@ -472,7 +434,7 @@ input[type="password"]:focus, input[type="email"]:focus, .form input:focus{
   margin: 26px 0 0 28px;
 }
 
-.login input[type="submit"], .edit input[type="submit"], .form input[type="submit"] {
+.login input[type="submit"], .edit input[type="submit"] {
   width:240px;
   height:35px;
   display:block;
@@ -496,7 +458,6 @@ input[type="password"]:focus, input[type="email"]:focus, .form input:focus{
   box-shadow: 0px 5px 0px 0px rgb(194,163,45);
 }
 
-
 /*.shadow {
   background: #000;
   border-radius: 12px 12px 4px 4px;
@@ -509,7 +470,7 @@ input[type="password"]:focus, input[type="email"]:focus, .form input:focus{
 }*/
 
 
-.login input[type="submit"]:active, .edit input[type="text"]:active{
+.login input[type="submit"]:active, .edit input[type="text"]:active {
   top:3px;
   box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
 }
@@ -532,14 +493,15 @@ footer {
 .pro-text span {
 	padding: 2px 5px 2px 5px;
  	border-radius: 3px;
- 	background: #256;
+ 	background: rgb(194,163,45);
 	color: white;
 	font-family: courier;
 	font-size: 16px;
+	
 }
 .pro-text{
 	float: left;
-	margin-top: 50px;
+	margin-top: 60px;
 }
 .pro-text p {
 	line-height: 10px;
@@ -555,15 +517,19 @@ footer {
 .pro-pic img {
 	border-radius: 10%;
 }
-.profile-footer {
-}
+/*.profile-footer {
+	order: 3;
+  flex-shrink: 0;
+  flex-basis: 50px;
+  background: blue;
+}*/
 
 /*---EDIT PROFILE--------------*/
 
 .edit {
 	/*margin-top: 40px;*/
 	order: 2;
-	margin: 10vh auto 0px auto;
+	margin: 40px auto 0px auto;
 }
 .edit input {
 	margin-bottom: 10px;
@@ -575,85 +541,14 @@ footer {
  	margin-top: 10px;
  	padding: 2px 5px 2px 5px;
  	border-radius: 3px;
- 	background: #256;
-	color: white;
-	font-family: courier;
-	font-size: 16px;
-}
-
-.edit input, .edit label, .edit input[type=submit], .edit input[type=text] {
-	margin-left: 0; 
-}
-
-.button {
-	padding: 1px 5px 2px 5px;
-	margin-left: 10px;
- 	border-radius: 3px;
  	background: rgb(194,163,45);
 	color: white;
 	font-family: courier;
 	font-size: 16px;
 }
+/*
 
-/*---- contact form ----*/
-div.form {
-	width: 450px;
-}
-.form label {
-	margin-left: 80px;
- 	padding: 2px 5px 2px 5px;
- 	border-radius: 3px;
- 	background: #215465;
-	color: #fff;
-	text-shadow:1px 1px 0px #215465;
-	font-family: courier;
-	font-size: 16px;
-}
-.form textarea {
-	background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
-  border: 1px solid #a1a3a3;
-  border-radius: 4px;
-  box-shadow: 0 1px #fff;
-  box-sizing: border-box;
-  color: #696969;
-  font-family: courier;
- 	padding-left: 10px;
- 	margin-left: 80px;
- 	margin-top:	20px;
-  transition: box-shadow 0.3s;
-}
-#overlay {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-}
-#modal {
-    position:absolute;
-    background:rgba(0,0,0,0.2);
-    border-radius:14px;
-    padding:8px;
-}
 
-#content {
-    border-radius:8px;
-    background:#fff;
-    padding:20px;
-}
-#close {
-    position:absolute;
-    background:url(/img/close.png) 0 0 no-repeat;
-    width:28px;
-    height:28px;
-    display:block;
-    text-indent:-9999px;
-    top:-7px;
-    right:-7px;
-}
-.form input[type="text"] {
-	margin-bottom: 20px;
-}
+*/
+
+
