@@ -108,8 +108,6 @@ body {
 	width: 90%;
 	margin: 5%;
 	margin-bottom: 0;
-	background: #44bad1;
-	background: #256;
 	background: #3f9faf;
 	border: none;
 	padding-top: 10px;
@@ -249,9 +247,9 @@ button.ghosted {
 
 .table-head {
 	order: 2;
-	flex: 1;
+	flex-grow: 0;
 	flex-shrink: 0;
-  flex-basis: 10px;
+  flex-basis: 40px;
 	margin: 5px;
 	/*height: 54px;*/
 }
@@ -277,7 +275,7 @@ button.ghosted {
 }
 
 .table.studenttotals {
-	flex: 10;
+	flex: 5;
 }
 
 .table.studenthistory {
@@ -337,9 +335,11 @@ button.ghosted {
 .flagged .td * {
 	color: white;
 }
-
-.f2 {
-
+.f3 .td {
+	background: rgb(250,180,150);
+}
+.f2 .td {
+	background: rgb(250,200,150);
 }
 
 .td a:hover {
@@ -370,6 +370,32 @@ button.ghosted {
 .student-message p {
 	margin-left: 6px;
 	color: #555;
+}
+
+.cohort {
+	 order: 1;
+    flex-shrink: 0;
+    flex-basis: 25px;
+	font-family: courier;	
+	width: 98%;
+	margin: 12px auto 0px auto;
+	padding-top: 12px;
+	padding-bottom: 5px;
+	border-radius: 3px;
+	background: white;
+}
+
+.cohort a {
+	margin-left: 6px;
+	background: rgb(250,210,55);
+	border-radius: 3px;
+	padding: 10px;
+	color: #555;
+}
+
+.cohort a:hover {
+	border-bottom: 3px solid #256;
+	border-bottom: 3px solid #cdd;
 }
 
  
@@ -458,18 +484,6 @@ input[type="password"]:focus, input[type="email"]:focus {
   box-shadow: 0px 5px 0px 0px rgb(194,163,45);
 }
 
-/*.shadow {
-  background: #000;
-  border-radius: 12px 12px 4px 4px;
-  box-shadow: 0 0 20px 10px #000;
-  height: 8px;
-	opacity: 0.1;
-  width: 400px;
-  margin: 0 auto;
-  margin-top: 40px;
-}*/
-
-
 .login input[type="submit"]:active, .edit input[type="text"]:active {
   top:3px;
   box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
@@ -497,7 +511,6 @@ footer {
 	color: white;
 	font-family: courier;
 	font-size: 16px;
-	
 }
 .pro-text{
 	float: left;
@@ -518,7 +531,6 @@ footer {
 	border-radius: 10%;
 }
 .profile-footer {
-	margin-left: 10px;
 }
 
 /*---EDIT PROFILE--------------*/
@@ -526,7 +538,7 @@ footer {
 .edit {
 	/*margin-top: 40px;*/
 	order: 2;
-	margin: 40px auto 0px auto;
+	margin: 10vh auto 0px auto;
 }
 .edit input {
 	margin-bottom: 10px;
@@ -544,8 +556,13 @@ footer {
 	font-size: 16px;
 }
 
+.edit input, .edit label, .edit input[type=submit], .edit input[type=text] {
+	margin-left: 0; 
+}
+
 .button {
 	padding: 1px 5px 2px 5px;
+	margin-left: 10px;
  	border-radius: 3px;
  	background: rgb(194,163,45);
 	color: white;

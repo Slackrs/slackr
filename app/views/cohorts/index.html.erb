@@ -1,15 +1,11 @@
 <div class="tr heading">
 	My Cohorts
 </div>
-<table>
-	<% @cohorts.each do |cohort| %>
-		<tr>
-			<td>
-				<%= link_to "#{cohort.name}", cohort_students_path(cohort.id) %>
-			</td>
-		</tr>
-	<% end %>
-</table>
+<% @cohorts.each do |cohort| %>
+	<div class="cohort">
+		<%= link_to "#{cohort.name}", cohort_students_path(cohort.id) %>
+	</div>
+<% end %>
 
 <script type="text/javascript">
     $(".all-cohorts").addClass('ghosted');

@@ -12,7 +12,7 @@
 </div>
 <div class="table studenttotals">
 		<% flagged = (@student.flagged? ? 'flagged' : nil) %>
-		<div class="tr odd <%= flagged %>">
+		<div class="tr odd <%= flagged %> " >
 				<div class="td name"><%= @student.name %></div>
 				<div class="td check"><%= @student.presents %></div>
 				<div class="td check"><%= @student.lates %></div>
