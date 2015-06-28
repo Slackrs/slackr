@@ -36,6 +36,7 @@ class AttendancesController < ApplicationController
 		elsif @current_user.instructor?
 			@cohort = Cohort.find(@current_user.cohort_id)
 			@students = @cohort.students
+		
 		elsif @current_user.student?
 			redirect_to cohort_stusdent_path(user.cohort_id, user.id)
 		else
