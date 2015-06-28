@@ -87,5 +87,7 @@ Rails.application.configure do
   authentication:       'plain',
   enable_starttls_auto: true  }
 
+  config.middleware.use Rack::TwilioWebhookAuthentication, Rails.application.secrets.twilio_auth_token, '/voice'
+
 end
 
