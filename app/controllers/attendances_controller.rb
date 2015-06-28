@@ -67,8 +67,8 @@ class AttendancesController < ApplicationController
 
 			attendance.save
 
-			# if !already_flagged && student.flagged?
-			if student.flagged?
+			if !already_flagged && student.flagged?
+		
 				NotificationMailer.alert_troubled_student(student).deliver_now
 			end
 		end
