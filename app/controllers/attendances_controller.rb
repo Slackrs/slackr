@@ -36,6 +36,7 @@ class AttendancesController < ApplicationController
 		elsif @current_user.instructor?
 			@cohort = Cohort.find(@current_user.cohort_id)
 			@students = @cohort.students
+		
 		elsif @current_user.student?
 			redirect_to cohort_stusdent_path(user.cohort_id, user.id)
 		else
@@ -55,20 +56,21 @@ class AttendancesController < ApplicationController
 		students.each do |s|
 
 			student = Student.find(s[0])
-			already_flagged = student.flagged?
+			
 
 			attendance = Attendance.where({student_id: s[0], date: params[:id]}).first
 			attendance.present = (s[1][:presence] == 'present' ? true : false)
 			attendance.late = (s[1][:presence] == 'late' ? true : false)
 			attendance.absent = (s[1][:presence] == 'absent' ? true : false)
 			attendance.excused = (s[1][:excused].nil? ? false : true)		
-			attendance.save
 
-			if !already_flagged && student.flagged?
-				NotificationMailer.alert_troubled_student(s).deliver_now
+
+			if student.flagged? && !student.was_flagged?
+				
+				NotificationMailer.alert_troubled_student(student).deliver_now
 			end
-		end
 
+		end
 		redirect_to "/cohorts/#{params[:cohort_id]}/attendances/#{params[:id]}/edit"
 	end
 

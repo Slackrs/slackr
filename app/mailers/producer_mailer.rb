@@ -1,7 +1,7 @@
 class ProducerMailer < ApplicationMailer
-	def send_email(student, producer, message)
+	def send_email(student, producer, message, subject)
 		@message = message
-		
-		mail({to: producer.email, from: student.email, subject:'hi', message: message})		
+		@email = student.email
+		mail({to: producer.email, from: student.email, subject: subject, message: message})		
 	end
 end

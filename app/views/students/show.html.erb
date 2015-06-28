@@ -3,14 +3,18 @@
 </div>
 
 <!-- MAIN CONTENT -->
+
 <%= render "/students/studenttotals" %>
+
 <% if @attendances != [] %>
 	<%= render "/students/studenthistory" %>
 <% else %>
 	<div class="student-message"><p>Student has been present for all class days</p></div>
 <% end %>
 
-
+<% if @current_user.student? && @current_user.flagged? %>
+  <%= render "students/emailform"%>
+<% end %>
 <script type="text/javascript">
     $(".student-history").addClass('ghosted');
 </script>

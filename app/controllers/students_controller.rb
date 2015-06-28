@@ -46,6 +46,7 @@ class StudentsController < ApplicationController
 			@attendances = @student.attendances.where.not(present: true).order(date: :asc)
 		elsif current_user.id == params[:id].to_i
 			@student = current_user
+			@cohort = @student.cohort
 			@attendances = @student.attendances.where.not(present: true).order(date: :asc)
 		else
 			redirect '/'

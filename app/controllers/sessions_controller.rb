@@ -25,7 +25,6 @@ class SessionsController < ApplicationController
   end
 
   def landing
-    binding.pry
     if session[:user_id]
       user = User.find(session[:user_id])
       if user.producer?
