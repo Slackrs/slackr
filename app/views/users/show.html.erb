@@ -10,14 +10,15 @@
 	<p><span>&nbsp;User&nbsp;</span>&nbsp;<%= @user.type %></p> 
 	<p><span>&nbsp;Email&nbsp;</span>&nbsp;<%= @user.email %></p>
 	<p><span>&nbsp;Phone#&nbsp;</span>&nbsp;<%= @user.phone_num %></p>
-	</div>
-
 	<% if @current_user.id == params[:id].to_i %>
 		<div class="profile-footer">
 			<%= link_to "edit profile", edit_user_path(current_user), :class => "button"  %>
 			<%= link_to "change password", user_edit_pass_path(current_user), :class => "button" %>
 		</div>
 	<% end %>
+	</div>
+
+	
 </div>
 
 <script type="text/javascript">

@@ -1,8 +1,9 @@
 
-<div class="aside">
 	<%= render "buttons/student_history" %>
+	<%= render 'buttons/contact_producer' %>
 
 	<div class="flex-vertical"></div>
+	<div class="heading"><%= @current_user.name %></div>
+
 	<%= render "buttons/edit_profile" %>
 	<%= render "buttons/logout" %>
-</div>
