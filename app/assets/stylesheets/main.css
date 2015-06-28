@@ -200,6 +200,18 @@ button.ghosted {
   box-shadow: 0 0 10px #3f9faf;
 }
 
+.nav .heading {
+	font-family: courier;	
+	width: 90%;
+	margin: 5%;
+	padding-top: 5px;
+	padding-bottom: 14px;
+	border-bottom: 1px solid #256;
+/*	border-top: 1px solid #256;*/
+	color: #256;
+	font-weight: bolder;
+}
+
 .content {
 	border-radius: 4px;
 	background: white;

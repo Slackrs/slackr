@@ -1,0 +1,9 @@
+<div class="tr heading">
+  Contact my producer: <%= @current_user.cohort.producer.name %>
+</div>
+
+<%= render '/students/emailform' %>
+
+<script type="text/javascript">
+    $(".contact-producer").addClass('ghosted');
+</script>
