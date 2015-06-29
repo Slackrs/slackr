@@ -1,7 +1,7 @@
 <div id='overlay'></div>
 <div id='modal'>
   <div id='content' class="form">
-    <h3>You have more than 3 official absences. Please contact your producer immediately.</h3><br>
+    <h3>You have more than 3 official absences.<br>Please contact your producer immediately.</h3><br><br>
     <%= form_tag "/email/#{@cohort.producer_id}", method: 'POST' do %>
       <%= label :subject, 'Subject' %><br>
       <%= text_field_tag :subject %><br>

@@ -608,6 +608,7 @@ div.form {
 	text-shadow:1px 1px 0px #215465;
 	font-family: courier;
 	font-size: 16px;
+	width: 200px;
 }
 .form textarea {
 	background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
@@ -621,42 +622,56 @@ div.form {
  	margin-left: 80px;
  	margin-top:	20px;
   transition: box-shadow 0.3s;
+  width: 300px;
+  max-width: 300px;
 }
 #overlay {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    opacity: 0.5;
-    filter: alpha(opacity=50);
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
 #modal {
-    position:absolute;
-    background:rgba(0,0,0,0.2);
-    border-radius:14px;
-    padding:8px;
+  position:absolute;
+  background:rgba(0,0,0,0.2);
+  border-radius:14px;
+  padding:8px;
 }
 
 #content {
-    border-radius:8px;
-    background:#fff;
-    padding:20px;
+  border-radius:5px;
+  background:#fff;
+  padding:20px;
+}
+#content h3 {
+	font-family: Courier;
+	color: white;
+	text-align: center;
+	font-weight: normal;
+	font-size: 16px;
+	background: rgb(235,97,98);
+	padding: 10px;
+	border-radius: 5px;
 }
 #close {
-    position:absolute;
-    background:url(/img/close.png) 0 0 no-repeat;
-    width:28px;
-    height:28px;
-    display:block;
-    text-indent:-9999px;
-    top:-7px;
-    right:-7px;
+  position:absolute;
+  background:url(/img/close.png) 0 0 no-repeat;
+  width:28px;
+  height:28px;
+  display:block;
+  text-indent:-9999px;
+  top:-7px;
+  right:-7px;
 }
 .form input[type="text"] {
 	margin-bottom: 20px;
 }
+
+
 
 #egggif {
 	position: absolute; 

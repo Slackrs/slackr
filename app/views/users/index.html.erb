@@ -1,9 +1,10 @@
 <div class="tr heading">
 	All Users
 </div>
-
-<ul>
-	<% @users.each do |user| %>
-	<li><%= link_to "#{user.name}", user_path(user) %> || <%= user.type %></li>
-	<% end %>
-</ul>
+<div class="table">
+<% @users.each do |user| %>
+	<div class="cohort">
+		<%= link_to "#{user.name} | #{user.type}", user_path(user) %>
+	</div>
+<% end %>
+</div>

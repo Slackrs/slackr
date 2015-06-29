@@ -1,9 +1,8 @@
+<div class="tr heading">
+  Cohort: <%= @cohort.name %> | Class Roster
+</div>
+
 <%= render "students/rostertotals" %>
-
-<% if @current_user.student? && @current_user.flagged? %>
-  <%= render "students/emailform"%>
-
-<% end %>
 
 <script>
 
@@ -12,10 +11,6 @@ $(function(){
 })
 
 </script>
-
-<div class="tr heading">
-  Cohort: <%= @cohort.name %> | Class Roster
-</div>
 
 <% if @current_user.producer? %>
 
@@ -31,8 +26,8 @@ $(function(){
  
 <% end %>
 
-<div>
+<!-- <div>
   <%= form_tag "/email/", method: 'POST' do %>
     <%= text_area_tag :message, nil , size: "24x6" %>
   <% end %>
-</div>
+</div> -->
