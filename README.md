@@ -49,4 +49,8 @@ Students have a read-only view on their current attendance totals from class sta
 
 + [Formal Wireframes, on Balsamiq](https://slackrs.mybalsamiq.com/projects/slackrs/grid)
 
++ [Text Updates, on Twilio](https://www.twilio.com/user/account/voice-sms-mms/getting-started)
+
+
+
 
