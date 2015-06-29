@@ -7,6 +7,45 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<script type="text/javascript" src="https://rawgit.com/mikeflynn/egg.js/9d4e0518cf9db87f634b36df5ad805ab957dcac3/egg.min.js">
+	</script>
+
+
+	<img id="egggif" src="<%= image_path('hammer.gif') %>"/>
+	
+	<audio autoloop="loop">  
+		 <source id="hammmer" src="<%= audio_path('mchammer.mp3') %>" />
+	</audio>
+
+	
+	<script type="text/javascript">
+	
+
+ 		aud = document.getElementsByTagName("audio")[0]
+ 		// var aud =  document.getElementById('#hammmer');
+    var egg = new Egg();
+    
+    
+    	egg.addCode("up,up,b,a", function() {
+      	jQuery('#egggif').fadeIn(500, function() {
+        window.setTimeout(function() { 
+        	jQuery('#egggif').hide(); 
+        	}, 5000);
+      	moveDiv();
+      	aud.play()
+				setInterval(moveDiv, 300 );
+      	});
+    	}, "konami-code");
+    	egg.addHook(function(){
+      console.log("Hook called for: " + this.activeEgg.keys);
+      console.log(this.activeEgg.metadata);
+    	});
+    	egg.listen();
+ 	
+ 	</script>
+
+
+	
 
 	<div class="header">
 		<!-- <p>S &nbsp;L &nbsp;A &nbsp;C &nbsp;K &nbsp;R</p> -->
@@ -29,11 +68,10 @@
 		</div>
 
 		<div class="line-vector"></div>
-
 		<div class="content">
+
 			<%= yield %>
 		</div>
 	</div>
-	
 </body>
 </html>
