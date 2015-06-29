@@ -53,6 +53,11 @@ class StudentsController < ApplicationController
 		end
 	end
 
+	def contact
+		@cohort = current_user.cohort
+		render :contact_producer
+	end
+
 
 
 end

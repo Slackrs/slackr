@@ -2,7 +2,22 @@
   Contact my producer: <%= @current_user.cohort.producer.name %>
 </div>
 
-<%= render '/students/emailform' %>
+<div class='table'>
+  <div id='content' class="form">
+    <%= form_tag "/email/#{@cohort.producer_id}", method: 'POST' do %>
+      <%= label :subject, 'Subject' %><br>
+      <%= text_field_tag :subject %><br>
+      <%= label :message, 'message' %><br>
+      <%= text_area_tag :message, nil , size: "35x10" %><br>
+      <%= submit_tag 'Send e-mail' %>
+    <% end %>
+  </div>
+  <br>
+  <h3 id='twilio_h3'>Running late or not going to make it?<br>Text Twilio.</h3><br>
+	<p id='twilio_p'>Keep us informed on the morning of by texting +19148254330 with a message containing either ‘absent’ or ‘late’ and the reason.</p>
+	<p id='twilio_p'>We’ll update your attendance record remotely and see you when we see you.</p>
+</div>
+
 
 <script type="text/javascript">
     $(".contact-producer").addClass('ghosted');
