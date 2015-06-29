@@ -64,9 +64,8 @@ class AttendancesController < ApplicationController
 			attendance.absent = (s[1][:presence] == 'absent' ? true : false)
 			attendance.excused = (s[1][:excused].nil? ? false : true)		
 
-
+			attendance.save
 			if student.flagged? && !student.was_flagged?
-				
 				NotificationMailer.alert_troubled_student(student).deliver_now
 			end
 
