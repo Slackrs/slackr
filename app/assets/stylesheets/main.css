@@ -410,6 +410,20 @@ button.ghosted {
 	border-bottom: 3px solid #cdd;
 }
 
+#twilio_h3 {
+	width: 500px;
+	margin-left: 10px;
+	font-size: 18px;
+	font-family: courier;
+}
+
+#twilio_p {
+	width: 500px;
+	margin-left: 10px;
+	font-size: 14px;
+	font-family: courier;
+}
+
  
 /*---LOGIN PAGE--------------*/
 
